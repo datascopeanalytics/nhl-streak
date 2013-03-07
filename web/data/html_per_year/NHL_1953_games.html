@@ -1,0 +1,2437 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/website" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" lang="en">
+ <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script>
+/*
+ * JS Redirection Mobile
+ *
+ * Developed by
+ * Sebastiano Armeli-Battana (@sebarmeli) - http://www.sebastianoarmelibattana.com
+ * Release under the MIT licence
+ */
+ if(!window.SA){window.SA={}}SA.redirection_mobile=function(d){var b=function(k){var j=new Date();j.setTime(j.getTime()+k);return j};var i=function(o){if(!o){return}var j=document.location.search,p=j&&j.substring(1).split("&"),l=0,n=p.length;for(;l<n;l++){var k=p[l],m=k&&k.substring(0,k.indexOf("="));if(m===o){return k.substring(k.indexOf("=")+1,k.length)}}};var f=navigator.userAgent.toLowerCase(),h="false",g="true",d=d||{},redirection_param=d.redirection_paramName||"mobile",redirection_param_long=d.redirection_paramName_long||"mobile_long",mobile_prefix=d.mobile_prefix||"m",mobile_url=d.mobile_url,mobile_protocol=d.mobile_scheme?d.mobile_scheme+":":document.location.protocol,host=document.location.host,queryValue=i(redirection_param),queryValue_long=i(redirection_param_long),mobile_host=mobile_url||(mobile_prefix+"."+(!!host.match(/^www./i)?host.substring(4):host)),cookie_hours=d.cookie_hours||1,isUAMobile=false;
+
+if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(f)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(f.substr(0,4))) { isUAMobile = true; }
+
+if(queryValue_long===h){if(window.localStorage){window.localStorage.setItem(redirection_param_long,h)}else{document.cookie=redirection_param+"="+h+";expires="+b(3600*1000*cookie_hours*7*24*31).toUTCString()}}else{if((queryValue_long===g)||(queryValue===g)){if(window.localStorage){window.localStorage.setItem(redirection_param_long,g)}else{document.cookie=redirection_param+"="+h+";expires="+b(-3600*1000*cookie_hours*7*24*31).toUTCString()}if(window.localStorage){window.sessionStorage.setItem(redirection_param,g)}else{document.cookie=redirection_param+"="+h+";expires="+b(-3600*1000*cookie_hours*7*24*31).toUTCString()}}else{if(document.referrer.indexOf(mobile_host)>=0||queryValue===h){if(window.sessionStorage){window.sessionStorage.setItem(redirection_param,h)}else{document.cookie=redirection_param+"="+h+";expires="+b(3600*1000*cookie_hours).toUTCString()}}}}var a=(window.sessionStorage)?(window.sessionStorage.getItem(redirection_param)===h):false,e=(window.localStorage)?(window.localStorage.getItem(redirection_param_long)===h):false,c=document.cookie?(document.cookie.indexOf(redirection_param)>=0):false;if(isUAMobile&&!(c||a||e)){document.location.href=mobile_protocol+"//"+mobile_host}};
+
+SA.redirection_mobile({mobile_url:"m.hkref.com/m?p=XXleaguesXXNHL_1953_games.html",redirection_paramName:"mobile",redirection_paramName_long:"mobile_long",cookie_hours:6});
+</script> 
+
+<!-- CRITEO -->
+<script type="text/javascript"> 
+var crtg_nid="1631"; 
+var crtg_cookiename="cto_usatd"; 
+function crtg_getCookie(c_name){var i,x,y,ARRcookies=document.cookie.split(";");for(i=0;i<ARRcookies.length;i++){x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);x=x.replace(/^\s+|\s+$/g,"");if(x==c_name){return unescape(y);}}return'';} var crtg_content=crtg_getCookie(crtg_cookiename);var crtg_rnd=Math.floor(Math.random()*99999999999);var crtg_url='http://rtax.criteo.com/delivery/rta/rta.js?netId='+escape(crtg_nid);crtg_url+='&cookieName='+escape(crtg_cookiename);crtg_url+='&rnd='+crtg_rnd;crtg_url+='&varName=crtg_content';var crtg_script=document.createElement('script');crtg_script.type='text/javascript';crtg_script.src=crtg_url;crtg_script.async=true;if(document.getElementsByTagName("head").length>0)document.getElementsByTagName("head")[0].appendChild(crtg_script);else if(document.getElementsByTagName("body").length>0)document.getElementsByTagName("body")[0].appendChild(crtg_script); 
+var crtg_ap=new Array();var crtg_cp=(crtg_content!=null&&crtg_content.length>0)?crtg_content.split(';'):null;if(crtg_cp){for(var crtg_kidx in crtg_cp){if(crtg_cp[crtg_kidx].length>0){var crtg_apa=crtg_cp[crtg_kidx].split('=');if(crtg_apa[1]==1){crtg_ap.push(crtg_apa[0].replace(/usatd/,''))}}}}
+</script>
+<!--  SYNCHRONOUS:googletag -->
+<script type="text/deferscript">
+  (function() {
+    var useSSL = 'https:' == document.location.protocol;
+    var src = (useSSL ? 'https:' : 'http:') +       '//www.googletagservices.com/tag/js/gpt.js';
+    document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+  })();
+</script>
+<script type="text/deferscript">
+googletag.pubads().enableSyncRendering();
+googletag.pubads().setTargeting("usatcriteo",crtg_ap);
+</script>
+
+<title>1952-53 NHL Season Schedule and Results | Hockey-Reference.com</title>
+<script type="text/javascript">var sr_gzipEnabled = false;</script>
+<script type="text/javascript" src="http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr.gzipcheck.js.jgz"></script>
+
+<noscript>
+  <link type="text/css" rel="stylesheet" href="http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min.css">
+</noscript>
+<script type="text/javascript">
+(function () {
+    var sr_css_file = 'http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min.css';
+    if (sr_gzipEnabled) {
+       sr_css_file = 'http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min-gz.css';
+    }
+    var head = document.getElementsByTagName("head")[0];
+    if (head) {
+	var scriptStyles = document.createElement("link");
+	scriptStyles.rel = "stylesheet";
+	scriptStyles.type = "text/css";
+	scriptStyles.href = sr_css_file;
+	head.appendChild(scriptStyles);
+	//alert('adding css to header:'+sr_css_file);
+    }
+}());
+</script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="nhl, wha, hockey, stats, statistics, history, 1952-53, schedule, results, games, scores">
+<meta property="fb:admins" content="1016660168">
+<meta property="fb:page_id" content="145429948844751">
+<meta property="og:site_name"  content="Hockey-Reference.com"> 
+<meta property="og:image"      content="http://d2ft4b0ve1aur1.cloudfront.net/images-241/Hockey-Ref.png"> 
+
+<link rel="icon"          type="image/vnd.microsoft.icon" href="http://d2ft4b0ve1aur1.cloudfront.net/images-290/favicon-hr.ico">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://d2ft4b0ve1aur1.cloudfront.net/images-290/favicon-hr.ico">
+<link rel="search"        type="application/opensearchdescription+xml" href="http://d2ft4b0ve1aur1.cloudfront.net/os-290/opensearch-hr.xml" title="Hockey-Ref Search">
+<!--[if lte IE 7 ]>
+<style type="text/css">
+.uni_holder { display: none; }
+</style>
+<![endif]-->
+<!--[if lte IE 6]>
+<style type="text/css">
+.hovermenu,.hovermenu_ajax,.sub_index,#quick_index {display:none!important}
+</style>
+<![endif]-->
+</head>
+
+<body onload="">
+
+<div id="page_container">
+
+<div id="top_nav">
+
+<div id="site_header">
+ <div id="sr_header">
+  <div class="float_right">
+    <a href="http://www.sports-reference.com">S-R</a>:
+    <a href="http://www.baseball-reference.com">MLB</a> | 
+    <a href="http://www.basketball-reference.com">NBA</a> &#183;
+    <a href="http://www.sports-reference.com/cbb/">CBB</a> |
+    <a href="http://www.pro-football-reference.com">NFL</a> &#183;
+    <a href="http://www.sports-reference.com/cfb/">CFB</a> |
+    <strong>NHL</strong> |
+    <a href="http://www.sports-reference.com/olympics/">Oly</a> |
+    <a href="http://www.sports-reference.com/blog/">Blog</a>
+    <br>
+  </div>
+  
+  <div class="clearfix padding_top_half float_right clear_both">
+    <div class="padding_left_half float_right"><a class="sprite-twitter" title="Follow us on Twitter" href="http://twitter.com/hockey_ref"></a><a class="sprite-facebook" title="Become a Fan on FaceBook" href="http://www.facebook.com/Hockey.Reference"></a>
+    </div>
+    <div class="float_right">
+       <form method="get" id="f" name="f" action="/player_search.cgi">
+         <input x-webkit-speech type="search" placeholder="click 'Tips' for shortcuts" id="search" name="search" class="search long"> 
+         <input type="submit" value="Search" class="submit">
+         <a class="padding_left_half small_text" href="/about/findstuff.shtml">Tips</a>
+       </form>
+    </div>
+  </div>
+  </div><!-- div#sr_header -->
+  <div class="float_left padding_bottom_half"><a href="/"><img src="http://d2ft4b0ve1aur1.cloudfront.net/images-265/Hockey-Ref.png" width=373 height=73 border="0" alt="Hockey-Reference.com"></a></div>
+ </div><!-- div#site_header -->
+
+
+
+<div id="quick_index">
+<ul class="hovermenu_ajax navbar">
+<li class=""><a href="/play-index/">play index</a><ul class="li_margin" id="header_playindex"></ul></li>
+ <li class=""><a href="/boxscores/">boxscores</a><ul class="li_margin" id="header_boxscores"></ul></li>
+ <li class=""><a href="/players/">players</a><ul class="li_margin" id="header_players"></ul></li>
+ <li class=""><a href="/teams/">teams</a><ul class="li_margin" id="header_teams"></ul></li>
+ <li class="active"><a href="/leagues/">seasons</a><ul class="li_margin" id="header_leagues"></ul></li>
+ <li class=""><a href="/coaches/">coaches</a><ul class="li_margin" id="header_coaches"></ul></li>
+ <li class=""><a href="/leaders/">leaders</a><ul class="li_margin" id="header_leaders"></ul></li>
+ <li class=""><a href="/awards/">awards</a><ul class="li_margin" id="header_awards"></ul></li>
+ <li class=""><a href="/playoffs/">playoffs</a><ul class="li_margin" id="header_playoffs"></ul></li>
+ <li class=""><a href="/draft/">draft</a><ul class="li_margin" id="header_draft"></ul></li>
+ <li class=""><a href="">more [+]</a><ul class="li_margin" id="header_more_links"></ul></li>
+
+</ul>
+</div>
+<div id="you_are_here">
+<p class="padding_left0"><a class="mobile_link" href="http://m.hkref.com/m?p=XXleaguesXXNHL_1953_games.html">Mobile Site</a> <span class="bold_text">You Are Here</span>&nbsp;&gt;&nbsp;<a href="/">HR</a>&nbsp;&gt;&nbsp;<a href="/leagues/">Leagues</a>&nbsp;&gt;&nbsp;<a href="/leagues/NHL_1953.html">1952-53 NHL</a>&nbsp;&gt;&nbsp;<strong>Season Schedule and Results</strong></p>
+</div>
+<div class="site_news"><p><span class="bold_text">News:</span> <span class="poptip" tip="With the NHL starting back up after the lockout, here's a reminder that we offer our familiar Play Index tools for hockey, too: Player Game FinderSearch through NHL regular season and playoff game logs spanning from 1987-88 to today for games that match your criteria. Player Season FinderSearch through NHL regular season statistics spanning from [...]">s-r blog:<a onClick="try { pageTracker._trackEvent('blog','click','area-yah'); } catch (err) {};"
+ href="http://www.sports-reference.com/blog/2013/01/hockey-reference-play-index/">Hockey-Reference Play Index</a> <span class="small_text"></span></span></p></div>
+
+</div>
+<div id="restofsite_launchpad" class="advertlaunchpad">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/launchpad/sports/hockey/general', [970,66] ,             'restofsite_launchpad').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_launchpad");
+</script>
+</div><!-- div.#restofsite_launchpad.advertlaunchpad -->
+
+<div id="info_box">
+<div id="restofsite_300x250_atf1" class="advert300x250">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/300x250_1a/sports/hockey/general', [[300,250],[300,600]] ,             'restofsite_300x250_atf1').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_300x250_atf1");
+</script>
+</div><!-- div.#restofsite_300x250_atf1.advert300x250 -->
+
+<h1>1952-53 NHL Season Schedule and Results</h1>
+<p><a href="/leagues/NHL_1952_games.html">Previous Season</a>&nbsp;&#9642;&nbsp;<a href="/leagues/NHL_1954_games.html">Next Season</a></p>
+<div class="margin_bottom no_mobile"><form class="sr_standard inline" name="pages" action="">
+<strong>Navigation:</strong>
+<select name="hr_pages" onchange="sr_goto_page('hr_pages','',this.form);">
+<option value="" disabled >Select Page
+<option value="/leagues/NHL_1953.html" >Summary
+<option value="/leagues/NHL_1953_standings.html" >Standings
+<option value="/leagues/NHL_1953_leaders.html" >Leaders
+<option value="/leagues/NHL_1953_games.html" selected>Schedule and Results
+<option value="/leagues/NHL_1953_skaters.html" >Skater Statistics
+<option value="/leagues/NHL_1953_goalies.html" >Goalie Statistics
+<option value="/leagues/NHL_1953_numbers.html" >Sweater Numbers
+<option value="/leagues/NHL_1953_debut.html" >Debuts
+<option value="/leagues/NHL_1953_final.html" >Final Season
+</select>
+</form>
+</div>
+<p><strong>League Champion:</strong> <a href="/teams/MTL/1953.html">Montreal Canadiens</a>
+<p><strong>Hart Memorial Trophy:</strong> <a href="/players/h/howego01.html">Gordie Howe</a> (49 G, 46 A, 95 P)<br><strong>Vezina Trophy:</strong> <a href="/players/s/sawchte01.html">Terry Sawchuk</a> (32-15-16, 1.90 GAA)<br><strong>Calder Memorial Trophy:</strong> <a href="/players/w/worslgu01.html">Gump Worsley</a> (13-29-8, 3.06 GAA)<br><p><strong>Goals Leader:</strong> <a href="/players/h/howego01.html">Gordie Howe</a> (49)<br><strong>Assists Leader:</strong> <a href="/players/h/howego01.html">Gordie Howe</a> (46)<br><strong>Points Leader:</strong> <a href="/players/h/howego01.html">Gordie Howe</a> (95)<br></div>
+<div id="restofsite_728x90_atf1" class="advert728x90">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/728x90_1a/sports/hockey/general', [728,90] ,             'restofsite_728x90_atf1').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_728x90_atf1");
+</script>
+</div><!-- div.#restofsite_728x90_atf1.advert728x90 -->
+
+<div id="page_content">
+<div class="table_heading">
+<h2 data-mobile-header="" style="">Regular Season</h2>
+<div class="table_heading_text"></div>
+</div>
+<div class="table_container" id="div_games">
+<table class="sortable  stats_table" id="games">
+<colgroup><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr class="">
+  <th align="left"  class="tooltip sort_default_asc" >Date</th>
+  <th align="left"  class="tooltip sort_default_asc" >Visitor</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="left"  class="tooltip sort_default_asc" >Home</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="center"  class="tooltip" ></th>
+  <th align="left"  class="tooltip sort_default_asc show_partial_when_sorting" >Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr  class="">
+   <td align="left"  csk="195210090DET">Thu, Oct 9, 1952</td>
+   <td align="left"  csk="NYR.195210090DET"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.195210090DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210090MTL">Thu, Oct 9, 1952</td>
+   <td align="left"  csk="CBH.195210090MTL"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.195210090MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210110MTL">Sat, Oct 11, 1952</td>
+   <td align="left"  csk="DET.195210110MTL"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195210110MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210110TOR">Sat, Oct 11, 1952</td>
+   <td align="left"  csk="CBH.195210110TOR"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="TOR.195210110TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210120BOS">Sun, Oct 12, 1952</td>
+   <td align="left"  csk="MTL.195210120BOS"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195210120BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210120CBH">Sun, Oct 12, 1952</td>
+   <td align="left"  csk="NYR.195210120CBH"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="CBH.195210120CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210120DET">Sun, Oct 12, 1952</td>
+   <td align="left"  csk="TOR.195210120DET"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.195210120DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210140CBH">Tue, Oct 14, 1952</td>
+   <td align="left"  csk="DET.195210140CBH"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.195210140CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210160BOS">Thu, Oct 16, 1952</td>
+   <td align="left"  csk="TOR.195210160BOS"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195210160BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210160DET">Thu, Oct 16, 1952</td>
+   <td align="left"  csk="CBH.195210160DET"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.195210160DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210160MTL">Thu, Oct 16, 1952</td>
+   <td align="left"  csk="NYR.195210160MTL"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195210160MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210180MTL">Sat, Oct 18, 1952</td>
+   <td align="left"  csk="BOS.195210180MTL"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195210180MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210180TOR">Sat, Oct 18, 1952</td>
+   <td align="left"  csk="NYR.195210180TOR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195210180TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210190BOS">Sun, Oct 19, 1952</td>
+   <td align="left"  csk="NYR.195210190BOS"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195210190BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210190CBH">Sun, Oct 19, 1952</td>
+   <td align="left"  csk="TOR.195210190CBH"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195210190CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210190DET">Sun, Oct 19, 1952</td>
+   <td align="left"  csk="MTL.195210190DET"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195210190DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210220NYR">Wed, Oct 22, 1952</td>
+   <td align="left"  csk="BOS.195210220NYR"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.195210220NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210220TOR">Wed, Oct 22, 1952</td>
+   <td align="left"  csk="DET.195210220TOR"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.195210220TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210230CBH">Thu, Oct 23, 1952</td>
+   <td align="left"  csk="MTL.195210230CBH"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.195210230CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210250MTL">Sat, Oct 25, 1952</td>
+   <td align="left"  csk="DET.195210250MTL"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.195210250MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >9</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210250TOR">Sat, Oct 25, 1952</td>
+   <td align="left"  csk="BOS.195210250TOR"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.195210250TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210260CBH">Sun, Oct 26, 1952</td>
+   <td align="left"  csk="BOS.195210260CBH"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.195210260CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210260NYR">Sun, Oct 26, 1952</td>
+   <td align="left"  csk="DET.195210260NYR"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195210260NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210290NYR">Wed, Oct 29, 1952</td>
+   <td align="left"  csk="CBH.195210290NYR"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.195210290NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210290TOR">Wed, Oct 29, 1952</td>
+   <td align="left"  csk="MTL.195210290TOR"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="TOR.195210290TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210300CBH">Thu, Oct 30, 1952</td>
+   <td align="left"  csk="NYR.195210300CBH"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195210300CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195210300DET">Thu, Oct 30, 1952</td>
+   <td align="left"  csk="BOS.195210300DET"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195210300DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211010MTL">Sat, Nov 1, 1952</td>
+   <td align="left"  csk="NYR.195211010MTL"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195211010MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211010TOR">Sat, Nov 1, 1952</td>
+   <td align="left"  csk="BOS.195211010TOR"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195211010TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211020CBH">Sun, Nov 2, 1952</td>
+   <td align="left"  csk="BOS.195211020CBH"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.195211020CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211020DET">Sun, Nov 2, 1952</td>
+   <td align="left"  csk="TOR.195211020DET"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.195211020DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211020NYR">Sun, Nov 2, 1952</td>
+   <td align="left"  csk="MTL.195211020NYR"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195211020NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211050TOR">Wed, Nov 5, 1952</td>
+   <td align="left"  csk="NYR.195211050TOR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.195211050TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211060BOS">Thu, Nov 6, 1952</td>
+   <td align="left"  csk="DET.195211060BOS"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.195211060BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211060MTL">Thu, Nov 6, 1952</td>
+   <td align="left"  csk="TOR.195211060MTL"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195211060MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211080MTL">Sat, Nov 8, 1952</td>
+   <td align="left"  csk="CBH.195211080MTL"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.195211080MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211080TOR">Sat, Nov 8, 1952</td>
+   <td align="left"  csk="DET.195211080TOR"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195211080TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211090BOS">Sun, Nov 9, 1952</td>
+   <td align="left"  csk="CBH.195211090BOS"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195211090BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211090DET">Sun, Nov 9, 1952</td>
+   <td align="left"  csk="NYR.195211090DET"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195211090DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211110BOS">Tue, Nov 11, 1952</td>
+   <td align="left"  csk="TOR.195211110BOS"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.195211110BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211120NYR">Wed, Nov 12, 1952</td>
+   <td align="left"  csk="CBH.195211120NYR"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195211120NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211130CBH">Thu, Nov 13, 1952</td>
+   <td align="left"  csk="NYR.195211130CBH"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.195211130CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211130DET">Thu, Nov 13, 1952</td>
+   <td align="left"  csk="BOS.195211130DET"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.195211130DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211130MTL">Thu, Nov 13, 1952</td>
+   <td align="left"  csk="TOR.195211130MTL"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.195211130MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211150MTL">Sat, Nov 15, 1952</td>
+   <td align="left"  csk="BOS.195211150MTL"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.195211150MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211150TOR">Sat, Nov 15, 1952</td>
+   <td align="left"  csk="CBH.195211150TOR"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195211150TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211160BOS">Sun, Nov 16, 1952</td>
+   <td align="left"  csk="DET.195211160BOS"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="BOS.195211160BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211160CBH">Sun, Nov 16, 1952</td>
+   <td align="left"  csk="MTL.195211160CBH"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.195211160CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211160NYR">Sun, Nov 16, 1952</td>
+   <td align="left"  csk="TOR.195211160NYR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="NYR.195211160NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211190NYR">Wed, Nov 19, 1952</td>
+   <td align="left"  csk="DET.195211190NYR"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195211190NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211190TOR">Wed, Nov 19, 1952</td>
+   <td align="left"  csk="BOS.195211190TOR"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195211190TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211200CBH">Thu, Nov 20, 1952</td>
+   <td align="left"  csk="BOS.195211200CBH"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.195211200CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211220DET">Sat, Nov 22, 1952</td>
+   <td align="left"  csk="CBH.195211220DET"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195211220DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >10</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211220TOR">Sat, Nov 22, 1952</td>
+   <td align="left"  csk="MTL.195211220TOR"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195211220TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211230BOS">Sun, Nov 23, 1952</td>
+   <td align="left"  csk="TOR.195211230BOS"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="BOS.195211230BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211230CBH">Sun, Nov 23, 1952</td>
+   <td align="left"  csk="DET.195211230CBH"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="CBH.195211230CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211230NYR">Sun, Nov 23, 1952</td>
+   <td align="left"  csk="MTL.195211230NYR"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195211230NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211260NYR">Wed, Nov 26, 1952</td>
+   <td align="left"  csk="TOR.195211260NYR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195211260NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211270BOS">Thu, Nov 27, 1952</td>
+   <td align="left"  csk="NYR.195211270BOS"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195211270BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211270CBH">Thu, Nov 27, 1952</td>
+   <td align="left"  csk="TOR.195211270CBH"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195211270CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211270DET">Thu, Nov 27, 1952</td>
+   <td align="left"  csk="MTL.195211270DET"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195211270DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211290MTL">Sat, Nov 29, 1952</td>
+   <td align="left"  csk="CBH.195211290MTL"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195211290MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211290TOR">Sat, Nov 29, 1952</td>
+   <td align="left"  csk="DET.195211290TOR"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195211290TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211300BOS">Sun, Nov 30, 1952</td>
+   <td align="left"  csk="MTL.195211300BOS"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195211300BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211300CBH">Sun, Nov 30, 1952</td>
+   <td align="left"  csk="NYR.195211300CBH"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.195211300CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195211300DET">Sun, Nov 30, 1952</td>
+   <td align="left"  csk="TOR.195211300DET"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195211300DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212030NYR">Wed, Dec 3, 1952</td>
+   <td align="left"  csk="CBH.195212030NYR"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="NYR.195212030NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212040BOS">Thu, Dec 4, 1952</td>
+   <td align="left"  csk="CBH.195212040BOS"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195212040BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212040DET">Thu, Dec 4, 1952</td>
+   <td align="left"  csk="NYR.195212040DET"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.195212040DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212040MTL">Thu, Dec 4, 1952</td>
+   <td align="left"  csk="TOR.195212040MTL"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195212040MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212060CBH">Sat, Dec 6, 1952</td>
+   <td align="left"  csk="DET.195212060CBH"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.195212060CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" >at Indianapolis, IN</td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212060MTL">Sat, Dec 6, 1952</td>
+   <td align="left"  csk="BOS.195212060MTL"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195212060MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212060TOR">Sat, Dec 6, 1952</td>
+   <td align="left"  csk="NYR.195212060TOR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195212060TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212070CBH">Sun, Dec 7, 1952</td>
+   <td align="left"  csk="TOR.195212070CBH"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.195212070CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212070DET">Sun, Dec 7, 1952</td>
+   <td align="left"  csk="BOS.195212070DET"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195212070DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212070NYR">Sun, Dec 7, 1952</td>
+   <td align="left"  csk="MTL.195212070NYR"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195212070NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212100NYR">Wed, Dec 10, 1952</td>
+   <td align="left"  csk="BOS.195212100NYR"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.195212100NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212100TOR">Wed, Dec 10, 1952</td>
+   <td align="left"  csk="MTL.195212100TOR"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195212100TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212110BOS">Thu, Dec 11, 1952</td>
+   <td align="left"  csk="DET.195212110BOS"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >10</td>
+   <td align="left"  csk="BOS.195212110BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212110CBH">Thu, Dec 11, 1952</td>
+   <td align="left"  csk="MTL.195212110CBH"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195212110CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212130MTL">Sat, Dec 13, 1952</td>
+   <td align="left"  csk="CBH.195212130MTL"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.195212130MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212130TOR">Sat, Dec 13, 1952</td>
+   <td align="left"  csk="DET.195212130TOR"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195212130TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212140BOS">Sun, Dec 14, 1952</td>
+   <td align="left"  csk="CBH.195212140BOS"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195212140BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212140DET">Sun, Dec 14, 1952</td>
+   <td align="left"  csk="MTL.195212140DET"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.195212140DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212140NYR">Sun, Dec 14, 1952</td>
+   <td align="left"  csk="TOR.195212140NYR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195212140NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212170NYR">Wed, Dec 17, 1952</td>
+   <td align="left"  csk="BOS.195212170NYR"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYR.195212170NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212180CBH">Thu, Dec 18, 1952</td>
+   <td align="left"  csk="BOS.195212180CBH"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195212180CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212180DET">Thu, Dec 18, 1952</td>
+   <td align="left"  csk="TOR.195212180DET"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195212180DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212180MTL">Thu, Dec 18, 1952</td>
+   <td align="left"  csk="NYR.195212180MTL"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195212180MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212200DET">Sat, Dec 20, 1952</td>
+   <td align="left"  csk="NYR.195212200DET"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195212200DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212200MTL">Sat, Dec 20, 1952</td>
+   <td align="left"  csk="BOS.195212200MTL"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="MTL.195212200MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212200TOR">Sat, Dec 20, 1952</td>
+   <td align="left"  csk="CBH.195212200TOR"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.195212200TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212210BOS">Sun, Dec 21, 1952</td>
+   <td align="left"  csk="MTL.195212210BOS"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.195212210BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212210CBH">Sun, Dec 21, 1952</td>
+   <td align="left"  csk="TOR.195212210CBH"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.195212210CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212210NYR">Sun, Dec 21, 1952</td>
+   <td align="left"  csk="DET.195212210NYR"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="NYR.195212210NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212240TOR">Wed, Dec 24, 1952</td>
+   <td align="left"  csk="MTL.195212240TOR"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.195212240TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212250BOS">Thu, Dec 25, 1952</td>
+   <td align="left"  csk="NYR.195212250BOS"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195212250BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212250DET">Thu, Dec 25, 1952</td>
+   <td align="left"  csk="CBH.195212250DET"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.195212250DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212270MTL">Sat, Dec 27, 1952</td>
+   <td align="left"  csk="DET.195212270MTL"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195212270MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212270TOR">Sat, Dec 27, 1952</td>
+   <td align="left"  csk="BOS.195212270TOR"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.195212270TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212280DET">Sun, Dec 28, 1952</td>
+   <td align="left"  csk="BOS.195212280DET"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195212280DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212280NYR">Sun, Dec 28, 1952</td>
+   <td align="left"  csk="CBH.195212280NYR"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="NYR.195212280NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212310DET">Wed, Dec 31, 1952</td>
+   <td align="left"  csk="MTL.195212310DET"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195212310DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195212310NYR">Wed, Dec 31, 1952</td>
+   <td align="left"  csk="TOR.195212310NYR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.195212310NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301010BOS">Thu, Jan 1, 1953</td>
+   <td align="left"  csk="TOR.195301010BOS"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195301010BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301010CBH">Thu, Jan 1, 1953</td>
+   <td align="left"  csk="MTL.195301010CBH"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.195301010CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301030MTL">Sat, Jan 3, 1953</td>
+   <td align="left"  csk="BOS.195301030MTL"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195301030MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301030TOR">Sat, Jan 3, 1953</td>
+   <td align="left"  csk="CBH.195301030TOR"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.195301030TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301040DET">Sun, Jan 4, 1953</td>
+   <td align="left"  csk="CBH.195301040DET"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.195301040DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301040NYR">Sun, Jan 4, 1953</td>
+   <td align="left"  csk="BOS.195301040NYR"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195301040NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301070NYR">Wed, Jan 7, 1953</td>
+   <td align="left"  csk="CBH.195301070NYR"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="NYR.195301070NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301080DET">Thu, Jan 8, 1953</td>
+   <td align="left"  csk="BOS.195301080DET"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.195301080DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301080MTL">Thu, Jan 8, 1953</td>
+   <td align="left"  csk="NYR.195301080MTL"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.195301080MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301100MTL">Sat, Jan 10, 1953</td>
+   <td align="left"  csk="CBH.195301100MTL"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195301100MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301100TOR">Sat, Jan 10, 1953</td>
+   <td align="left"  csk="BOS.195301100TOR"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.195301100TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301110BOS">Sun, Jan 11, 1953</td>
+   <td align="left"  csk="CBH.195301110BOS"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.195301110BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301110DET">Sun, Jan 11, 1953</td>
+   <td align="left"  csk="TOR.195301110DET"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195301110DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301110NYR">Sun, Jan 11, 1953</td>
+   <td align="left"  csk="MTL.195301110NYR"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYR.195301110NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301140NYR">Wed, Jan 14, 1953</td>
+   <td align="left"  csk="DET.195301140NYR"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195301140NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301140TOR">Wed, Jan 14, 1953</td>
+   <td align="left"  csk="CBH.195301140TOR"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.195301140TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301150BOS">Thu, Jan 15, 1953</td>
+   <td align="left"  csk="DET.195301150BOS"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.195301150BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301150CBH">Thu, Jan 15, 1953</td>
+   <td align="left"  csk="MTL.195301150CBH"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.195301150CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301170MTL">Sat, Jan 17, 1953</td>
+   <td align="left"  csk="DET.195301170MTL"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195301170MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301170TOR">Sat, Jan 17, 1953</td>
+   <td align="left"  csk="NYR.195301170TOR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.195301170TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301180BOS">Sun, Jan 18, 1953</td>
+   <td align="left"  csk="TOR.195301180BOS"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195301180BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301180CBH">Sun, Jan 18, 1953</td>
+   <td align="left"  csk="NYR.195301180CBH"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="CBH.195301180CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301180DET">Sun, Jan 18, 1953</td>
+   <td align="left"  csk="MTL.195301180DET"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.195301180DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301210TOR">Wed, Jan 21, 1953</td>
+   <td align="left"  csk="MTL.195301210TOR"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.195301210TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301220BOS">Thu, Jan 22, 1953</td>
+   <td align="left"  csk="CBH.195301220BOS"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.195301220BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301220DET">Thu, Jan 22, 1953</td>
+   <td align="left"  csk="NYR.195301220DET"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >8</td>
+   <td align="left"  csk="DET.195301220DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301220MTL">Thu, Jan 22, 1953</td>
+   <td align="left"  csk="TOR.195301220MTL"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195301220MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301240BOS">Sat, Jan 24, 1953</td>
+   <td align="left"  csk="NYR.195301240BOS"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.195301240BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >9</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301240MTL">Sat, Jan 24, 1953</td>
+   <td align="left"  csk="CBH.195301240MTL"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="MTL.195301240MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301240TOR">Sat, Jan 24, 1953</td>
+   <td align="left"  csk="DET.195301240TOR"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.195301240TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301250BOS">Sun, Jan 25, 1953</td>
+   <td align="left"  csk="NYR.195301250BOS"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195301250BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301250CBH">Sun, Jan 25, 1953</td>
+   <td align="left"  csk="TOR.195301250CBH"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.195301250CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301250DET">Sun, Jan 25, 1953</td>
+   <td align="left"  csk="MTL.195301250DET"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.195301250DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301280NYR">Wed, Jan 28, 1953</td>
+   <td align="left"  csk="MTL.195301280NYR"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195301280NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301290BOS">Thu, Jan 29, 1953</td>
+   <td align="left"  csk="TOR.195301290BOS"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195301290BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301290CBH">Thu, Jan 29, 1953</td>
+   <td align="left"  csk="DET.195301290CBH"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="CBH.195301290CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301290MTL">Thu, Jan 29, 1953</td>
+   <td align="left"  csk="NYR.195301290MTL"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195301290MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301310DET">Sat, Jan 31, 1953</td>
+   <td align="left"  csk="CBH.195301310DET"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.195301310DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301310MTL">Sat, Jan 31, 1953</td>
+   <td align="left"  csk="BOS.195301310MTL"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.195301310MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195301310TOR">Sat, Jan 31, 1953</td>
+   <td align="left"  csk="NYR.195301310TOR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.195301310TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302010BOS">Sun, Feb 1, 1953</td>
+   <td align="left"  csk="MTL.195302010BOS"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.195302010BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302010CBH">Sun, Feb 1, 1953</td>
+   <td align="left"  csk="NYR.195302010CBH"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.195302010CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302010DET">Sun, Feb 1, 1953</td>
+   <td align="left"  csk="TOR.195302010DET"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195302010DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302050BOS">Thu, Feb 5, 1953</td>
+   <td align="left"  csk="CBH.195302050BOS"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195302050BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302050DET">Thu, Feb 5, 1953</td>
+   <td align="left"  csk="NYR.195302050DET"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.195302050DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302050MTL">Thu, Feb 5, 1953</td>
+   <td align="left"  csk="TOR.195302050MTL"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.195302050MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302070MTL">Sat, Feb 7, 1953</td>
+   <td align="left"  csk="DET.195302070MTL"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.195302070MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302070TOR">Sat, Feb 7, 1953</td>
+   <td align="left"  csk="CBH.195302070TOR"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.195302070TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302080BOS">Sun, Feb 8, 1953</td>
+   <td align="left"  csk="DET.195302080BOS"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="BOS.195302080BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302080CBH">Sun, Feb 8, 1953</td>
+   <td align="left"  csk="TOR.195302080CBH"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.195302080CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302080NYR">Sun, Feb 8, 1953</td>
+   <td align="left"  csk="MTL.195302080NYR"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.195302080NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302110NYR">Wed, Feb 11, 1953</td>
+   <td align="left"  csk="DET.195302110NYR"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195302110NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302120BOS">Thu, Feb 12, 1953</td>
+   <td align="left"  csk="DET.195302120BOS"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195302120BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302120CBH">Thu, Feb 12, 1953</td>
+   <td align="left"  csk="MTL.195302120CBH"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195302120CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302140BOS">Sat, Feb 14, 1953</td>
+   <td align="left"  csk="NYR.195302140BOS"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.195302140BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302140TOR">Sat, Feb 14, 1953</td>
+   <td align="left"  csk="MTL.195302140TOR"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195302140TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302150BOS">Sun, Feb 15, 1953</td>
+   <td align="left"  csk="MTL.195302150BOS"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.195302150BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302150CBH">Sun, Feb 15, 1953</td>
+   <td align="left"  csk="DET.195302150CBH"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.195302150CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302150NYR">Sun, Feb 15, 1953</td>
+   <td align="left"  csk="TOR.195302150NYR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195302150NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302160DET">Mon, Feb 16, 1953</td>
+   <td align="left"  csk="CBH.195302160DET"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195302160DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302180NYR">Wed, Feb 18, 1953</td>
+   <td align="left"  csk="BOS.195302180NYR"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195302180NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302180TOR">Wed, Feb 18, 1953</td>
+   <td align="left"  csk="DET.195302180TOR"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.195302180TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302190CBH">Thu, Feb 19, 1953</td>
+   <td align="left"  csk="NYR.195302190CBH"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.195302190CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302190MTL">Thu, Feb 19, 1953</td>
+   <td align="left"  csk="DET.195302190MTL"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.195302190MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302210MTL">Sat, Feb 21, 1953</td>
+   <td align="left"  csk="NYR.195302210MTL"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195302210MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302210TOR">Sat, Feb 21, 1953</td>
+   <td align="left"  csk="BOS.195302210TOR"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195302210TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302220CBH">Sun, Feb 22, 1953</td>
+   <td align="left"  csk="BOS.195302220CBH"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="CBH.195302220CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302220NYR">Sun, Feb 22, 1953</td>
+   <td align="left"  csk="DET.195302220NYR"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195302220NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302250NYR">Wed, Feb 25, 1953</td>
+   <td align="left"  csk="BOS.195302250NYR"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.195302250NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302250TOR">Wed, Feb 25, 1953</td>
+   <td align="left"  csk="MTL.195302250TOR"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195302250TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302260MTL">Thu, Feb 26, 1953</td>
+   <td align="left"  csk="TOR.195302260MTL"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195302260MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302270CBH">Fri, Feb 27, 1953</td>
+   <td align="left"  csk="BOS.195302270CBH"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="CBH.195302270CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302280MTL">Sat, Feb 28, 1953</td>
+   <td align="left"  csk="DET.195302280MTL"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.195302280MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195302280TOR">Sat, Feb 28, 1953</td>
+   <td align="left"  csk="NYR.195302280TOR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.195302280TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303010CBH">Sun, Mar 1, 1953</td>
+   <td align="left"  csk="BOS.195303010CBH"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.195303010CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303010NYR">Sun, Mar 1, 1953</td>
+   <td align="left"  csk="TOR.195303010NYR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195303010NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303020DET">Mon, Mar 2, 1953</td>
+   <td align="left"  csk="BOS.195303020DET"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195303020DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >10</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303040NYR">Wed, Mar 4, 1953</td>
+   <td align="left"  csk="CBH.195303040NYR"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.195303040NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303050BOS">Thu, Mar 5, 1953</td>
+   <td align="left"  csk="MTL.195303050BOS"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.195303050BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303050CBH">Thu, Mar 5, 1953</td>
+   <td align="left"  csk="TOR.195303050CBH"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.195303050CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303050DET">Thu, Mar 5, 1953</td>
+   <td align="left"  csk="NYR.195303050DET"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195303050DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303070BOS">Sat, Mar 7, 1953</td>
+   <td align="left"  csk="NYR.195303070BOS"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195303070BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303070MTL">Sat, Mar 7, 1953</td>
+   <td align="left"  csk="CBH.195303070MTL"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.195303070MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303070TOR">Sat, Mar 7, 1953</td>
+   <td align="left"  csk="DET.195303070TOR"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195303070TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303080BOS">Sun, Mar 8, 1953</td>
+   <td align="left"  csk="CBH.195303080BOS"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195303080BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303080DET">Sun, Mar 8, 1953</td>
+   <td align="left"  csk="TOR.195303080DET"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195303080DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303080NYR">Sun, Mar 8, 1953</td>
+   <td align="left"  csk="MTL.195303080NYR"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.195303080NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303110NYR">Wed, Mar 11, 1953</td>
+   <td align="left"  csk="DET.195303110NYR"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195303110NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303120BOS">Thu, Mar 12, 1953</td>
+   <td align="left"  csk="DET.195303120BOS"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195303120BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303120CBH">Thu, Mar 12, 1953</td>
+   <td align="left"  csk="MTL.195303120CBH"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.195303120CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303140DET">Sat, Mar 14, 1953</td>
+   <td align="left"  csk="CBH.195303140DET"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.195303140DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303140MTL">Sat, Mar 14, 1953</td>
+   <td align="left"  csk="NYR.195303140MTL"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195303140MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303140TOR">Sat, Mar 14, 1953</td>
+   <td align="left"  csk="BOS.195303140TOR"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195303140TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303150BOS">Sun, Mar 15, 1953</td>
+   <td align="left"  csk="MTL.195303150BOS"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195303150BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303150CBH">Sun, Mar 15, 1953</td>
+   <td align="left"  csk="DET.195303150CBH"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="CBH.195303150CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303150NYR">Sun, Mar 15, 1953</td>
+   <td align="left"  csk="TOR.195303150NYR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.195303150NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303180NYR">Wed, Mar 18, 1953</td>
+   <td align="left"  csk="BOS.195303180NYR"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195303180NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303180TOR">Wed, Mar 18, 1953</td>
+   <td align="left"  csk="CBH.195303180TOR"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195303180TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303190DET">Thu, Mar 19, 1953</td>
+   <td align="left"  csk="BOS.195303190DET"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195303190DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303190MTL">Thu, Mar 19, 1953</td>
+   <td align="left"  csk="TOR.195303190MTL"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.195303190MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303210CBH">Sat, Mar 21, 1953</td>
+   <td align="left"  csk="DET.195303210CBH"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195303210CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303210MTL">Sat, Mar 21, 1953</td>
+   <td align="left"  csk="BOS.195303210MTL"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195303210MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303210TOR">Sat, Mar 21, 1953</td>
+   <td align="left"  csk="NYR.195303210TOR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.195303210TOR"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303220BOS">Sun, Mar 22, 1953</td>
+   <td align="left"  csk="TOR.195303220BOS"><a href="/teams/TOR/1953.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.195303220BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303220DET">Sun, Mar 22, 1953</td>
+   <td align="left"  csk="MTL.195303220DET"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195303220DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303220NYR">Sun, Mar 22, 1953</td>
+   <td align="left"  csk="CBH.195303220NYR"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.195303220NYR"><a href="/teams/NYR/1953.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+</tbody>
+</table>
+</div><!-- div.table_container#div_xxxx -->
+<div class="table_heading">
+<h2 data-mobile-header="" style="">Playoffs</h2>
+<div class="table_heading_text"></div>
+</div>
+<div class="table_container" id="div_games_playoffs">
+<table class="sortable  stats_table" id="games_playoffs">
+<colgroup><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr class="">
+  <th align="left"  class="tooltip sort_default_asc" >Date</th>
+  <th align="left"  class="tooltip sort_default_asc" >Visitor</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="left"  class="tooltip sort_default_asc" >Home</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="center"  class="tooltip" ></th>
+  <th align="left"  class="tooltip sort_default_asc show_partial_when_sorting" >Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr  class="">
+   <td align="left"  csk="195303240DET">Tue, Mar 24, 1953</td>
+   <td align="left"  csk="BOS.195303240DET"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.195303240DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303240MTL">Tue, Mar 24, 1953</td>
+   <td align="left"  csk="CBH.195303240MTL"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195303240MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303260DET">Thu, Mar 26, 1953</td>
+   <td align="left"  csk="BOS.195303260DET"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="DET.195303260DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303260MTL">Thu, Mar 26, 1953</td>
+   <td align="left"  csk="CBH.195303260MTL"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.195303260MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303290BOS">Sun, Mar 29, 1953</td>
+   <td align="left"  csk="DET.195303290BOS"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195303290BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303290CBH">Sun, Mar 29, 1953</td>
+   <td align="left"  csk="MTL.195303290CBH"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.195303290CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303310BOS">Tue, Mar 31, 1953</td>
+   <td align="left"  csk="DET.195303310BOS"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195303310BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195303310CBH">Tue, Mar 31, 1953</td>
+   <td align="left"  csk="MTL.195303310CBH"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.195303310CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195304020DET">Thu, Apr 2, 1953</td>
+   <td align="left"  csk="BOS.195304020DET"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.195304020DET"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195304020MTL">Thu, Apr 2, 1953</td>
+   <td align="left"  csk="CBH.195304020MTL"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.195304020MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195304040CBH">Sat, Apr 4, 1953</td>
+   <td align="left"  csk="MTL.195304040CBH"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195304040CBH"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195304050BOS">Sun, Apr 5, 1953</td>
+   <td align="left"  csk="DET.195304050BOS"><a href="/teams/DET/1953.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195304050BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195304070MTL">Tue, Apr 7, 1953</td>
+   <td align="left"  csk="CBH.195304070MTL"><a href="/teams/CBH/1953.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195304070MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195304090MTL">Thu, Apr 9, 1953</td>
+   <td align="left"  csk="BOS.195304090MTL"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195304090MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195304110MTL">Sat, Apr 11, 1953</td>
+   <td align="left"  csk="BOS.195304110MTL"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.195304110MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195304120BOS">Sun, Apr 12, 1953</td>
+   <td align="left"  csk="MTL.195304120BOS"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.195304120BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195304140BOS">Tue, Apr 14, 1953</td>
+   <td align="left"  csk="MTL.195304140BOS"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="BOS.195304140BOS"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195304160MTL">Thu, Apr 16, 1953</td>
+   <td align="left"  csk="BOS.195304160MTL"><a href="/teams/BOS/1953.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.195304160MTL"><a href="/teams/MTL/1953.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+</tbody>
+</table>
+</div><!-- div.table_container#div_xxxx -->
+</div>
+<div id="sr_js"></div>
+<script type="text/javascript">
+(function () {
+    var sr_js_file = 'http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr-hr-min.js';
+    if (sr_gzipEnabled) {
+       sr_js_file = 'http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr-hr-min.js.jgz';
+    }
+    var sr_script_tag = document.getElementById("sr_js");         
+    if (sr_script_tag) {
+	var scriptStyles = document.createElement("script");
+	scriptStyles.type = "text/javascript";
+	scriptStyles.src = sr_js_file;
+	sr_script_tag.appendChild(scriptStyles);
+	//alert('adding js to footer:'+sr_js_file);
+    }
+}());
+</script>
+
+<div id="site_footer">
+<div class="margin border">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5319453360923253";
+/* Page Bottom - HR */
+google_ad_slot = "1698819814";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<div id="sr_footer">
+Copyright &copy; 2000-2013 <a href="http://www.sports-reference.com">Sports
+Reference LLC</a>. All rights reserved.
+
+<form class="inline margin_left" method="get" name="f_footer" action="/player_search.cgi" style="margin-left:5em;">
+<input x-webkit-speech type="text" id="search_footer" name="search" class="search long"> 
+<input type="submit" value="Search" class="submit">
+</form>
+
+<div class="margin_top">Tools: <a href="/linker/">Automatic Player
+Linker</a>&nbsp;|&nbsp;<a href="/friv/linkify.cgi">Basic Player
+Linker</a></div>
+  
+<div class="blockquote italic_text clear_both margin_top">
+Most historical data provided by <a 
+href="http://www.nhlofficialguide.com/">Dan Diamond and Associates</a>. 
+Current season data provided by <a href="http://www.xmlteam.com">XML Team 
+Solutions</a>.<br>
+Other data sources include the <a
+href="http://groups.yahoo.com/group/hockey_summary_project">Hockey Summary
+Project</a> and <a
+href="http://groups.yahoo.com/group/hockey-databank/">Hockey Databank</a>.
+</div>
+
+<div class="blockquote clear_both margin_top">
+<a href="http://www.sports-reference.com/">A Sports Reference Site</a>:
+<a href="/about/">About HR</a>&nbsp;|
+<a href="/feedback/">Found a bug or have a suggestion?</a><br>
+<a href="http://www.sports-reference.com/privacy.shtml">Privacy Statement</a>&nbsp;|
+<a href="http://www.sports-reference.com/termsofuse.shtml">Conditions &amp; Terms of Service</a> | 
+<a href="http://www.sports-reference.com/data_use.shtml">Use of Data</a>
+</div>
+
+<div class="blockquote clear_both margin_bottom margin_top">
+<a target="_blank" title="USA TODAY Sports" href="http://Sports.USATODAY.com/"><img src="http://d2ft4b0ve1aur1.cloudfront.net/images-252/USATSdp.png" width="193" height="41" border="0"  style="width:193px;height:41px;vertical-align:middle"></a>
+Partner of <a target="_blank" title="USA TODAY Sports" href="http://Sports.USATODAY.com/">USA TODAY Sports Digital Properties</a>.
+</div>
+
+</div><!-- div#sr_footer -->
+</div><!-- div#site_footer -->
+
+<script type="text/javascript"> 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+   var pageTracker = _gat._createTracker("UA-1890630-5");
+   pageTracker._trackPageview();
+   pageTracker._trackPageLoadTime();
+   var sr_tracker = _gat._createTracker("UA-1890630-9");
+   sr_tracker._setDomainName('none'); 
+   sr_tracker._setAllowLinker(true); 
+   sr_tracker._setAllowHash(false);
+   sr_tracker._setCustomVar(1,"site","hr",3);
+   sr_tracker._trackPageview();
+} catch(err) {}</script>
+        
+<!-- Begin comScore Tag -->
+<script type="text/deferscript">
+    document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js' %3E%3C/script%3E"));
+</script>
+
+<script type="text/deferscript">
+  COMSCORE.beacon({
+    c1:2,
+    c2:"6035210",
+    c3:"",
+    c4:"www.hockey-reference.com",
+    c5:"",
+    c6:"",
+    c15:""
+  });
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/b?c1=2&amp;c2=6035210&amp;c3=&amp;c4=www.baseball-reference.com&amp;c5=&amp;c6=&amp;c15=&amp;cv=1.3&amp;cj=1" width="0" height="0" alt="" />
+</noscript>
+<!-- End comScore Tag -->
+
+<!-- google +1 code -->
+<script type="text/deferscript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<!-- facebook code -->
+<script type="text/deferscript">
+     window.fbAsyncInit = function() {
+        FB.init({appId: '212945115395487', status: true, cookie: true,
+                 xfbml: true, channelUrl  : 'http://www.hockey-reference.com/channel.html'});
+      };
+      (function() {
+        var fb_root = document.getElementById('fb-root');
+        if (fb_root) {
+           var e = document.createElement('script');
+           e.type = 'text/javascript';
+           e.src = document.location.protocol +
+              '//connect.facebook.net/en_US/all.js';
+           e.async = true;
+           fb_root.appendChild(e);
+        }
+      }());
+</script>
+
+
+</div><!-- div#Page container -->
+</body>
+</html>

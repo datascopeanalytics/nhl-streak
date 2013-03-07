@@ -1,0 +1,2482 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/website" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" lang="en">
+ <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script>
+/*
+ * JS Redirection Mobile
+ *
+ * Developed by
+ * Sebastiano Armeli-Battana (@sebarmeli) - http://www.sebastianoarmelibattana.com
+ * Release under the MIT licence
+ */
+ if(!window.SA){window.SA={}}SA.redirection_mobile=function(d){var b=function(k){var j=new Date();j.setTime(j.getTime()+k);return j};var i=function(o){if(!o){return}var j=document.location.search,p=j&&j.substring(1).split("&"),l=0,n=p.length;for(;l<n;l++){var k=p[l],m=k&&k.substring(0,k.indexOf("="));if(m===o){return k.substring(k.indexOf("=")+1,k.length)}}};var f=navigator.userAgent.toLowerCase(),h="false",g="true",d=d||{},redirection_param=d.redirection_paramName||"mobile",redirection_param_long=d.redirection_paramName_long||"mobile_long",mobile_prefix=d.mobile_prefix||"m",mobile_url=d.mobile_url,mobile_protocol=d.mobile_scheme?d.mobile_scheme+":":document.location.protocol,host=document.location.host,queryValue=i(redirection_param),queryValue_long=i(redirection_param_long),mobile_host=mobile_url||(mobile_prefix+"."+(!!host.match(/^www./i)?host.substring(4):host)),cookie_hours=d.cookie_hours||1,isUAMobile=false;
+
+if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(f)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(f.substr(0,4))) { isUAMobile = true; }
+
+if(queryValue_long===h){if(window.localStorage){window.localStorage.setItem(redirection_param_long,h)}else{document.cookie=redirection_param+"="+h+";expires="+b(3600*1000*cookie_hours*7*24*31).toUTCString()}}else{if((queryValue_long===g)||(queryValue===g)){if(window.localStorage){window.localStorage.setItem(redirection_param_long,g)}else{document.cookie=redirection_param+"="+h+";expires="+b(-3600*1000*cookie_hours*7*24*31).toUTCString()}if(window.localStorage){window.sessionStorage.setItem(redirection_param,g)}else{document.cookie=redirection_param+"="+h+";expires="+b(-3600*1000*cookie_hours*7*24*31).toUTCString()}}else{if(document.referrer.indexOf(mobile_host)>=0||queryValue===h){if(window.sessionStorage){window.sessionStorage.setItem(redirection_param,h)}else{document.cookie=redirection_param+"="+h+";expires="+b(3600*1000*cookie_hours).toUTCString()}}}}var a=(window.sessionStorage)?(window.sessionStorage.getItem(redirection_param)===h):false,e=(window.localStorage)?(window.localStorage.getItem(redirection_param_long)===h):false,c=document.cookie?(document.cookie.indexOf(redirection_param)>=0):false;if(isUAMobile&&!(c||a||e)){document.location.href=mobile_protocol+"//"+mobile_host}};
+
+SA.redirection_mobile({mobile_url:"m.hkref.com/m?p=XXleaguesXXNHL_1928_games.html",redirection_paramName:"mobile",redirection_paramName_long:"mobile_long",cookie_hours:6});
+</script> 
+
+<!-- CRITEO -->
+<script type="text/javascript"> 
+var crtg_nid="1631"; 
+var crtg_cookiename="cto_usatd"; 
+function crtg_getCookie(c_name){var i,x,y,ARRcookies=document.cookie.split(";");for(i=0;i<ARRcookies.length;i++){x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);x=x.replace(/^\s+|\s+$/g,"");if(x==c_name){return unescape(y);}}return'';} var crtg_content=crtg_getCookie(crtg_cookiename);var crtg_rnd=Math.floor(Math.random()*99999999999);var crtg_url='http://rtax.criteo.com/delivery/rta/rta.js?netId='+escape(crtg_nid);crtg_url+='&cookieName='+escape(crtg_cookiename);crtg_url+='&rnd='+crtg_rnd;crtg_url+='&varName=crtg_content';var crtg_script=document.createElement('script');crtg_script.type='text/javascript';crtg_script.src=crtg_url;crtg_script.async=true;if(document.getElementsByTagName("head").length>0)document.getElementsByTagName("head")[0].appendChild(crtg_script);else if(document.getElementsByTagName("body").length>0)document.getElementsByTagName("body")[0].appendChild(crtg_script); 
+var crtg_ap=new Array();var crtg_cp=(crtg_content!=null&&crtg_content.length>0)?crtg_content.split(';'):null;if(crtg_cp){for(var crtg_kidx in crtg_cp){if(crtg_cp[crtg_kidx].length>0){var crtg_apa=crtg_cp[crtg_kidx].split('=');if(crtg_apa[1]==1){crtg_ap.push(crtg_apa[0].replace(/usatd/,''))}}}}
+</script>
+<!--  SYNCHRONOUS:googletag -->
+<script type="text/deferscript">
+  (function() {
+    var useSSL = 'https:' == document.location.protocol;
+    var src = (useSSL ? 'https:' : 'http:') +       '//www.googletagservices.com/tag/js/gpt.js';
+    document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+  })();
+</script>
+<script type="text/deferscript">
+googletag.pubads().enableSyncRendering();
+googletag.pubads().setTargeting("usatcriteo",crtg_ap);
+</script>
+
+<title>1927-28 NHL Season Schedule and Results | Hockey-Reference.com</title>
+<script type="text/javascript">var sr_gzipEnabled = false;</script>
+<script type="text/javascript" src="http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr.gzipcheck.js.jgz"></script>
+
+<noscript>
+  <link type="text/css" rel="stylesheet" href="http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min.css">
+</noscript>
+<script type="text/javascript">
+(function () {
+    var sr_css_file = 'http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min.css';
+    if (sr_gzipEnabled) {
+       sr_css_file = 'http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min-gz.css';
+    }
+    var head = document.getElementsByTagName("head")[0];
+    if (head) {
+	var scriptStyles = document.createElement("link");
+	scriptStyles.rel = "stylesheet";
+	scriptStyles.type = "text/css";
+	scriptStyles.href = sr_css_file;
+	head.appendChild(scriptStyles);
+	//alert('adding css to header:'+sr_css_file);
+    }
+}());
+</script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="nhl, wha, hockey, stats, statistics, history, 1927-28, schedule, results, games, scores">
+<meta property="fb:admins" content="1016660168">
+<meta property="fb:page_id" content="145429948844751">
+<meta property="og:site_name"  content="Hockey-Reference.com"> 
+<meta property="og:image"      content="http://d2ft4b0ve1aur1.cloudfront.net/images-241/Hockey-Ref.png"> 
+
+<link rel="icon"          type="image/vnd.microsoft.icon" href="http://d2ft4b0ve1aur1.cloudfront.net/images-290/favicon-hr.ico">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://d2ft4b0ve1aur1.cloudfront.net/images-290/favicon-hr.ico">
+<link rel="search"        type="application/opensearchdescription+xml" href="http://d2ft4b0ve1aur1.cloudfront.net/os-290/opensearch-hr.xml" title="Hockey-Ref Search">
+<!--[if lte IE 7 ]>
+<style type="text/css">
+.uni_holder { display: none; }
+</style>
+<![endif]-->
+<!--[if lte IE 6]>
+<style type="text/css">
+.hovermenu,.hovermenu_ajax,.sub_index,#quick_index {display:none!important}
+</style>
+<![endif]-->
+</head>
+
+<body onload="">
+
+<div id="page_container">
+
+<div id="top_nav">
+
+<div id="site_header">
+ <div id="sr_header">
+  <div class="float_right">
+    <a href="http://www.sports-reference.com">S-R</a>:
+    <a href="http://www.baseball-reference.com">MLB</a> | 
+    <a href="http://www.basketball-reference.com">NBA</a> &#183;
+    <a href="http://www.sports-reference.com/cbb/">CBB</a> |
+    <a href="http://www.pro-football-reference.com">NFL</a> &#183;
+    <a href="http://www.sports-reference.com/cfb/">CFB</a> |
+    <strong>NHL</strong> |
+    <a href="http://www.sports-reference.com/olympics/">Oly</a> |
+    <a href="http://www.sports-reference.com/blog/">Blog</a>
+    <br>
+  </div>
+  
+  <div class="clearfix padding_top_half float_right clear_both">
+    <div class="padding_left_half float_right"><a class="sprite-twitter" title="Follow us on Twitter" href="http://twitter.com/hockey_ref"></a><a class="sprite-facebook" title="Become a Fan on FaceBook" href="http://www.facebook.com/Hockey.Reference"></a>
+    </div>
+    <div class="float_right">
+       <form method="get" id="f" name="f" action="/player_search.cgi">
+         <input x-webkit-speech type="search" placeholder="click 'Tips' for shortcuts" id="search" name="search" class="search long"> 
+         <input type="submit" value="Search" class="submit">
+         <a class="padding_left_half small_text" href="/about/findstuff.shtml">Tips</a>
+       </form>
+    </div>
+  </div>
+  </div><!-- div#sr_header -->
+  <div class="float_left padding_bottom_half"><a href="/"><img src="http://d2ft4b0ve1aur1.cloudfront.net/images-265/Hockey-Ref.png" width=373 height=73 border="0" alt="Hockey-Reference.com"></a></div>
+ </div><!-- div#site_header -->
+
+
+
+<div id="quick_index">
+<ul class="hovermenu_ajax navbar">
+<li class=""><a href="/play-index/">play index</a><ul class="li_margin" id="header_playindex"></ul></li>
+ <li class=""><a href="/boxscores/">boxscores</a><ul class="li_margin" id="header_boxscores"></ul></li>
+ <li class=""><a href="/players/">players</a><ul class="li_margin" id="header_players"></ul></li>
+ <li class=""><a href="/teams/">teams</a><ul class="li_margin" id="header_teams"></ul></li>
+ <li class="active"><a href="/leagues/">seasons</a><ul class="li_margin" id="header_leagues"></ul></li>
+ <li class=""><a href="/coaches/">coaches</a><ul class="li_margin" id="header_coaches"></ul></li>
+ <li class=""><a href="/leaders/">leaders</a><ul class="li_margin" id="header_leaders"></ul></li>
+ <li class=""><a href="/awards/">awards</a><ul class="li_margin" id="header_awards"></ul></li>
+ <li class=""><a href="/playoffs/">playoffs</a><ul class="li_margin" id="header_playoffs"></ul></li>
+ <li class=""><a href="/draft/">draft</a><ul class="li_margin" id="header_draft"></ul></li>
+ <li class=""><a href="">more [+]</a><ul class="li_margin" id="header_more_links"></ul></li>
+
+</ul>
+</div>
+<div id="you_are_here">
+<p class="padding_left0"><a class="mobile_link" href="http://m.hkref.com/m?p=XXleaguesXXNHL_1928_games.html">Mobile Site</a> <span class="bold_text">You Are Here</span>&nbsp;&gt;&nbsp;<a href="/">HR</a>&nbsp;&gt;&nbsp;<a href="/leagues/">Leagues</a>&nbsp;&gt;&nbsp;<a href="/leagues/NHL_1928.html">1927-28 NHL</a>&nbsp;&gt;&nbsp;<strong>Season Schedule and Results</strong></p>
+</div>
+<div class="site_news"><p><span class="bold_text">News:</span> <span class="poptip" tip="With the NHL starting back up after the lockout, here's a reminder that we offer our familiar Play Index tools for hockey, too: Player Game FinderSearch through NHL regular season and playoff game logs spanning from 1987-88 to today for games that match your criteria. Player Season FinderSearch through NHL regular season statistics spanning from [...]">s-r blog:<a onClick="try { pageTracker._trackEvent('blog','click','area-yah'); } catch (err) {};"
+ href="http://www.sports-reference.com/blog/2013/01/hockey-reference-play-index/">Hockey-Reference Play Index</a> <span class="small_text"></span></span></p></div>
+
+</div>
+<div id="restofsite_launchpad" class="advertlaunchpad">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/launchpad/sports/hockey/general', [970,66] ,             'restofsite_launchpad').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_launchpad");
+</script>
+</div><!-- div.#restofsite_launchpad.advertlaunchpad -->
+
+<div id="info_box">
+<div id="restofsite_300x250_atf1" class="advert300x250">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/300x250_1a/sports/hockey/general', [[300,250],[300,600]] ,             'restofsite_300x250_atf1').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_300x250_atf1");
+</script>
+</div><!-- div.#restofsite_300x250_atf1.advert300x250 -->
+
+<h1>1927-28 NHL Season Schedule and Results</h1>
+<p><a href="/leagues/NHL_1927_games.html">Previous Season</a>&nbsp;&#9642;&nbsp;<a href="/leagues/NHL_1929_games.html">Next Season</a></p>
+<div class="margin_bottom no_mobile"><form class="sr_standard inline" name="pages" action="">
+<strong>Navigation:</strong>
+<select name="hr_pages" onchange="sr_goto_page('hr_pages','',this.form);">
+<option value="" disabled >Select Page
+<option value="/leagues/NHL_1928.html" >Summary
+<option value="/leagues/NHL_1928_standings.html" >Standings
+<option value="/leagues/NHL_1928_leaders.html" >Leaders
+<option value="/leagues/NHL_1928_games.html" selected>Schedule and Results
+<option value="/leagues/NHL_1928_skaters.html" >Skater Statistics
+<option value="/leagues/NHL_1928_goalies.html" >Goalie Statistics
+<option value="/leagues/NHL_1928_numbers.html" >Sweater Numbers
+<option value="/leagues/NHL_1928_debut.html" >Debuts
+<option value="/leagues/NHL_1928_final.html" >Final Season
+</select>
+</form>
+</div>
+<p><strong>League Champion:</strong> <a href="/teams/NYR/1928.html">New York Rangers</a>
+<p><strong>Hart Memorial Trophy:</strong> <a href="/players/m/morenho01.html">Howie Morenz</a> (33 G, 18 A, 51 P)<br><strong>Vezina Trophy:</strong> <a href="/players/h/hainsge01.html">George Hainsworth</a> (26-11-7, 1.05 GAA)<br><p><strong>Goals Leader:</strong> <a href="/players/m/morenho01.html">Howie Morenz</a> (33)<br><strong>Assists Leader:</strong> <a href="/players/m/morenho01.html">Howie Morenz</a> (18)<br><strong>Points Leader:</strong> <a href="/players/m/morenho01.html">Howie Morenz</a> (51)<br></div>
+<div id="restofsite_728x90_atf1" class="advert728x90">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/728x90_1a/sports/hockey/general', [728,90] ,             'restofsite_728x90_atf1').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_728x90_atf1");
+</script>
+</div><!-- div.#restofsite_728x90_atf1.advert728x90 -->
+
+<div id="page_content">
+<div class="table_heading">
+<h2 data-mobile-header="" style="">Regular Season</h2>
+<div class="table_heading_text"></div>
+</div>
+<div class="table_container" id="div_games">
+<table class="sortable  stats_table" id="games">
+<colgroup><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr class="">
+  <th align="left"  class="tooltip sort_default_asc" >Date</th>
+  <th align="left"  class="tooltip sort_default_asc" >Visitor</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="left"  class="tooltip sort_default_asc" >Home</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="center"  class="tooltip" ></th>
+  <th align="left"  class="tooltip sort_default_asc show_partial_when_sorting" >Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr  class="">
+   <td align="left"  csk="192711150BOS">Tue, Nov 15, 1927</td>
+   <td align="left"  csk="CBH.192711150BOS"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.192711150BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711150NYA">Tue, Nov 15, 1927</td>
+   <td align="left"  csk="MTL.192711150NYA"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="NYA.192711150NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711150OTS">Tue, Nov 15, 1927</td>
+   <td align="left"  csk="MTM.192711150OTS"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="OTS.192711150OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711150PTP">Tue, Nov 15, 1927</td>
+   <td align="left"  csk="DTC.192711150PTP"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="PTP.192711150PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711150TOR">Tue, Nov 15, 1927</td>
+   <td align="left"  csk="NYR.192711150TOR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.192711150TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711170MTM">Thu, Nov 17, 1927</td>
+   <td align="left"  csk="CBH.192711170MTM"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTM.192711170MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711170NYR">Thu, Nov 17, 1927</td>
+   <td align="left"  csk="OTS.192711170NYR"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.192711170NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711190BOS">Sat, Nov 19, 1927</td>
+   <td align="left"  csk="DTC.192711190BOS"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.192711190BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711190MTL">Sat, Nov 19, 1927</td>
+   <td align="left"  csk="MTM.192711190MTL"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.192711190MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711190OTS">Sat, Nov 19, 1927</td>
+   <td align="left"  csk="PTP.192711190OTS"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="OTS.192711190OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711190TOR">Sat, Nov 19, 1927</td>
+   <td align="left"  csk="CBH.192711190TOR"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.192711190TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711200NYA">Sun, Nov 20, 1927</td>
+   <td align="left"  csk="NYR.192711200NYA"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYA.192711200NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711220BOS">Tue, Nov 22, 1927</td>
+   <td align="left"  csk="TOR.192711220BOS"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.192711220BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711220DTC">Tue, Nov 22, 1927</td>
+   <td align="left"  csk="OTS.192711220DTC"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DTC.192711220DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711220MTL">Tue, Nov 22, 1927</td>
+   <td align="left"  csk="PTP.192711220MTL"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.192711220MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711220NYR">Tue, Nov 22, 1927</td>
+   <td align="left"  csk="MTM.192711220NYR"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.192711220NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711230CBH">Wed, Nov 23, 1927</td>
+   <td align="left"  csk="OTS.192711230CBH"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.192711230CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711240NYA">Thu, Nov 24, 1927</td>
+   <td align="left"  csk="TOR.192711240NYA"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYA.192711240NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711260BOS">Sat, Nov 26, 1927</td>
+   <td align="left"  csk="NYA.192711260BOS"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.192711260BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711260CBH">Sat, Nov 26, 1927</td>
+   <td align="left"  csk="DTC.192711260CBH"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="CBH.192711260CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711260MTM">Sat, Nov 26, 1927</td>
+   <td align="left"  csk="OTS.192711260MTM"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTM.192711260MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711260PTP">Sat, Nov 26, 1927</td>
+   <td align="left"  csk="TOR.192711260PTP"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="PTP.192711260PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711270DTC">Sun, Nov 27, 1927</td>
+   <td align="left"  csk="MTL.192711270DTC"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DTC.192711270DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711270NYR">Sun, Nov 27, 1927</td>
+   <td align="left"  csk="BOS.192711270NYR"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.192711270NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711290BOS">Tue, Nov 29, 1927</td>
+   <td align="left"  csk="MTM.192711290BOS"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.192711290BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711290NYA">Tue, Nov 29, 1927</td>
+   <td align="left"  csk="PTP.192711290NYA"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYA.192711290NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711290OTS">Tue, Nov 29, 1927</td>
+   <td align="left"  csk="NYR.192711290OTS"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="OTS.192711290OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192711300CBH">Wed, Nov 30, 1927</td>
+   <td align="left"  csk="MTL.192711300CBH"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="CBH.192711300CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712010DTC">Thu, Dec 1, 1927</td>
+   <td align="left"  csk="CBH.192712010DTC"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DTC.192712010DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712010MTM">Thu, Dec 1, 1927</td>
+   <td align="left"  csk="NYR.192712010MTM"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192712010MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712010PTP">Thu, Dec 1, 1927</td>
+   <td align="left"  csk="BOS.192712010PTP"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="PTP.192712010PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712030CBH">Sat, Dec 3, 1927</td>
+   <td align="left"  csk="NYR.192712030CBH"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.192712030CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712030MTL">Sat, Dec 3, 1927</td>
+   <td align="left"  csk="NYA.192712030MTL"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.192712030MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712030OTS">Sat, Dec 3, 1927</td>
+   <td align="left"  csk="BOS.192712030OTS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="OTS.192712030OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712030TOR">Sat, Dec 3, 1927</td>
+   <td align="left"  csk="MTM.192712030TOR"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.192712030TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712040DTC">Sun, Dec 4, 1927</td>
+   <td align="left"  csk="NYR.192712040DTC"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DTC.192712040DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712060BOS">Tue, Dec 6, 1927</td>
+   <td align="left"  csk="MTL.192712060BOS"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.192712060BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712060OTS">Tue, Dec 6, 1927</td>
+   <td align="left"  csk="TOR.192712060OTS"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192712060OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712060PTP">Tue, Dec 6, 1927</td>
+   <td align="left"  csk="NYR.192712060PTP"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="PTP.192712060PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712070CBH">Wed, Dec 7, 1927</td>
+   <td align="left"  csk="NYA.192712070CBH"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.192712070CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712080DTC">Thu, Dec 8, 1927</td>
+   <td align="left"  csk="NYA.192712080DTC"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DTC.192712080DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712080MTL">Thu, Dec 8, 1927</td>
+   <td align="left"  csk="TOR.192712080MTL"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.192712080MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712100CBH">Sat, Dec 10, 1927</td>
+   <td align="left"  csk="BOS.192712100CBH"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.192712100CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712100MTM">Sat, Dec 10, 1927</td>
+   <td align="left"  csk="DTC.192712100MTM"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTM.192712100MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712100PTP">Sat, Dec 10, 1927</td>
+   <td align="left"  csk="NYA.192712100PTP"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="PTP.192712100PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712100TOR">Sat, Dec 10, 1927</td>
+   <td align="left"  csk="OTS.192712100TOR"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.192712100TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712110DTC">Sun, Dec 11, 1927</td>
+   <td align="left"  csk="BOS.192712110DTC"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DTC.192712110DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712110NYR">Sun, Dec 11, 1927</td>
+   <td align="left"  csk="MTL.192712110NYR"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.192712110NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712130BOS">Tue, Dec 13, 1927</td>
+   <td align="left"  csk="NYR.192712130BOS"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.192712130BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712130MTL">Tue, Dec 13, 1927</td>
+   <td align="left"  csk="DTC.192712130MTL"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.192712130MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712130NYA">Tue, Dec 13, 1927</td>
+   <td align="left"  csk="OTS.192712130NYA"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYA.192712130NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712140CBH">Wed, Dec 14, 1927</td>
+   <td align="left"  csk="TOR.192712140CBH"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.192712140CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712150MTM">Thu, Dec 15, 1927</td>
+   <td align="left"  csk="MTL.192712150MTM"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTM.192712150MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712150NYR">Thu, Dec 15, 1927</td>
+   <td align="left"  csk="DTC.192712150NYR"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.192712150NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712150OTS">Thu, Dec 15, 1927</td>
+   <td align="left"  csk="NYA.192712150OTS"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="OTS.192712150OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712170MTL">Sat, Dec 17, 1927</td>
+   <td align="left"  csk="BOS.192712170MTL"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.192712170MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712170OTS">Sat, Dec 17, 1927</td>
+   <td align="left"  csk="MTM.192712170OTS"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192712170OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712170PTP">Sat, Dec 17, 1927</td>
+   <td align="left"  csk="CBH.192712170PTP"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="PTP.192712170PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712170TOR">Sat, Dec 17, 1927</td>
+   <td align="left"  csk="DTC.192712170TOR"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.192712170TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712180DTC">Sun, Dec 18, 1927</td>
+   <td align="left"  csk="PTP.192712180DTC"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DTC.192712180DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712180NYA">Sun, Dec 18, 1927</td>
+   <td align="left"  csk="CBH.192712180NYA"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYA.192712180NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712200BOS">Tue, Dec 20, 1927</td>
+   <td align="left"  csk="OTS.192712200BOS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.192712200BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712200NYR">Tue, Dec 20, 1927</td>
+   <td align="left"  csk="PTP.192712200NYR"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYR.192712200NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712200TOR">Tue, Dec 20, 1927</td>
+   <td align="left"  csk="NYA.192712200TOR"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.192712200TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712220MTL">Thu, Dec 22, 1927</td>
+   <td align="left"  csk="CBH.192712220MTL"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.192712220MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712220NYA">Thu, Dec 22, 1927</td>
+   <td align="left"  csk="MTM.192712220NYA"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="NYA.192712220NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712220TOR">Thu, Dec 22, 1927</td>
+   <td align="left"  csk="PTP.192712220TOR"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.192712220TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712240MTM">Sat, Dec 24, 1927</td>
+   <td align="left"  csk="NYA.192712240MTM"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTM.192712240MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712240OTS">Sat, Dec 24, 1927</td>
+   <td align="left"  csk="TOR.192712240OTS"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="OTS.192712240OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712240PTP">Sat, Dec 24, 1927</td>
+   <td align="left"  csk="MTL.192712240PTP"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="PTP.192712240PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712250NYR">Sun, Dec 25, 1927</td>
+   <td align="left"  csk="CBH.192712250NYR"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYR.192712250NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712270BOS">Tue, Dec 27, 1927</td>
+   <td align="left"  csk="NYR.192712270BOS"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.192712270BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712270NYA">Tue, Dec 27, 1927</td>
+   <td align="left"  csk="DTC.192712270NYA"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYA.192712270NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712270OTS">Tue, Dec 27, 1927</td>
+   <td align="left"  csk="MTL.192712270OTS"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192712270OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712280CBH">Wed, Dec 28, 1927</td>
+   <td align="left"  csk="MTM.192712280CBH"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.192712280CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712290DTC">Thu, Dec 29, 1927</td>
+   <td align="left"  csk="MTM.192712290DTC"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DTC.192712290DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712290NYR">Thu, Dec 29, 1927</td>
+   <td align="left"  csk="NYA.192712290NYR"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.192712290NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712290TOR">Thu, Dec 29, 1927</td>
+   <td align="left"  csk="BOS.192712290TOR"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.192712290TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712310MTL">Sat, Dec 31, 1927</td>
+   <td align="left"  csk="NYR.192712310MTL"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.192712310MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712310OTS">Sat, Dec 31, 1927</td>
+   <td align="left"  csk="DTC.192712310OTS"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="OTS.192712310OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192712310PTP">Sat, Dec 31, 1927</td>
+   <td align="left"  csk="MTM.192712310PTP"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="PTP.192712310PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801010NYA">Sun, Jan 1, 1928</td>
+   <td align="left"  csk="BOS.192801010NYA"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYA.192801010NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801020CBH">Mon, Jan 2, 1928</td>
+   <td align="left"  csk="TOR.192801020CBH"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.192801020CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801030BOS">Tue, Jan 3, 1928</td>
+   <td align="left"  csk="PTP.192801030BOS"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.192801030BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801030NYR">Tue, Jan 3, 1928</td>
+   <td align="left"  csk="DTC.192801030NYR"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.192801030NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801040CBH">Wed, Jan 4, 1928</td>
+   <td align="left"  csk="MTL.192801040CBH"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.192801040CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801050DTC">Thu, Jan 5, 1928</td>
+   <td align="left"  csk="MTL.192801050DTC"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DTC.192801050DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801050MTM">Thu, Jan 5, 1928</td>
+   <td align="left"  csk="TOR.192801050MTM"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192801050MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801050NYA">Thu, Jan 5, 1928</td>
+   <td align="left"  csk="PTP.192801050NYA"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYA.192801050NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801070MTM">Sat, Jan 7, 1928</td>
+   <td align="left"  csk="BOS.192801070MTM"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192801070MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801070OTS">Sat, Jan 7, 1928</td>
+   <td align="left"  csk="NYA.192801070OTS"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="OTS.192801070OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801070PTP">Sat, Jan 7, 1928</td>
+   <td align="left"  csk="DTC.192801070PTP"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="PTP.192801070PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801070TOR">Sat, Jan 7, 1928</td>
+   <td align="left"  csk="MTL.192801070TOR"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >9</td>
+   <td align="left"  csk="TOR.192801070TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801080NYR">Sun, Jan 8, 1928</td>
+   <td align="left"  csk="CBH.192801080NYR"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYR.192801080NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801100BOS">Tue, Jan 10, 1928</td>
+   <td align="left"  csk="CBH.192801100BOS"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.192801100BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801100MTL">Tue, Jan 10, 1928</td>
+   <td align="left"  csk="OTS.192801100MTL"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.192801100MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801100NYA">Tue, Jan 10, 1928</td>
+   <td align="left"  csk="TOR.192801100NYA"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYA.192801100NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801120DTC">Thu, Jan 12, 1928</td>
+   <td align="left"  csk="TOR.192801120DTC"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DTC.192801120DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801120NYR">Thu, Jan 12, 1928</td>
+   <td align="left"  csk="BOS.192801120NYR"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.192801120NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801120PTP">Thu, Jan 12, 1928</td>
+   <td align="left"  csk="CBH.192801120PTP"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="PTP.192801120PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801140MTM">Sat, Jan 14, 1928</td>
+   <td align="left"  csk="PTP.192801140MTM"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTM.192801140MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801140OTS">Sat, Jan 14, 1928</td>
+   <td align="left"  csk="BOS.192801140OTS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="OTS.192801140OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801140TOR">Sat, Jan 14, 1928</td>
+   <td align="left"  csk="NYR.192801140TOR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.192801140TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801150DTC">Sun, Jan 15, 1928</td>
+   <td align="left"  csk="NYR.192801150DTC"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DTC.192801150DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801150NYA">Sun, Jan 15, 1928</td>
+   <td align="left"  csk="MTL.192801150NYA"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYA.192801150NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801160CBH">Mon, Jan 16, 1928</td>
+   <td align="left"  csk="PTP.192801160CBH"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.192801160CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801170BOS">Tue, Jan 17, 1928</td>
+   <td align="left"  csk="MTL.192801170BOS"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.192801170BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801170MTM">Tue, Jan 17, 1928</td>
+   <td align="left"  csk="OTS.192801170MTM"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192801170MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801170NYR">Tue, Jan 17, 1928</td>
+   <td align="left"  csk="TOR.192801170NYR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.192801170NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801180CBH">Wed, Jan 18, 1928</td>
+   <td align="left"  csk="DTC.192801180CBH"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="CBH.192801180CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801190NYA">Thu, Jan 19, 1928</td>
+   <td align="left"  csk="MTM.192801190NYA"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYA.192801190NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801190PTP">Thu, Jan 19, 1928</td>
+   <td align="left"  csk="OTS.192801190PTP"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="PTP.192801190PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801210CBH">Sat, Jan 21, 1928</td>
+   <td align="left"  csk="BOS.192801210CBH"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.192801210CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801210MTL">Sat, Jan 21, 1928</td>
+   <td align="left"  csk="MTM.192801210MTL"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.192801210MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801210TOR">Sat, Jan 21, 1928</td>
+   <td align="left"  csk="OTS.192801210TOR"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.192801210TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801220DTC">Sun, Jan 22, 1928</td>
+   <td align="left"  csk="BOS.192801220DTC"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DTC.192801220DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801220NYR">Sun, Jan 22, 1928</td>
+   <td align="left"  csk="PTP.192801220NYR"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.192801220NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801240BOS">Tue, Jan 24, 1928</td>
+   <td align="left"  csk="PTP.192801240BOS"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.192801240BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801240MTL">Tue, Jan 24, 1928</td>
+   <td align="left"  csk="CBH.192801240MTL"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.192801240MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >10</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801240NYA">Tue, Jan 24, 1928</td>
+   <td align="left"  csk="OTS.192801240NYA"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYA.192801240NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801260MTM">Thu, Jan 26, 1928</td>
+   <td align="left"  csk="TOR.192801260MTM"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTM.192801260MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801260NYR">Thu, Jan 26, 1928</td>
+   <td align="left"  csk="DTC.192801260NYR"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYR.192801260NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801260OTS">Thu, Jan 26, 1928</td>
+   <td align="left"  csk="CBH.192801260OTS"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="OTS.192801260OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >9</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801280MTL">Sat, Jan 28, 1928</td>
+   <td align="left"  csk="OTS.192801280MTL"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.192801280MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801280PTP">Sat, Jan 28, 1928</td>
+   <td align="left"  csk="BOS.192801280PTP"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="PTP.192801280PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801280TOR">Sat, Jan 28, 1928</td>
+   <td align="left"  csk="CBH.192801280TOR"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.192801280TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801290DTC">Sun, Jan 29, 1928</td>
+   <td align="left"  csk="CBH.192801290DTC"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DTC.192801290DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801290NYA">Sun, Jan 29, 1928</td>
+   <td align="left"  csk="NYR.192801290NYA"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="NYA.192801290NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801310BOS">Tue, Jan 31, 1928</td>
+   <td align="left"  csk="NYA.192801310BOS"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.192801310BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801310MTL">Tue, Jan 31, 1928</td>
+   <td align="left"  csk="PTP.192801310MTL"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.192801310MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801310NYR">Tue, Jan 31, 1928</td>
+   <td align="left"  csk="MTM.192801310NYR"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.192801310NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192801310OTS">Tue, Jan 31, 1928</td>
+   <td align="left"  csk="TOR.192801310OTS"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192801310OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802020MTL">Thu, Feb 2, 1928</td>
+   <td align="left"  csk="TOR.192802020MTL"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.192802020MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802020OTS">Thu, Feb 2, 1928</td>
+   <td align="left"  csk="MTM.192802020OTS"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192802020OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802040MTM">Sat, Feb 4, 1928</td>
+   <td align="left"  csk="MTL.192802040MTM"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTM.192802040MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802040PTP">Sat, Feb 4, 1928</td>
+   <td align="left"  csk="NYR.192802040PTP"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="PTP.192802040PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802040TOR">Sat, Feb 4, 1928</td>
+   <td align="left"  csk="DTC.192802040TOR"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.192802040TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802050NYA">Sun, Feb 5, 1928</td>
+   <td align="left"  csk="CBH.192802050NYA"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="NYA.192802050NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802070BOS">Tue, Feb 7, 1928</td>
+   <td align="left"  csk="DTC.192802070BOS"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.192802070BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802070MTM">Tue, Feb 7, 1928</td>
+   <td align="left"  csk="NYA.192802070MTM"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTM.192802070MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802070NYR">Tue, Feb 7, 1928</td>
+   <td align="left"  csk="OTS.192802070NYR"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYR.192802070NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802070TOR">Tue, Feb 7, 1928</td>
+   <td align="left"  csk="MTL.192802070TOR"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.192802070TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802080CBH">Wed, Feb 8, 1928</td>
+   <td align="left"  csk="PTP.192802080CBH"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.192802080CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802090NYA">Thu, Feb 9, 1928</td>
+   <td align="left"  csk="DTC.192802090NYA"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYA.192802090NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802090OTS">Thu, Feb 9, 1928</td>
+   <td align="left"  csk="NYR.192802090OTS"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192802090OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802100CBH">Fri, Feb 10, 1928</td>
+   <td align="left"  csk="MTM.192802100CBH"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.192802100CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802110MTL">Sat, Feb 11, 1928</td>
+   <td align="left"  csk="BOS.192802110MTL"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.192802110MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802110PTP">Sat, Feb 11, 1928</td>
+   <td align="left"  csk="MTM.192802110PTP"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="PTP.192802110PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802110TOR">Sat, Feb 11, 1928</td>
+   <td align="left"  csk="NYA.192802110TOR"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.192802110TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802120DTC">Sun, Feb 12, 1928</td>
+   <td align="left"  csk="PTP.192802120DTC"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DTC.192802120DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802120NYR">Sun, Feb 12, 1928</td>
+   <td align="left"  csk="CBH.192802120NYR"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.192802120NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802140BOS">Tue, Feb 14, 1928</td>
+   <td align="left"  csk="CBH.192802140BOS"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.192802140BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802140MTL">Tue, Feb 14, 1928</td>
+   <td align="left"  csk="NYA.192802140MTL"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.192802140MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802140TOR">Tue, Feb 14, 1928</td>
+   <td align="left"  csk="PTP.192802140TOR"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.192802140TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802160MTM">Thu, Feb 16, 1928</td>
+   <td align="left"  csk="DTC.192802160MTM"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192802160MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802160NYA">Thu, Feb 16, 1928</td>
+   <td align="left"  csk="TOR.192802160NYA"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYA.192802160NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802160OTS">Thu, Feb 16, 1928</td>
+   <td align="left"  csk="PTP.192802160OTS"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192802160OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802180MTM">Sat, Feb 18, 1928</td>
+   <td align="left"  csk="TOR.192802180MTM"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192802180MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802180OTS">Sat, Feb 18, 1928</td>
+   <td align="left"  csk="MTL.192802180OTS"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192802180OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802180PTP">Sat, Feb 18, 1928</td>
+   <td align="left"  csk="NYA.192802180PTP"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="PTP.192802180PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802190DTC">Sun, Feb 19, 1928</td>
+   <td align="left"  csk="CBH.192802190DTC"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DTC.192802190DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802190NYR">Sun, Feb 19, 1928</td>
+   <td align="left"  csk="BOS.192802190NYR"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.192802190NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802210BOS">Tue, Feb 21, 1928</td>
+   <td align="left"  csk="PTP.192802210BOS"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.192802210BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802210MTL">Tue, Feb 21, 1928</td>
+   <td align="left"  csk="TOR.192802210MTL"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.192802210MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802210NYA">Tue, Feb 21, 1928</td>
+   <td align="left"  csk="MTM.192802210NYA"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="NYA.192802210NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802220CBH">Wed, Feb 22, 1928</td>
+   <td align="left"  csk="OTS.192802220CBH"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.192802220CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802230DTC">Thu, Feb 23, 1928</td>
+   <td align="left"  csk="OTS.192802230DTC"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DTC.192802230DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802230NYR">Thu, Feb 23, 1928</td>
+   <td align="left"  csk="PTP.192802230NYR"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYR.192802230NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802230TOR">Thu, Feb 23, 1928</td>
+   <td align="left"  csk="MTM.192802230TOR"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.192802230TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802250CBH">Sat, Feb 25, 1928</td>
+   <td align="left"  csk="NYR.192802250CBH"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.192802250CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802250MTM">Sat, Feb 25, 1928</td>
+   <td align="left"  csk="BOS.192802250MTM"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192802250MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802250PTP">Sat, Feb 25, 1928</td>
+   <td align="left"  csk="OTS.192802250PTP"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="PTP.192802250PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802260DTC">Sun, Feb 26, 1928</td>
+   <td align="left"  csk="NYR.192802260DTC"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DTC.192802260DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802260NYA">Sun, Feb 26, 1928</td>
+   <td align="left"  csk="MTL.192802260NYA"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYA.192802260NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802280BOS">Tue, Feb 28, 1928</td>
+   <td align="left"  csk="MTM.192802280BOS"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.192802280BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802280CBH">Tue, Feb 28, 1928</td>
+   <td align="left"  csk="NYA.192802280CBH"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.192802280CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802280NYR">Tue, Feb 28, 1928</td>
+   <td align="left"  csk="TOR.192802280NYR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYR.192802280NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192802280OTS">Tue, Feb 28, 1928</td>
+   <td align="left"  csk="MTL.192802280OTS"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="OTS.192802280OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803010DTC">Thu, Mar 1, 1928</td>
+   <td align="left"  csk="NYA.192803010DTC"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DTC.192803010DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803010MTM">Thu, Mar 1, 1928</td>
+   <td align="left"  csk="CBH.192803010MTM"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTM.192803010MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803010PTP">Thu, Mar 1, 1928</td>
+   <td align="left"  csk="TOR.192803010PTP"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="PTP.192803010PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803030MTL">Sat, Mar 3, 1928</td>
+   <td align="left"  csk="MTM.192803030MTL"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.192803030MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803030OTS">Sat, Mar 3, 1928</td>
+   <td align="left"  csk="CBH.192803030OTS"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="OTS.192803030OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803030PTP">Sat, Mar 3, 1928</td>
+   <td align="left"  csk="DTC.192803030PTP"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="PTP.192803030PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803030TOR">Sat, Mar 3, 1928</td>
+   <td align="left"  csk="BOS.192803030TOR"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.192803030TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803060BOS">Tue, Mar 6, 1928</td>
+   <td align="left"  csk="OTS.192803060BOS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.192803060BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803060DTC">Tue, Mar 6, 1928</td>
+   <td align="left"  csk="TOR.192803060DTC"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DTC.192803060DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803060MTM">Tue, Mar 6, 1928</td>
+   <td align="left"  csk="NYR.192803060MTM"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192803060MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803060PTP">Tue, Mar 6, 1928</td>
+   <td align="left"  csk="MTL.192803060PTP"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="PTP.192803060PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803080DTC">Thu, Mar 8, 1928</td>
+   <td align="left"  csk="MTM.192803080DTC"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DTC.192803080DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803080MTL">Thu, Mar 8, 1928</td>
+   <td align="left"  csk="NYR.192803080MTL"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.192803080MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803080TOR">Thu, Mar 8, 1928</td>
+   <td align="left"  csk="NYA.192803080TOR"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.192803080TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803100BOS">Sat, Mar 10, 1928</td>
+   <td align="left"  csk="NYR.192803100BOS"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.192803100BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803100MTM">Sat, Mar 10, 1928</td>
+   <td align="left"  csk="MTL.192803100MTM"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTM.192803100MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803100OTS">Sat, Mar 10, 1928</td>
+   <td align="left"  csk="DTC.192803100OTS"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="OTS.192803100OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803100PTP">Sat, Mar 10, 1928</td>
+   <td align="left"  csk="CBH.192803100PTP"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="PTP.192803100PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803110NYA">Sun, Mar 11, 1928</td>
+   <td align="left"  csk="BOS.192803110NYA"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYA.192803110NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803120CBH">Mon, Mar 12, 1928</td>
+   <td align="left"  csk="PTP.192803120CBH"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.192803120CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803130BOS">Tue, Mar 13, 1928</td>
+   <td align="left"  csk="DTC.192803130BOS"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.192803130BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803130MTM">Tue, Mar 13, 1928</td>
+   <td align="left"  csk="NYA.192803130MTM"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTM.192803130MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803130NYR">Tue, Mar 13, 1928</td>
+   <td align="left"  csk="MTL.192803130NYR"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.192803130NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803130TOR">Tue, Mar 13, 1928</td>
+   <td align="left"  csk="OTS.192803130TOR"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.192803130TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803150CBH">Thu, Mar 15, 1928</td>
+   <td align="left"  csk="BOS.192803150CBH"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.192803150CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803150MTL">Thu, Mar 15, 1928</td>
+   <td align="left"  csk="DTC.192803150MTL"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.192803150MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803150NYA">Thu, Mar 15, 1928</td>
+   <td align="left"  csk="OTS.192803150NYA"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="NYA.192803150NYA"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803170CBH">Sat, Mar 17, 1928</td>
+   <td align="left"  csk="DTC.192803170CBH"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="CBH.192803170CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803170MTM">Sat, Mar 17, 1928</td>
+   <td align="left"  csk="OTS.192803170MTM"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192803170MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803170PTP">Sat, Mar 17, 1928</td>
+   <td align="left"  csk="BOS.192803170PTP"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="PTP.192803170PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803170TOR">Sat, Mar 17, 1928</td>
+   <td align="left"  csk="MTL.192803170TOR"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.192803170TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803180DTC">Sun, Mar 18, 1928</td>
+   <td align="left"  csk="PTP.192803180DTC"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DTC.192803180DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803180NYR">Sun, Mar 18, 1928</td>
+   <td align="left"  csk="NYA.192803180NYR"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.192803180NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803200BOS">Tue, Mar 20, 1928</td>
+   <td align="left"  csk="TOR.192803200BOS"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="BOS.192803200BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803200MTL">Tue, Mar 20, 1928</td>
+   <td align="left"  csk="NYA.192803200MTL"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.192803200MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803210CBH">Wed, Mar 21, 1928</td>
+   <td align="left"  csk="NYR.192803210CBH"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="CBH.192803210CBH"><a href="/teams/CBH/1928.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803220MTM">Thu, Mar 22, 1928</td>
+   <td align="left"  csk="PTP.192803220MTM"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTM.192803220MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803220OTS">Thu, Mar 22, 1928</td>
+   <td align="left"  csk="NYA.192803220OTS"><a href="/teams/NYA/1928.html">New York Americans</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192803220OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803240DTC">Sat, Mar 24, 1928</td>
+   <td align="left"  csk="BOS.192803240DTC"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DTC.192803240DTC"><a href="/teams/DTC/1928.html">Detroit Cougars</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803240MTL">Sat, Mar 24, 1928</td>
+   <td align="left"  csk="OTS.192803240MTL"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.192803240MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803240PTP">Sat, Mar 24, 1928</td>
+   <td align="left"  csk="NYR.192803240PTP"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="PTP.192803240PTP"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803240TOR">Sat, Mar 24, 1928</td>
+   <td align="left"  csk="MTM.192803240TOR"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >8</td>
+   <td align="left"  csk="TOR.192803240TOR"><a href="/teams/TOR/1928.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+</tbody>
+</table>
+</div><!-- div.table_container#div_xxxx -->
+<div class="table_heading">
+<h2 data-mobile-header="" style="">Playoffs</h2>
+<div class="table_heading_text"></div>
+</div>
+<div class="table_container" id="div_games_playoffs">
+<table class="sortable  stats_table" id="games_playoffs">
+<colgroup><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr class="">
+  <th align="left"  class="tooltip sort_default_asc" >Date</th>
+  <th align="left"  class="tooltip sort_default_asc" >Visitor</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="left"  class="tooltip sort_default_asc" >Home</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="center"  class="tooltip" ></th>
+  <th align="left"  class="tooltip sort_default_asc show_partial_when_sorting" >Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr  class="">
+   <td align="left"  csk="192803270NYR">Tue, Mar 27, 1928</td>
+   <td align="left"  csk="PTP.192803270NYR"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYR.192803270NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803270OTS">Tue, Mar 27, 1928</td>
+   <td align="left"  csk="MTM.192803270OTS"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="OTS.192803270OTS"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803290MTM">Thu, Mar 29, 1928</td>
+   <td align="left"  csk="OTS.192803290MTM"><a href="/teams/OTS/1928.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192803290MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803290NYR">Thu, Mar 29, 1928</td>
+   <td align="left"  csk="PTP.192803290NYR"><a href="/teams/PTP/1928.html">Pittsburgh Pirates</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.192803290NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803310MTM">Sat, Mar 31, 1928</td>
+   <td align="left"  csk="MTL.192803310MTM"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTM.192803310MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192803310NYR">Sat, Mar 31, 1928</td>
+   <td align="left"  csk="BOS.192803310NYR"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.192803310NYR"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192804030BOS">Tue, Apr 3, 1928</td>
+   <td align="left"  csk="NYR.192804030BOS"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.192804030BOS"><a href="/teams/BOS/1928.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192804030MTL">Tue, Apr 3, 1928</td>
+   <td align="left"  csk="MTM.192804030MTL"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.192804030MTL"><a href="/teams/MTL/1928.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192804050MTM">Thu, Apr 5, 1928</td>
+   <td align="left"  csk="NYR.192804050MTM"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTM.192804050MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192804070MTM">Sat, Apr 7, 1928</td>
+   <td align="left"  csk="NYR.192804070MTM"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTM.192804070MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192804100MTM">Tue, Apr 10, 1928</td>
+   <td align="left"  csk="NYR.192804100MTM"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTM.192804100MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192804120MTM">Thu, Apr 12, 1928</td>
+   <td align="left"  csk="NYR.192804120MTM"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192804120MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192804140MTM">Sat, Apr 14, 1928</td>
+   <td align="left"  csk="NYR.192804140MTM"><a href="/teams/NYR/1928.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTM.192804140MTM"><a href="/teams/MTM/1928.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+</tbody>
+</table>
+</div><!-- div.table_container#div_xxxx -->
+</div>
+<div id="sr_js"></div>
+<script type="text/javascript">
+(function () {
+    var sr_js_file = 'http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr-hr-min.js';
+    if (sr_gzipEnabled) {
+       sr_js_file = 'http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr-hr-min.js.jgz';
+    }
+    var sr_script_tag = document.getElementById("sr_js");         
+    if (sr_script_tag) {
+	var scriptStyles = document.createElement("script");
+	scriptStyles.type = "text/javascript";
+	scriptStyles.src = sr_js_file;
+	sr_script_tag.appendChild(scriptStyles);
+	//alert('adding js to footer:'+sr_js_file);
+    }
+}());
+</script>
+
+<div id="site_footer">
+<div class="margin border">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5319453360923253";
+/* Page Bottom - HR */
+google_ad_slot = "1698819814";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<div id="sr_footer">
+Copyright &copy; 2000-2013 <a href="http://www.sports-reference.com">Sports
+Reference LLC</a>. All rights reserved.
+
+<form class="inline margin_left" method="get" name="f_footer" action="/player_search.cgi" style="margin-left:5em;">
+<input x-webkit-speech type="text" id="search_footer" name="search" class="search long"> 
+<input type="submit" value="Search" class="submit">
+</form>
+
+<div class="margin_top">Tools: <a href="/linker/">Automatic Player
+Linker</a>&nbsp;|&nbsp;<a href="/friv/linkify.cgi">Basic Player
+Linker</a></div>
+  
+<div class="blockquote italic_text clear_both margin_top">
+Most historical data provided by <a 
+href="http://www.nhlofficialguide.com/">Dan Diamond and Associates</a>. 
+Current season data provided by <a href="http://www.xmlteam.com">XML Team 
+Solutions</a>.<br>
+Other data sources include the <a
+href="http://groups.yahoo.com/group/hockey_summary_project">Hockey Summary
+Project</a> and <a
+href="http://groups.yahoo.com/group/hockey-databank/">Hockey Databank</a>.
+</div>
+
+<div class="blockquote clear_both margin_top">
+<a href="http://www.sports-reference.com/">A Sports Reference Site</a>:
+<a href="/about/">About HR</a>&nbsp;|
+<a href="/feedback/">Found a bug or have a suggestion?</a><br>
+<a href="http://www.sports-reference.com/privacy.shtml">Privacy Statement</a>&nbsp;|
+<a href="http://www.sports-reference.com/termsofuse.shtml">Conditions &amp; Terms of Service</a> | 
+<a href="http://www.sports-reference.com/data_use.shtml">Use of Data</a>
+</div>
+
+<div class="blockquote clear_both margin_bottom margin_top">
+<a target="_blank" title="USA TODAY Sports" href="http://Sports.USATODAY.com/"><img src="http://d2ft4b0ve1aur1.cloudfront.net/images-252/USATSdp.png" width="193" height="41" border="0"  style="width:193px;height:41px;vertical-align:middle"></a>
+Partner of <a target="_blank" title="USA TODAY Sports" href="http://Sports.USATODAY.com/">USA TODAY Sports Digital Properties</a>.
+</div>
+
+</div><!-- div#sr_footer -->
+</div><!-- div#site_footer -->
+
+<script type="text/javascript"> 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+   var pageTracker = _gat._createTracker("UA-1890630-5");
+   pageTracker._trackPageview();
+   pageTracker._trackPageLoadTime();
+   var sr_tracker = _gat._createTracker("UA-1890630-9");
+   sr_tracker._setDomainName('none'); 
+   sr_tracker._setAllowLinker(true); 
+   sr_tracker._setAllowHash(false);
+   sr_tracker._setCustomVar(1,"site","hr",3);
+   sr_tracker._trackPageview();
+} catch(err) {}</script>
+        
+<!-- Begin comScore Tag -->
+<script type="text/deferscript">
+    document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js' %3E%3C/script%3E"));
+</script>
+
+<script type="text/deferscript">
+  COMSCORE.beacon({
+    c1:2,
+    c2:"6035210",
+    c3:"",
+    c4:"www.hockey-reference.com",
+    c5:"",
+    c6:"",
+    c15:""
+  });
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/b?c1=2&amp;c2=6035210&amp;c3=&amp;c4=www.baseball-reference.com&amp;c5=&amp;c6=&amp;c15=&amp;cv=1.3&amp;cj=1" width="0" height="0" alt="" />
+</noscript>
+<!-- End comScore Tag -->
+
+<!-- google +1 code -->
+<script type="text/deferscript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<!-- facebook code -->
+<script type="text/deferscript">
+     window.fbAsyncInit = function() {
+        FB.init({appId: '212945115395487', status: true, cookie: true,
+                 xfbml: true, channelUrl  : 'http://www.hockey-reference.com/channel.html'});
+      };
+      (function() {
+        var fb_root = document.getElementById('fb-root');
+        if (fb_root) {
+           var e = document.createElement('script');
+           e.type = 'text/javascript';
+           e.src = document.location.protocol +
+              '//connect.facebook.net/en_US/all.js';
+           e.async = true;
+           fb_root.appendChild(e);
+        }
+      }());
+</script>
+
+
+</div><!-- div#Page container -->
+</body>
+</html>

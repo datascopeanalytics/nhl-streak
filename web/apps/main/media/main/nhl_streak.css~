@@ -1,0 +1,43 @@
+#main{
+    position:relative;
+    border:2px solid red;
+}
+#svg_placer{
+    border:2px solid green;
+}
+#streak_holder{
+    margin-top: 10px;
+    width:480px;
+    border:2px solid purple;
+}
+#streak_length{
+    float:left;
+    /* margin-right: 25px; */
+}
+#streak_slider{
+    float:right;
+    width:360px;
+}
+
+#season_holder{
+    clear:both;
+    width:480px;
+    margin-top:20px;
+    border:2px solid blue;
+}
+#seasons{   
+    float:left;
+    margin-top:20px;
+   /*  margin-right: 25px;	*/
+}
+#year_slider{
+    float:right;
+    width:360px;
+    margin-top:20px;
+}
+#stats_box{
+    position:static;
+    border:2px solid black;
+    height:200px;
+    width:200px;
+}

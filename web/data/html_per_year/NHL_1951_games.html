@@ -1,0 +1,2428 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/website" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" lang="en">
+ <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script>
+/*
+ * JS Redirection Mobile
+ *
+ * Developed by
+ * Sebastiano Armeli-Battana (@sebarmeli) - http://www.sebastianoarmelibattana.com
+ * Release under the MIT licence
+ */
+ if(!window.SA){window.SA={}}SA.redirection_mobile=function(d){var b=function(k){var j=new Date();j.setTime(j.getTime()+k);return j};var i=function(o){if(!o){return}var j=document.location.search,p=j&&j.substring(1).split("&"),l=0,n=p.length;for(;l<n;l++){var k=p[l],m=k&&k.substring(0,k.indexOf("="));if(m===o){return k.substring(k.indexOf("=")+1,k.length)}}};var f=navigator.userAgent.toLowerCase(),h="false",g="true",d=d||{},redirection_param=d.redirection_paramName||"mobile",redirection_param_long=d.redirection_paramName_long||"mobile_long",mobile_prefix=d.mobile_prefix||"m",mobile_url=d.mobile_url,mobile_protocol=d.mobile_scheme?d.mobile_scheme+":":document.location.protocol,host=document.location.host,queryValue=i(redirection_param),queryValue_long=i(redirection_param_long),mobile_host=mobile_url||(mobile_prefix+"."+(!!host.match(/^www./i)?host.substring(4):host)),cookie_hours=d.cookie_hours||1,isUAMobile=false;
+
+if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(f)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(f.substr(0,4))) { isUAMobile = true; }
+
+if(queryValue_long===h){if(window.localStorage){window.localStorage.setItem(redirection_param_long,h)}else{document.cookie=redirection_param+"="+h+";expires="+b(3600*1000*cookie_hours*7*24*31).toUTCString()}}else{if((queryValue_long===g)||(queryValue===g)){if(window.localStorage){window.localStorage.setItem(redirection_param_long,g)}else{document.cookie=redirection_param+"="+h+";expires="+b(-3600*1000*cookie_hours*7*24*31).toUTCString()}if(window.localStorage){window.sessionStorage.setItem(redirection_param,g)}else{document.cookie=redirection_param+"="+h+";expires="+b(-3600*1000*cookie_hours*7*24*31).toUTCString()}}else{if(document.referrer.indexOf(mobile_host)>=0||queryValue===h){if(window.sessionStorage){window.sessionStorage.setItem(redirection_param,h)}else{document.cookie=redirection_param+"="+h+";expires="+b(3600*1000*cookie_hours).toUTCString()}}}}var a=(window.sessionStorage)?(window.sessionStorage.getItem(redirection_param)===h):false,e=(window.localStorage)?(window.localStorage.getItem(redirection_param_long)===h):false,c=document.cookie?(document.cookie.indexOf(redirection_param)>=0):false;if(isUAMobile&&!(c||a||e)){document.location.href=mobile_protocol+"//"+mobile_host}};
+
+SA.redirection_mobile({mobile_url:"m.hkref.com/m?p=XXleaguesXXNHL_1951_games.html",redirection_paramName:"mobile",redirection_paramName_long:"mobile_long",cookie_hours:6});
+</script> 
+
+<!-- CRITEO -->
+<script type="text/javascript"> 
+var crtg_nid="1631"; 
+var crtg_cookiename="cto_usatd"; 
+function crtg_getCookie(c_name){var i,x,y,ARRcookies=document.cookie.split(";");for(i=0;i<ARRcookies.length;i++){x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);x=x.replace(/^\s+|\s+$/g,"");if(x==c_name){return unescape(y);}}return'';} var crtg_content=crtg_getCookie(crtg_cookiename);var crtg_rnd=Math.floor(Math.random()*99999999999);var crtg_url='http://rtax.criteo.com/delivery/rta/rta.js?netId='+escape(crtg_nid);crtg_url+='&cookieName='+escape(crtg_cookiename);crtg_url+='&rnd='+crtg_rnd;crtg_url+='&varName=crtg_content';var crtg_script=document.createElement('script');crtg_script.type='text/javascript';crtg_script.src=crtg_url;crtg_script.async=true;if(document.getElementsByTagName("head").length>0)document.getElementsByTagName("head")[0].appendChild(crtg_script);else if(document.getElementsByTagName("body").length>0)document.getElementsByTagName("body")[0].appendChild(crtg_script); 
+var crtg_ap=new Array();var crtg_cp=(crtg_content!=null&&crtg_content.length>0)?crtg_content.split(';'):null;if(crtg_cp){for(var crtg_kidx in crtg_cp){if(crtg_cp[crtg_kidx].length>0){var crtg_apa=crtg_cp[crtg_kidx].split('=');if(crtg_apa[1]==1){crtg_ap.push(crtg_apa[0].replace(/usatd/,''))}}}}
+</script>
+<!--  SYNCHRONOUS:googletag -->
+<script type="text/deferscript">
+  (function() {
+    var useSSL = 'https:' == document.location.protocol;
+    var src = (useSSL ? 'https:' : 'http:') +       '//www.googletagservices.com/tag/js/gpt.js';
+    document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+  })();
+</script>
+<script type="text/deferscript">
+googletag.pubads().enableSyncRendering();
+googletag.pubads().setTargeting("usatcriteo",crtg_ap);
+</script>
+
+<title>1950-51 NHL Season Schedule and Results | Hockey-Reference.com</title>
+<script type="text/javascript">var sr_gzipEnabled = false;</script>
+<script type="text/javascript" src="http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr.gzipcheck.js.jgz"></script>
+
+<noscript>
+  <link type="text/css" rel="stylesheet" href="http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min.css">
+</noscript>
+<script type="text/javascript">
+(function () {
+    var sr_css_file = 'http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min.css';
+    if (sr_gzipEnabled) {
+       sr_css_file = 'http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min-gz.css';
+    }
+    var head = document.getElementsByTagName("head")[0];
+    if (head) {
+	var scriptStyles = document.createElement("link");
+	scriptStyles.rel = "stylesheet";
+	scriptStyles.type = "text/css";
+	scriptStyles.href = sr_css_file;
+	head.appendChild(scriptStyles);
+	//alert('adding css to header:'+sr_css_file);
+    }
+}());
+</script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="nhl, wha, hockey, stats, statistics, history, 1950-51, schedule, results, games, scores">
+<meta property="fb:admins" content="1016660168">
+<meta property="fb:page_id" content="145429948844751">
+<meta property="og:site_name"  content="Hockey-Reference.com"> 
+<meta property="og:image"      content="http://d2ft4b0ve1aur1.cloudfront.net/images-241/Hockey-Ref.png"> 
+
+<link rel="icon"          type="image/vnd.microsoft.icon" href="http://d2ft4b0ve1aur1.cloudfront.net/images-290/favicon-hr.ico">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://d2ft4b0ve1aur1.cloudfront.net/images-290/favicon-hr.ico">
+<link rel="search"        type="application/opensearchdescription+xml" href="http://d2ft4b0ve1aur1.cloudfront.net/os-290/opensearch-hr.xml" title="Hockey-Ref Search">
+<!--[if lte IE 7 ]>
+<style type="text/css">
+.uni_holder { display: none; }
+</style>
+<![endif]-->
+<!--[if lte IE 6]>
+<style type="text/css">
+.hovermenu,.hovermenu_ajax,.sub_index,#quick_index {display:none!important}
+</style>
+<![endif]-->
+</head>
+
+<body onload="">
+
+<div id="page_container">
+
+<div id="top_nav">
+
+<div id="site_header">
+ <div id="sr_header">
+  <div class="float_right">
+    <a href="http://www.sports-reference.com">S-R</a>:
+    <a href="http://www.baseball-reference.com">MLB</a> | 
+    <a href="http://www.basketball-reference.com">NBA</a> &#183;
+    <a href="http://www.sports-reference.com/cbb/">CBB</a> |
+    <a href="http://www.pro-football-reference.com">NFL</a> &#183;
+    <a href="http://www.sports-reference.com/cfb/">CFB</a> |
+    <strong>NHL</strong> |
+    <a href="http://www.sports-reference.com/olympics/">Oly</a> |
+    <a href="http://www.sports-reference.com/blog/">Blog</a>
+    <br>
+  </div>
+  
+  <div class="clearfix padding_top_half float_right clear_both">
+    <div class="padding_left_half float_right"><a class="sprite-twitter" title="Follow us on Twitter" href="http://twitter.com/hockey_ref"></a><a class="sprite-facebook" title="Become a Fan on FaceBook" href="http://www.facebook.com/Hockey.Reference"></a>
+    </div>
+    <div class="float_right">
+       <form method="get" id="f" name="f" action="/player_search.cgi">
+         <input x-webkit-speech type="search" placeholder="click 'Tips' for shortcuts" id="search" name="search" class="search long"> 
+         <input type="submit" value="Search" class="submit">
+         <a class="padding_left_half small_text" href="/about/findstuff.shtml">Tips</a>
+       </form>
+    </div>
+  </div>
+  </div><!-- div#sr_header -->
+  <div class="float_left padding_bottom_half"><a href="/"><img src="http://d2ft4b0ve1aur1.cloudfront.net/images-265/Hockey-Ref.png" width=373 height=73 border="0" alt="Hockey-Reference.com"></a></div>
+ </div><!-- div#site_header -->
+
+
+
+<div id="quick_index">
+<ul class="hovermenu_ajax navbar">
+<li class=""><a href="/play-index/">play index</a><ul class="li_margin" id="header_playindex"></ul></li>
+ <li class=""><a href="/boxscores/">boxscores</a><ul class="li_margin" id="header_boxscores"></ul></li>
+ <li class=""><a href="/players/">players</a><ul class="li_margin" id="header_players"></ul></li>
+ <li class=""><a href="/teams/">teams</a><ul class="li_margin" id="header_teams"></ul></li>
+ <li class="active"><a href="/leagues/">seasons</a><ul class="li_margin" id="header_leagues"></ul></li>
+ <li class=""><a href="/coaches/">coaches</a><ul class="li_margin" id="header_coaches"></ul></li>
+ <li class=""><a href="/leaders/">leaders</a><ul class="li_margin" id="header_leaders"></ul></li>
+ <li class=""><a href="/awards/">awards</a><ul class="li_margin" id="header_awards"></ul></li>
+ <li class=""><a href="/playoffs/">playoffs</a><ul class="li_margin" id="header_playoffs"></ul></li>
+ <li class=""><a href="/draft/">draft</a><ul class="li_margin" id="header_draft"></ul></li>
+ <li class=""><a href="">more [+]</a><ul class="li_margin" id="header_more_links"></ul></li>
+
+</ul>
+</div>
+<div id="you_are_here">
+<p class="padding_left0"><a class="mobile_link" href="http://m.hkref.com/m?p=XXleaguesXXNHL_1951_games.html">Mobile Site</a> <span class="bold_text">You Are Here</span>&nbsp;&gt;&nbsp;<a href="/">HR</a>&nbsp;&gt;&nbsp;<a href="/leagues/">Leagues</a>&nbsp;&gt;&nbsp;<a href="/leagues/NHL_1951.html">1950-51 NHL</a>&nbsp;&gt;&nbsp;<strong>Season Schedule and Results</strong></p>
+</div>
+<div class="site_news"><p><span class="bold_text">News:</span> <span class="poptip" tip="With the NHL starting back up after the lockout, here's a reminder that we offer our familiar Play Index tools for hockey, too: Player Game FinderSearch through NHL regular season and playoff game logs spanning from 1987-88 to today for games that match your criteria. Player Season FinderSearch through NHL regular season statistics spanning from [...]">s-r blog:<a onClick="try { pageTracker._trackEvent('blog','click','area-yah'); } catch (err) {};"
+ href="http://www.sports-reference.com/blog/2013/01/hockey-reference-play-index/">Hockey-Reference Play Index</a> <span class="small_text"></span></span></p></div>
+
+</div>
+<div id="restofsite_launchpad" class="advertlaunchpad">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/launchpad/sports/hockey/general', [970,66] ,             'restofsite_launchpad').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_launchpad");
+</script>
+</div><!-- div.#restofsite_launchpad.advertlaunchpad -->
+
+<div id="info_box">
+<div id="restofsite_300x250_atf1" class="advert300x250">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/300x250_1a/sports/hockey/general', [[300,250],[300,600]] ,             'restofsite_300x250_atf1').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_300x250_atf1");
+</script>
+</div><!-- div.#restofsite_300x250_atf1.advert300x250 -->
+
+<h1>1950-51 NHL Season Schedule and Results</h1>
+<p><a href="/leagues/NHL_1950_games.html">Previous Season</a>&nbsp;&#9642;&nbsp;<a href="/leagues/NHL_1952_games.html">Next Season</a></p>
+<div class="margin_bottom no_mobile"><form class="sr_standard inline" name="pages" action="">
+<strong>Navigation:</strong>
+<select name="hr_pages" onchange="sr_goto_page('hr_pages','',this.form);">
+<option value="" disabled >Select Page
+<option value="/leagues/NHL_1951.html" >Summary
+<option value="/leagues/NHL_1951_standings.html" >Standings
+<option value="/leagues/NHL_1951_leaders.html" >Leaders
+<option value="/leagues/NHL_1951_games.html" selected>Schedule and Results
+<option value="/leagues/NHL_1951_skaters.html" >Skater Statistics
+<option value="/leagues/NHL_1951_goalies.html" >Goalie Statistics
+<option value="/leagues/NHL_1951_numbers.html" >Sweater Numbers
+<option value="/leagues/NHL_1951_debut.html" >Debuts
+<option value="/leagues/NHL_1951_final.html" >Final Season
+</select>
+</form>
+</div>
+<p><strong>League Champion:</strong> <a href="/teams/TOR/1951.html">Toronto Maple Leafs</a>
+<p><strong>Hart Memorial Trophy:</strong> <a href="/players/s/schmimi01.html">Milt Schmidt</a> (22 G, 39 A, 61 P)<br><strong>Vezina Trophy:</strong> <a href="/players/r/rollial01.html">Al Rollins</a> (27-5-8, 1.77 GAA)<br><strong>Calder Memorial Trophy:</strong> <a href="/players/s/sawchte01.html">Terry Sawchuk</a> (44-13-13, 1.99 GAA)<br><p><strong>Goals Leader:</strong> <a href="/players/h/howego01.html">Gordie Howe</a> (43)<br><strong>Assists Leader:</strong> <a href="/players/h/howego01.html">Gordie Howe</a> (43) &amp; <a href="/players/k/kennete01.html">Ted Kennedy</a> (43)<br><strong>Points Leader:</strong> <a href="/players/h/howego01.html">Gordie Howe</a> (86)<br></div>
+<div id="restofsite_728x90_atf1" class="advert728x90">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/728x90_1a/sports/hockey/general', [728,90] ,             'restofsite_728x90_atf1').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_728x90_atf1");
+</script>
+</div><!-- div.#restofsite_728x90_atf1.advert728x90 -->
+
+<div id="page_content">
+<div class="table_heading">
+<h2 data-mobile-header="" style="">Regular Season</h2>
+<div class="table_heading_text"></div>
+</div>
+<div class="table_container" id="div_games">
+<table class="sortable  stats_table" id="games">
+<colgroup><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr class="">
+  <th align="left"  class="tooltip sort_default_asc" >Date</th>
+  <th align="left"  class="tooltip sort_default_asc" >Visitor</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="left"  class="tooltip sort_default_asc" >Home</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="center"  class="tooltip" ></th>
+  <th align="left"  class="tooltip sort_default_asc show_partial_when_sorting" >Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr  class="">
+   <td align="left"  csk="195010110DET">Wed, Oct 11, 1950</td>
+   <td align="left"  csk="NYR.195010110DET"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195010110DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010120MTL">Thu, Oct 12, 1950</td>
+   <td align="left"  csk="CBH.195010120MTL"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.195010120MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010140MTL">Sat, Oct 14, 1950</td>
+   <td align="left"  csk="BOS.195010140MTL"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195010140MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010140TOR">Sat, Oct 14, 1950</td>
+   <td align="left"  csk="CBH.195010140TOR"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195010140TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010150BOS">Sun, Oct 15, 1950</td>
+   <td align="left"  csk="MTL.195010150BOS"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195010150BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010150CBH">Sun, Oct 15, 1950</td>
+   <td align="left"  csk="NYR.195010150CBH"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195010150CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010150DET">Sun, Oct 15, 1950</td>
+   <td align="left"  csk="TOR.195010150DET"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.195010150DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010180BOS">Wed, Oct 18, 1950</td>
+   <td align="left"  csk="TOR.195010180BOS"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195010180BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010190MTL">Thu, Oct 19, 1950</td>
+   <td align="left"  csk="NYR.195010190MTL"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.195010190MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010210MTL">Sat, Oct 21, 1950</td>
+   <td align="left"  csk="DET.195010210MTL"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.195010210MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010210TOR">Sat, Oct 21, 1950</td>
+   <td align="left"  csk="NYR.195010210TOR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.195010210TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010220BOS">Sun, Oct 22, 1950</td>
+   <td align="left"  csk="NYR.195010220BOS"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.195010220BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010220CBH">Sun, Oct 22, 1950</td>
+   <td align="left"  csk="TOR.195010220CBH"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="CBH.195010220CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010220DET">Sun, Oct 22, 1950</td>
+   <td align="left"  csk="MTL.195010220DET"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195010220DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010250NYR">Wed, Oct 25, 1950</td>
+   <td align="left"  csk="BOS.195010250NYR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.195010250NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010250TOR">Wed, Oct 25, 1950</td>
+   <td align="left"  csk="DET.195010250TOR"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.195010250TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010260CBH">Thu, Oct 26, 1950</td>
+   <td align="left"  csk="MTL.195010260CBH"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.195010260CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010280DET">Sat, Oct 28, 1950</td>
+   <td align="left"  csk="CBH.195010280DET"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195010280DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010280MTL">Sat, Oct 28, 1950</td>
+   <td align="left"  csk="NYR.195010280MTL"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195010280MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010280TOR">Sat, Oct 28, 1950</td>
+   <td align="left"  csk="BOS.195010280TOR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195010280TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010290CBH">Sun, Oct 29, 1950</td>
+   <td align="left"  csk="TOR.195010290CBH"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195010290CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010290DET">Sun, Oct 29, 1950</td>
+   <td align="left"  csk="BOS.195010290DET"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.195010290DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195010290NYR">Sun, Oct 29, 1950</td>
+   <td align="left"  csk="MTL.195010290NYR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195010290NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011010TOR">Wed, Nov 1, 1950</td>
+   <td align="left"  csk="MTL.195011010TOR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195011010TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011020CBH">Thu, Nov 2, 1950</td>
+   <td align="left"  csk="BOS.195011020CBH"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.195011020CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011020DET">Thu, Nov 2, 1950</td>
+   <td align="left"  csk="NYR.195011020DET"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195011020DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011020MTL">Thu, Nov 2, 1950</td>
+   <td align="left"  csk="TOR.195011020MTL"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195011020MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011040MTL">Sat, Nov 4, 1950</td>
+   <td align="left"  csk="BOS.195011040MTL"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.195011040MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011040TOR">Sat, Nov 4, 1950</td>
+   <td align="left"  csk="NYR.195011040TOR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195011040TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011050CBH">Sun, Nov 5, 1950</td>
+   <td align="left"  csk="NYR.195011050CBH"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.195011050CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011050DET">Sun, Nov 5, 1950</td>
+   <td align="left"  csk="BOS.195011050DET"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195011050DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011080BOS">Wed, Nov 8, 1950</td>
+   <td align="left"  csk="DET.195011080BOS"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.195011080BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011080NYR">Wed, Nov 8, 1950</td>
+   <td align="left"  csk="TOR.195011080NYR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="NYR.195011080NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011090CBH">Thu, Nov 9, 1950</td>
+   <td align="left"  csk="MTL.195011090CBH"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.195011090CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011110BOS">Sat, Nov 11, 1950</td>
+   <td align="left"  csk="CBH.195011110BOS"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.195011110BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011110MTL">Sat, Nov 11, 1950</td>
+   <td align="left"  csk="NYR.195011110MTL"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195011110MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011110TOR">Sat, Nov 11, 1950</td>
+   <td align="left"  csk="DET.195011110TOR"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195011110TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011120BOS">Sun, Nov 12, 1950</td>
+   <td align="left"  csk="TOR.195011120BOS"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="BOS.195011120BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011120DET">Sun, Nov 12, 1950</td>
+   <td align="left"  csk="MTL.195011120DET"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.195011120DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011120NYR">Sun, Nov 12, 1950</td>
+   <td align="left"  csk="CBH.195011120NYR"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.195011120NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011150NYR">Wed, Nov 15, 1950</td>
+   <td align="left"  csk="BOS.195011150NYR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.195011150NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011160CBH">Thu, Nov 16, 1950</td>
+   <td align="left"  csk="DET.195011160CBH"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="CBH.195011160CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011160MTL">Thu, Nov 16, 1950</td>
+   <td align="left"  csk="TOR.195011160MTL"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195011160MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011180BOS">Sat, Nov 18, 1950</td>
+   <td align="left"  csk="DET.195011180BOS"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195011180BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011180MTL">Sat, Nov 18, 1950</td>
+   <td align="left"  csk="CBH.195011180MTL"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195011180MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011180TOR">Sat, Nov 18, 1950</td>
+   <td align="left"  csk="NYR.195011180TOR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.195011180TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011190BOS">Sun, Nov 19, 1950</td>
+   <td align="left"  csk="TOR.195011190BOS"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195011190BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011190CBH">Sun, Nov 19, 1950</td>
+   <td align="left"  csk="MTL.195011190CBH"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195011190CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011190NYR">Sun, Nov 19, 1950</td>
+   <td align="left"  csk="DET.195011190NYR"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.195011190NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011220NYR">Wed, Nov 22, 1950</td>
+   <td align="left"  csk="MTL.195011220NYR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195011220NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011220TOR">Wed, Nov 22, 1950</td>
+   <td align="left"  csk="CBH.195011220TOR"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195011220TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011230CBH">Thu, Nov 23, 1950</td>
+   <td align="left"  csk="BOS.195011230CBH"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.195011230CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011230DET">Thu, Nov 23, 1950</td>
+   <td align="left"  csk="TOR.195011230DET"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195011230DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011250BOS">Sat, Nov 25, 1950</td>
+   <td align="left"  csk="NYR.195011250BOS"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.195011250BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011250DET">Sat, Nov 25, 1950</td>
+   <td align="left"  csk="CBH.195011250DET"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195011250DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011250TOR">Sat, Nov 25, 1950</td>
+   <td align="left"  csk="MTL.195011250TOR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.195011250TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011260BOS">Sun, Nov 26, 1950</td>
+   <td align="left"  csk="MTL.195011260BOS"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.195011260BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011260CBH">Sun, Nov 26, 1950</td>
+   <td align="left"  csk="DET.195011260CBH"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="CBH.195011260CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011260NYR">Sun, Nov 26, 1950</td>
+   <td align="left"  csk="TOR.195011260NYR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.195011260NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011290BOS">Wed, Nov 29, 1950</td>
+   <td align="left"  csk="DET.195011290BOS"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.195011290BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011290NYR">Wed, Nov 29, 1950</td>
+   <td align="left"  csk="CBH.195011290NYR"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.195011290NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195011300MTL">Thu, Nov 30, 1950</td>
+   <td align="left"  csk="TOR.195011300MTL"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.195011300MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012020BOS">Sat, Dec 2, 1950</td>
+   <td align="left"  csk="NYR.195012020BOS"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.195012020BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012020MTL">Sat, Dec 2, 1950</td>
+   <td align="left"  csk="DET.195012020MTL"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="MTL.195012020MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012020TOR">Sat, Dec 2, 1950</td>
+   <td align="left"  csk="CBH.195012020TOR"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.195012020TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012030CBH">Sun, Dec 3, 1950</td>
+   <td align="left"  csk="TOR.195012030CBH"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195012030CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012030DET">Sun, Dec 3, 1950</td>
+   <td align="left"  csk="MTL.195012030DET"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.195012030DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012030NYR">Sun, Dec 3, 1950</td>
+   <td align="left"  csk="BOS.195012030NYR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="NYR.195012030NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012060BOS">Wed, Dec 6, 1950</td>
+   <td align="left"  csk="CBH.195012060BOS"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.195012060BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012060NYR">Wed, Dec 6, 1950</td>
+   <td align="left"  csk="DET.195012060NYR"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >9</td>
+   <td align="left"  csk="NYR.195012060NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012060TOR">Wed, Dec 6, 1950</td>
+   <td align="left"  csk="MTL.195012060TOR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.195012060TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012070MTL">Thu, Dec 7, 1950</td>
+   <td align="left"  csk="BOS.195012070MTL"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.195012070MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012090DET">Sat, Dec 9, 1950</td>
+   <td align="left"  csk="NYR.195012090DET"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.195012090DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012090MTL">Sat, Dec 9, 1950</td>
+   <td align="left"  csk="CBH.195012090MTL"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="MTL.195012090MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012090TOR">Sat, Dec 9, 1950</td>
+   <td align="left"  csk="BOS.195012090TOR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.195012090TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012100BOS">Sun, Dec 10, 1950</td>
+   <td align="left"  csk="MTL.195012100BOS"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195012100BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012100CBH">Sun, Dec 10, 1950</td>
+   <td align="left"  csk="NYR.195012100CBH"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195012100CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012100DET">Sun, Dec 10, 1950</td>
+   <td align="left"  csk="TOR.195012100DET"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195012100DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012130NYR">Wed, Dec 13, 1950</td>
+   <td align="left"  csk="MTL.195012130NYR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195012130NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012130TOR">Wed, Dec 13, 1950</td>
+   <td align="left"  csk="DET.195012130TOR"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.195012130TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012140CBH">Thu, Dec 14, 1950</td>
+   <td align="left"  csk="TOR.195012140CBH"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="CBH.195012140CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012140DET">Thu, Dec 14, 1950</td>
+   <td align="left"  csk="BOS.195012140DET"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195012140DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012160BOS">Sat, Dec 16, 1950</td>
+   <td align="left"  csk="DET.195012160BOS"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.195012160BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012160MTL">Sat, Dec 16, 1950</td>
+   <td align="left"  csk="NYR.195012160MTL"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195012160MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012160TOR">Sat, Dec 16, 1950</td>
+   <td align="left"  csk="CBH.195012160TOR"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195012160TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012170BOS">Sun, Dec 17, 1950</td>
+   <td align="left"  csk="TOR.195012170BOS"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.195012170BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012170CBH">Sun, Dec 17, 1950</td>
+   <td align="left"  csk="MTL.195012170CBH"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="CBH.195012170CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012170NYR">Sun, Dec 17, 1950</td>
+   <td align="left"  csk="DET.195012170NYR"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.195012170NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012190DET">Tue, Dec 19, 1950</td>
+   <td align="left"  csk="CBH.195012190DET"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195012190DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012200NYR">Wed, Dec 20, 1950</td>
+   <td align="left"  csk="BOS.195012200NYR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.195012200NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012200TOR">Wed, Dec 20, 1950</td>
+   <td align="left"  csk="MTL.195012200TOR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.195012200TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012210CBH">Thu, Dec 21, 1950</td>
+   <td align="left"  csk="BOS.195012210CBH"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195012210CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012230MTL">Sat, Dec 23, 1950</td>
+   <td align="left"  csk="DET.195012230MTL"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.195012230MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012230TOR">Sat, Dec 23, 1950</td>
+   <td align="left"  csk="BOS.195012230TOR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195012230TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012240NYR">Sun, Dec 24, 1950</td>
+   <td align="left"  csk="CBH.195012240NYR"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.195012240NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012250BOS">Mon, Dec 25, 1950</td>
+   <td align="left"  csk="CBH.195012250BOS"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.195012250BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012250DET">Mon, Dec 25, 1950</td>
+   <td align="left"  csk="NYR.195012250DET"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195012250DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012270BOS">Wed, Dec 27, 1950</td>
+   <td align="left"  csk="CBH.195012270BOS"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.195012270BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012270NYR">Wed, Dec 27, 1950</td>
+   <td align="left"  csk="TOR.195012270NYR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.195012270NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012280DET">Thu, Dec 28, 1950</td>
+   <td align="left"  csk="MTL.195012280DET"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195012280DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012300MTL">Sat, Dec 30, 1950</td>
+   <td align="left"  csk="CBH.195012300MTL"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.195012300MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012300TOR">Sat, Dec 30, 1950</td>
+   <td align="left"  csk="DET.195012300TOR"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195012300TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012310DET">Sun, Dec 31, 1950</td>
+   <td align="left"  csk="TOR.195012310DET"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.195012310DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195012310NYR">Sun, Dec 31, 1950</td>
+   <td align="left"  csk="BOS.195012310NYR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYR.195012310NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101010BOS">Mon, Jan 1, 1951</td>
+   <td align="left"  csk="NYR.195101010BOS"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195101010BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101010CBH">Mon, Jan 1, 1951</td>
+   <td align="left"  csk="MTL.195101010CBH"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195101010CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101030NYR">Wed, Jan 3, 1951</td>
+   <td align="left"  csk="DET.195101030NYR"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.195101030NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101040DET">Thu, Jan 4, 1951</td>
+   <td align="left"  csk="CBH.195101040DET"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.195101040DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101040MTL">Thu, Jan 4, 1951</td>
+   <td align="left"  csk="BOS.195101040MTL"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.195101040MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101060MTL">Sat, Jan 6, 1951</td>
+   <td align="left"  csk="DET.195101060MTL"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195101060MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101060TOR">Sat, Jan 6, 1951</td>
+   <td align="left"  csk="NYR.195101060TOR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.195101060TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101070DET">Sun, Jan 7, 1951</td>
+   <td align="left"  csk="BOS.195101070DET"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.195101070DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101070NYR">Sun, Jan 7, 1951</td>
+   <td align="left"  csk="CBH.195101070NYR"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195101070NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101090CBH">Tue, Jan 9, 1951</td>
+   <td align="left"  csk="BOS.195101090CBH"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="CBH.195101090CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101090DET">Tue, Jan 9, 1951</td>
+   <td align="left"  csk="TOR.195101090DET"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.195101090DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101100NYR">Wed, Jan 10, 1951</td>
+   <td align="left"  csk="MTL.195101100NYR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.195101100NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101110MTL">Thu, Jan 11, 1951</td>
+   <td align="left"  csk="CBH.195101110MTL"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195101110MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101130DET">Sat, Jan 13, 1951</td>
+   <td align="left"  csk="NYR.195101130DET"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195101130DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101130MTL">Sat, Jan 13, 1951</td>
+   <td align="left"  csk="BOS.195101130MTL"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.195101130MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101130TOR">Sat, Jan 13, 1951</td>
+   <td align="left"  csk="CBH.195101130TOR"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195101130TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101140BOS">Sun, Jan 14, 1951</td>
+   <td align="left"  csk="CBH.195101140BOS"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195101140BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101140DET">Sun, Jan 14, 1951</td>
+   <td align="left"  csk="MTL.195101140DET"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195101140DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101140NYR">Sun, Jan 14, 1951</td>
+   <td align="left"  csk="TOR.195101140NYR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.195101140NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101170CBH">Wed, Jan 17, 1951</td>
+   <td align="left"  csk="DET.195101170CBH"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.195101170CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101170NYR">Wed, Jan 17, 1951</td>
+   <td align="left"  csk="BOS.195101170NYR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.195101170NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101180DET">Thu, Jan 18, 1951</td>
+   <td align="left"  csk="CBH.195101180DET"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195101180DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101180MTL">Thu, Jan 18, 1951</td>
+   <td align="left"  csk="TOR.195101180MTL"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="MTL.195101180MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101200MTL">Sat, Jan 20, 1951</td>
+   <td align="left"  csk="NYR.195101200MTL"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195101200MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101200TOR">Sat, Jan 20, 1951</td>
+   <td align="left"  csk="BOS.195101200TOR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.195101200TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101210BOS">Sun, Jan 21, 1951</td>
+   <td align="left"  csk="NYR.195101210BOS"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195101210BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101210CBH">Sun, Jan 21, 1951</td>
+   <td align="left"  csk="MTL.195101210CBH"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195101210CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101210DET">Sun, Jan 21, 1951</td>
+   <td align="left"  csk="TOR.195101210DET"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.195101210DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101230CBH">Tue, Jan 23, 1951</td>
+   <td align="left"  csk="DET.195101230CBH"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >8</td>
+   <td align="left"  csk="CBH.195101230CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101240TOR">Wed, Jan 24, 1951</td>
+   <td align="left"  csk="MTL.195101240TOR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195101240TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101250CBH">Thu, Jan 25, 1951</td>
+   <td align="left"  csk="NYR.195101250CBH"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.195101250CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101250DET">Thu, Jan 25, 1951</td>
+   <td align="left"  csk="BOS.195101250DET"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.195101250DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101270BOS">Sat, Jan 27, 1951</td>
+   <td align="left"  csk="DET.195101270BOS"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.195101270BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101270MTL">Sat, Jan 27, 1951</td>
+   <td align="left"  csk="CBH.195101270MTL"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195101270MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101270TOR">Sat, Jan 27, 1951</td>
+   <td align="left"  csk="NYR.195101270TOR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.195101270TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101280BOS">Sun, Jan 28, 1951</td>
+   <td align="left"  csk="MTL.195101280BOS"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195101280BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101280CBH">Sun, Jan 28, 1951</td>
+   <td align="left"  csk="TOR.195101280CBH"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.195101280CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195101280NYR">Sun, Jan 28, 1951</td>
+   <td align="left"  csk="DET.195101280NYR"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.195101280NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102010CBH">Thu, Feb 1, 1951</td>
+   <td align="left"  csk="BOS.195102010CBH"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.195102010CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102010DET">Thu, Feb 1, 1951</td>
+   <td align="left"  csk="NYR.195102010DET"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195102010DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102010MTL">Thu, Feb 1, 1951</td>
+   <td align="left"  csk="TOR.195102010MTL"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.195102010MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102030MTL">Sat, Feb 3, 1951</td>
+   <td align="left"  csk="BOS.195102030MTL"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195102030MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102030TOR">Sat, Feb 3, 1951</td>
+   <td align="left"  csk="CBH.195102030TOR"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195102030TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102040BOS">Sun, Feb 4, 1951</td>
+   <td align="left"  csk="TOR.195102040BOS"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.195102040BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102040CBH">Sun, Feb 4, 1951</td>
+   <td align="left"  csk="NYR.195102040CBH"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.195102040CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102040DET">Sun, Feb 4, 1951</td>
+   <td align="left"  csk="MTL.195102040DET"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.195102040DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102070BOS">Wed, Feb 7, 1951</td>
+   <td align="left"  csk="NYR.195102070BOS"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195102070BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102070DET">Wed, Feb 7, 1951</td>
+   <td align="left"  csk="CBH.195102070DET"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.195102070DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >11</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102070TOR">Wed, Feb 7, 1951</td>
+   <td align="left"  csk="MTL.195102070TOR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.195102070TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102080CBH">Thu, Feb 8, 1951</td>
+   <td align="left"  csk="DET.195102080CBH"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.195102080CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102100BOS">Sat, Feb 10, 1951</td>
+   <td align="left"  csk="MTL.195102100BOS"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.195102100BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102100TOR">Sat, Feb 10, 1951</td>
+   <td align="left"  csk="DET.195102100TOR"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195102100TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102110BOS">Sun, Feb 11, 1951</td>
+   <td align="left"  csk="DET.195102110BOS"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195102110BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102110CBH">Sun, Feb 11, 1951</td>
+   <td align="left"  csk="TOR.195102110CBH"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="CBH.195102110CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102110NYR">Sun, Feb 11, 1951</td>
+   <td align="left"  csk="MTL.195102110NYR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.195102110NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102140NYR">Wed, Feb 14, 1951</td>
+   <td align="left"  csk="CBH.195102140NYR"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.195102140NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102150CBH">Thu, Feb 15, 1951</td>
+   <td align="left"  csk="NYR.195102150CBH"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="CBH.195102150CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102150MTL">Thu, Feb 15, 1951</td>
+   <td align="left"  csk="TOR.195102150MTL"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195102150MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102170MTL">Sat, Feb 17, 1951</td>
+   <td align="left"  csk="DET.195102170MTL"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195102170MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102170TOR">Sat, Feb 17, 1951</td>
+   <td align="left"  csk="NYR.195102170TOR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.195102170TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102180CBH">Sun, Feb 18, 1951</td>
+   <td align="left"  csk="BOS.195102180CBH"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="CBH.195102180CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102180NYR">Sun, Feb 18, 1951</td>
+   <td align="left"  csk="TOR.195102180NYR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="NYR.195102180NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102190DET">Mon, Feb 19, 1951</td>
+   <td align="left"  csk="BOS.195102190DET"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195102190DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102210NYR">Wed, Feb 21, 1951</td>
+   <td align="left"  csk="BOS.195102210NYR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195102210NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102210TOR">Wed, Feb 21, 1951</td>
+   <td align="left"  csk="DET.195102210TOR"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195102210TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102220CBH">Thu, Feb 22, 1951</td>
+   <td align="left"  csk="MTL.195102220CBH"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.195102220CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102240MTL">Sat, Feb 24, 1951</td>
+   <td align="left"  csk="NYR.195102240MTL"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195102240MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102240TOR">Sat, Feb 24, 1951</td>
+   <td align="left"  csk="BOS.195102240TOR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195102240TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102250CBH">Sun, Feb 25, 1951</td>
+   <td align="left"  csk="BOS.195102250CBH"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.195102250CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102250NYR">Sun, Feb 25, 1951</td>
+   <td align="left"  csk="DET.195102250NYR"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195102250NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195102280BOS">Wed, Feb 28, 1951</td>
+   <td align="left"  csk="DET.195102280BOS"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195102280BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103010CBH">Thu, Mar 1, 1951</td>
+   <td align="left"  csk="NYR.195103010CBH"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.195103010CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103010MTL">Thu, Mar 1, 1951</td>
+   <td align="left"  csk="TOR.195103010MTL"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195103010MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103030BOS">Sat, Mar 3, 1951</td>
+   <td align="left"  csk="NYR.195103030BOS"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.195103030BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103030MTL">Sat, Mar 3, 1951</td>
+   <td align="left"  csk="DET.195103030MTL"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.195103030MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103030TOR">Sat, Mar 3, 1951</td>
+   <td align="left"  csk="CBH.195103030TOR"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.195103030TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103040BOS">Sun, Mar 4, 1951</td>
+   <td align="left"  csk="CBH.195103040BOS"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195103040BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >10</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103040NYR">Sun, Mar 4, 1951</td>
+   <td align="left"  csk="MTL.195103040NYR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195103040NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103050DET">Mon, Mar 5, 1951</td>
+   <td align="left"  csk="TOR.195103050DET"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195103050DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103070BOS">Wed, Mar 7, 1951</td>
+   <td align="left"  csk="MTL.195103070BOS"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.195103070BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103070NYR">Wed, Mar 7, 1951</td>
+   <td align="left"  csk="CBH.195103070NYR"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.195103070NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103070TOR">Wed, Mar 7, 1951</td>
+   <td align="left"  csk="DET.195103070TOR"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195103070TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103100DET">Sat, Mar 10, 1951</td>
+   <td align="left"  csk="NYR.195103100DET"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195103100DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103100MTL">Sat, Mar 10, 1951</td>
+   <td align="left"  csk="CBH.195103100MTL"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195103100MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >12</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103100TOR">Sat, Mar 10, 1951</td>
+   <td align="left"  csk="BOS.195103100TOR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195103100TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103110BOS">Sun, Mar 11, 1951</td>
+   <td align="left"  csk="TOR.195103110BOS"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195103110BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103110CBH">Sun, Mar 11, 1951</td>
+   <td align="left"  csk="DET.195103110CBH"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="CBH.195103110CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103110NYR">Sun, Mar 11, 1951</td>
+   <td align="left"  csk="MTL.195103110NYR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="NYR.195103110NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103140NYR">Wed, Mar 14, 1951</td>
+   <td align="left"  csk="TOR.195103140NYR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.195103140NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103150CBH">Thu, Mar 15, 1951</td>
+   <td align="left"  csk="TOR.195103150CBH"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="CBH.195103150CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103150DET">Thu, Mar 15, 1951</td>
+   <td align="left"  csk="BOS.195103150DET"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.195103150DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103150MTL">Thu, Mar 15, 1951</td>
+   <td align="left"  csk="NYR.195103150MTL"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.195103150MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103170DET">Sat, Mar 17, 1951</td>
+   <td align="left"  csk="CBH.195103170DET"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.195103170DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103170MTL">Sat, Mar 17, 1951</td>
+   <td align="left"  csk="BOS.195103170MTL"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.195103170MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103170TOR">Sat, Mar 17, 1951</td>
+   <td align="left"  csk="NYR.195103170TOR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.195103170TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103180BOS">Sun, Mar 18, 1951</td>
+   <td align="left"  csk="MTL.195103180BOS"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.195103180BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103180CBH">Sun, Mar 18, 1951</td>
+   <td align="left"  csk="DET.195103180CBH"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.195103180CBH"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103180NYR">Sun, Mar 18, 1951</td>
+   <td align="left"  csk="TOR.195103180NYR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.195103180NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103210BOS">Wed, Mar 21, 1951</td>
+   <td align="left"  csk="CBH.195103210BOS"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="BOS.195103210BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103210NYR">Wed, Mar 21, 1951</td>
+   <td align="left"  csk="DET.195103210NYR"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.195103210NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103210TOR">Wed, Mar 21, 1951</td>
+   <td align="left"  csk="MTL.195103210TOR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.195103210TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103240MTL">Sat, Mar 24, 1951</td>
+   <td align="left"  csk="DET.195103240MTL"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195103240MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103240TOR">Sat, Mar 24, 1951</td>
+   <td align="left"  csk="BOS.195103240TOR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.195103240TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103250BOS">Sun, Mar 25, 1951</td>
+   <td align="left"  csk="TOR.195103250BOS"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.195103250BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103250DET">Sun, Mar 25, 1951</td>
+   <td align="left"  csk="MTL.195103250DET"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.195103250DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103250NYR">Sun, Mar 25, 1951</td>
+   <td align="left"  csk="CBH.195103250NYR"><a href="/teams/CBH/1951.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.195103250NYR"><a href="/teams/NYR/1951.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+</tbody>
+</table>
+</div><!-- div.table_container#div_xxxx -->
+<div class="table_heading">
+<h2 data-mobile-header="" style="">Playoffs</h2>
+<div class="table_heading_text"></div>
+</div>
+<div class="table_container" id="div_games_playoffs">
+<table class="sortable  stats_table" id="games_playoffs">
+<colgroup><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr class="">
+  <th align="left"  class="tooltip sort_default_asc" >Date</th>
+  <th align="left"  class="tooltip sort_default_asc" >Visitor</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="left"  class="tooltip sort_default_asc" >Home</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="center"  class="tooltip" ></th>
+  <th align="left"  class="tooltip sort_default_asc show_partial_when_sorting" >Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr  class="">
+   <td align="left"  csk="195103270DET">Tue, Mar 27, 1951</td>
+   <td align="left"  csk="MTL.195103270DET"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.195103270DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="4">4OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103280TOR">Wed, Mar 28, 1951</td>
+   <td align="left"  csk="BOS.195103280TOR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195103280TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103290DET">Thu, Mar 29, 1951</td>
+   <td align="left"  csk="MTL.195103290DET"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.195103290DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="3">3OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103310MTL">Sat, Mar 31, 1951</td>
+   <td align="left"  csk="DET.195103310MTL"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195103310MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195103310TOR">Sat, Mar 31, 1951</td>
+   <td align="left"  csk="BOS.195103310TOR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.195103310TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" >Game called due to local curfew law</td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195104010BOS">Sun, Apr 1, 1951</td>
+   <td align="left"  csk="TOR.195104010BOS"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.195104010BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195104030BOS">Tue, Apr 3, 1951</td>
+   <td align="left"  csk="TOR.195104030BOS"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.195104030BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195104030MTL">Tue, Apr 3, 1951</td>
+   <td align="left"  csk="DET.195104030MTL"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.195104030MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195104050DET">Thu, Apr 5, 1951</td>
+   <td align="left"  csk="MTL.195104050DET"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="DET.195104050DET"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195104070MTL">Sat, Apr 7, 1951</td>
+   <td align="left"  csk="DET.195104070MTL"><a href="/teams/DET/1951.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195104070MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195104070TOR">Sat, Apr 7, 1951</td>
+   <td align="left"  csk="BOS.195104070TOR"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.195104070TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195104080BOS">Sun, Apr 8, 1951</td>
+   <td align="left"  csk="TOR.195104080BOS"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="BOS.195104080BOS"><a href="/teams/BOS/1951.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195104110TOR">Wed, Apr 11, 1951</td>
+   <td align="left"  csk="MTL.195104110TOR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195104110TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195104140TOR">Sat, Apr 14, 1951</td>
+   <td align="left"  csk="MTL.195104140TOR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.195104140TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195104170MTL">Tue, Apr 17, 1951</td>
+   <td align="left"  csk="TOR.195104170MTL"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.195104170MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195104190MTL">Thu, Apr 19, 1951</td>
+   <td align="left"  csk="TOR.195104190MTL"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.195104190MTL"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="195104210TOR">Sat, Apr 21, 1951</td>
+   <td align="left"  csk="MTL.195104210TOR"><a href="/teams/MTL/1951.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.195104210TOR"><a href="/teams/TOR/1951.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+</tbody>
+</table>
+</div><!-- div.table_container#div_xxxx -->
+</div>
+<div id="sr_js"></div>
+<script type="text/javascript">
+(function () {
+    var sr_js_file = 'http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr-hr-min.js';
+    if (sr_gzipEnabled) {
+       sr_js_file = 'http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr-hr-min.js.jgz';
+    }
+    var sr_script_tag = document.getElementById("sr_js");         
+    if (sr_script_tag) {
+	var scriptStyles = document.createElement("script");
+	scriptStyles.type = "text/javascript";
+	scriptStyles.src = sr_js_file;
+	sr_script_tag.appendChild(scriptStyles);
+	//alert('adding js to footer:'+sr_js_file);
+    }
+}());
+</script>
+
+<div id="site_footer">
+<div class="margin border">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5319453360923253";
+/* Page Bottom - HR */
+google_ad_slot = "1698819814";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<div id="sr_footer">
+Copyright &copy; 2000-2013 <a href="http://www.sports-reference.com">Sports
+Reference LLC</a>. All rights reserved.
+
+<form class="inline margin_left" method="get" name="f_footer" action="/player_search.cgi" style="margin-left:5em;">
+<input x-webkit-speech type="text" id="search_footer" name="search" class="search long"> 
+<input type="submit" value="Search" class="submit">
+</form>
+
+<div class="margin_top">Tools: <a href="/linker/">Automatic Player
+Linker</a>&nbsp;|&nbsp;<a href="/friv/linkify.cgi">Basic Player
+Linker</a></div>
+  
+<div class="blockquote italic_text clear_both margin_top">
+Most historical data provided by <a 
+href="http://www.nhlofficialguide.com/">Dan Diamond and Associates</a>. 
+Current season data provided by <a href="http://www.xmlteam.com">XML Team 
+Solutions</a>.<br>
+Other data sources include the <a
+href="http://groups.yahoo.com/group/hockey_summary_project">Hockey Summary
+Project</a> and <a
+href="http://groups.yahoo.com/group/hockey-databank/">Hockey Databank</a>.
+</div>
+
+<div class="blockquote clear_both margin_top">
+<a href="http://www.sports-reference.com/">A Sports Reference Site</a>:
+<a href="/about/">About HR</a>&nbsp;|
+<a href="/feedback/">Found a bug or have a suggestion?</a><br>
+<a href="http://www.sports-reference.com/privacy.shtml">Privacy Statement</a>&nbsp;|
+<a href="http://www.sports-reference.com/termsofuse.shtml">Conditions &amp; Terms of Service</a> | 
+<a href="http://www.sports-reference.com/data_use.shtml">Use of Data</a>
+</div>
+
+<div class="blockquote clear_both margin_bottom margin_top">
+<a target="_blank" title="USA TODAY Sports" href="http://Sports.USATODAY.com/"><img src="http://d2ft4b0ve1aur1.cloudfront.net/images-252/USATSdp.png" width="193" height="41" border="0"  style="width:193px;height:41px;vertical-align:middle"></a>
+Partner of <a target="_blank" title="USA TODAY Sports" href="http://Sports.USATODAY.com/">USA TODAY Sports Digital Properties</a>.
+</div>
+
+</div><!-- div#sr_footer -->
+</div><!-- div#site_footer -->
+
+<script type="text/javascript"> 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+   var pageTracker = _gat._createTracker("UA-1890630-5");
+   pageTracker._trackPageview();
+   pageTracker._trackPageLoadTime();
+   var sr_tracker = _gat._createTracker("UA-1890630-9");
+   sr_tracker._setDomainName('none'); 
+   sr_tracker._setAllowLinker(true); 
+   sr_tracker._setAllowHash(false);
+   sr_tracker._setCustomVar(1,"site","hr",3);
+   sr_tracker._trackPageview();
+} catch(err) {}</script>
+        
+<!-- Begin comScore Tag -->
+<script type="text/deferscript">
+    document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js' %3E%3C/script%3E"));
+</script>
+
+<script type="text/deferscript">
+  COMSCORE.beacon({
+    c1:2,
+    c2:"6035210",
+    c3:"",
+    c4:"www.hockey-reference.com",
+    c5:"",
+    c6:"",
+    c15:""
+  });
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/b?c1=2&amp;c2=6035210&amp;c3=&amp;c4=www.baseball-reference.com&amp;c5=&amp;c6=&amp;c15=&amp;cv=1.3&amp;cj=1" width="0" height="0" alt="" />
+</noscript>
+<!-- End comScore Tag -->
+
+<!-- google +1 code -->
+<script type="text/deferscript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<!-- facebook code -->
+<script type="text/deferscript">
+     window.fbAsyncInit = function() {
+        FB.init({appId: '212945115395487', status: true, cookie: true,
+                 xfbml: true, channelUrl  : 'http://www.hockey-reference.com/channel.html'});
+      };
+      (function() {
+        var fb_root = document.getElementById('fb-root');
+        if (fb_root) {
+           var e = document.createElement('script');
+           e.type = 'text/javascript';
+           e.src = document.location.protocol +
+              '//connect.facebook.net/en_US/all.js';
+           e.async = true;
+           fb_root.appendChild(e);
+        }
+      }());
+</script>
+
+
+</div><!-- div#Page container -->
+</body>
+</html>

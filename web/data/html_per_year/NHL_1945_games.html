@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/website" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" lang="en">
+ <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script>
+/*
+ * JS Redirection Mobile
+ *
+ * Developed by
+ * Sebastiano Armeli-Battana (@sebarmeli) - http://www.sebastianoarmelibattana.com
+ * Release under the MIT licence
+ */
+ if(!window.SA){window.SA={}}SA.redirection_mobile=function(d){var b=function(k){var j=new Date();j.setTime(j.getTime()+k);return j};var i=function(o){if(!o){return}var j=document.location.search,p=j&&j.substring(1).split("&"),l=0,n=p.length;for(;l<n;l++){var k=p[l],m=k&&k.substring(0,k.indexOf("="));if(m===o){return k.substring(k.indexOf("=")+1,k.length)}}};var f=navigator.userAgent.toLowerCase(),h="false",g="true",d=d||{},redirection_param=d.redirection_paramName||"mobile",redirection_param_long=d.redirection_paramName_long||"mobile_long",mobile_prefix=d.mobile_prefix||"m",mobile_url=d.mobile_url,mobile_protocol=d.mobile_scheme?d.mobile_scheme+":":document.location.protocol,host=document.location.host,queryValue=i(redirection_param),queryValue_long=i(redirection_param_long),mobile_host=mobile_url||(mobile_prefix+"."+(!!host.match(/^www./i)?host.substring(4):host)),cookie_hours=d.cookie_hours||1,isUAMobile=false;
+
+if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(f)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(f.substr(0,4))) { isUAMobile = true; }
+
+if(queryValue_long===h){if(window.localStorage){window.localStorage.setItem(redirection_param_long,h)}else{document.cookie=redirection_param+"="+h+";expires="+b(3600*1000*cookie_hours*7*24*31).toUTCString()}}else{if((queryValue_long===g)||(queryValue===g)){if(window.localStorage){window.localStorage.setItem(redirection_param_long,g)}else{document.cookie=redirection_param+"="+h+";expires="+b(-3600*1000*cookie_hours*7*24*31).toUTCString()}if(window.localStorage){window.sessionStorage.setItem(redirection_param,g)}else{document.cookie=redirection_param+"="+h+";expires="+b(-3600*1000*cookie_hours*7*24*31).toUTCString()}}else{if(document.referrer.indexOf(mobile_host)>=0||queryValue===h){if(window.sessionStorage){window.sessionStorage.setItem(redirection_param,h)}else{document.cookie=redirection_param+"="+h+";expires="+b(3600*1000*cookie_hours).toUTCString()}}}}var a=(window.sessionStorage)?(window.sessionStorage.getItem(redirection_param)===h):false,e=(window.localStorage)?(window.localStorage.getItem(redirection_param_long)===h):false,c=document.cookie?(document.cookie.indexOf(redirection_param)>=0):false;if(isUAMobile&&!(c||a||e)){document.location.href=mobile_protocol+"//"+mobile_host}};
+
+SA.redirection_mobile({mobile_url:"m.hkref.com/m?p=XXleaguesXXNHL_1945_games.html",redirection_paramName:"mobile",redirection_paramName_long:"mobile_long",cookie_hours:6});
+</script> 
+
+<!-- CRITEO -->
+<script type="text/javascript"> 
+var crtg_nid="1631"; 
+var crtg_cookiename="cto_usatd"; 
+function crtg_getCookie(c_name){var i,x,y,ARRcookies=document.cookie.split(";");for(i=0;i<ARRcookies.length;i++){x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);x=x.replace(/^\s+|\s+$/g,"");if(x==c_name){return unescape(y);}}return'';} var crtg_content=crtg_getCookie(crtg_cookiename);var crtg_rnd=Math.floor(Math.random()*99999999999);var crtg_url='http://rtax.criteo.com/delivery/rta/rta.js?netId='+escape(crtg_nid);crtg_url+='&cookieName='+escape(crtg_cookiename);crtg_url+='&rnd='+crtg_rnd;crtg_url+='&varName=crtg_content';var crtg_script=document.createElement('script');crtg_script.type='text/javascript';crtg_script.src=crtg_url;crtg_script.async=true;if(document.getElementsByTagName("head").length>0)document.getElementsByTagName("head")[0].appendChild(crtg_script);else if(document.getElementsByTagName("body").length>0)document.getElementsByTagName("body")[0].appendChild(crtg_script); 
+var crtg_ap=new Array();var crtg_cp=(crtg_content!=null&&crtg_content.length>0)?crtg_content.split(';'):null;if(crtg_cp){for(var crtg_kidx in crtg_cp){if(crtg_cp[crtg_kidx].length>0){var crtg_apa=crtg_cp[crtg_kidx].split('=');if(crtg_apa[1]==1){crtg_ap.push(crtg_apa[0].replace(/usatd/,''))}}}}
+</script>
+<!--  SYNCHRONOUS:googletag -->
+<script type="text/deferscript">
+  (function() {
+    var useSSL = 'https:' == document.location.protocol;
+    var src = (useSSL ? 'https:' : 'http:') +       '//www.googletagservices.com/tag/js/gpt.js';
+    document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+  })();
+</script>
+<script type="text/deferscript">
+googletag.pubads().enableSyncRendering();
+googletag.pubads().setTargeting("usatcriteo",crtg_ap);
+</script>
+
+<title>1944-45 NHL Season Schedule and Results | Hockey-Reference.com</title>
+<script type="text/javascript">var sr_gzipEnabled = false;</script>
+<script type="text/javascript" src="http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr.gzipcheck.js.jgz"></script>
+
+<noscript>
+  <link type="text/css" rel="stylesheet" href="http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min.css">
+</noscript>
+<script type="text/javascript">
+(function () {
+    var sr_css_file = 'http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min.css';
+    if (sr_gzipEnabled) {
+       sr_css_file = 'http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min-gz.css';
+    }
+    var head = document.getElementsByTagName("head")[0];
+    if (head) {
+	var scriptStyles = document.createElement("link");
+	scriptStyles.rel = "stylesheet";
+	scriptStyles.type = "text/css";
+	scriptStyles.href = sr_css_file;
+	head.appendChild(scriptStyles);
+	//alert('adding css to header:'+sr_css_file);
+    }
+}());
+</script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="nhl, wha, hockey, stats, statistics, history, 1944-45, schedule, results, games, scores">
+<meta property="fb:admins" content="1016660168">
+<meta property="fb:page_id" content="145429948844751">
+<meta property="og:site_name"  content="Hockey-Reference.com"> 
+<meta property="og:image"      content="http://d2ft4b0ve1aur1.cloudfront.net/images-241/Hockey-Ref.png"> 
+
+<link rel="icon"          type="image/vnd.microsoft.icon" href="http://d2ft4b0ve1aur1.cloudfront.net/images-290/favicon-hr.ico">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://d2ft4b0ve1aur1.cloudfront.net/images-290/favicon-hr.ico">
+<link rel="search"        type="application/opensearchdescription+xml" href="http://d2ft4b0ve1aur1.cloudfront.net/os-290/opensearch-hr.xml" title="Hockey-Ref Search">
+<!--[if lte IE 7 ]>
+<style type="text/css">
+.uni_holder { display: none; }
+</style>
+<![endif]-->
+<!--[if lte IE 6]>
+<style type="text/css">
+.hovermenu,.hovermenu_ajax,.sub_index,#quick_index {display:none!important}
+</style>
+<![endif]-->
+</head>
+
+<body onload="">
+
+<div id="page_container">
+
+<div id="top_nav">
+
+<div id="site_header">
+ <div id="sr_header">
+  <div class="float_right">
+    <a href="http://www.sports-reference.com">S-R</a>:
+    <a href="http://www.baseball-reference.com">MLB</a> | 
+    <a href="http://www.basketball-reference.com">NBA</a> &#183;
+    <a href="http://www.sports-reference.com/cbb/">CBB</a> |
+    <a href="http://www.pro-football-reference.com">NFL</a> &#183;
+    <a href="http://www.sports-reference.com/cfb/">CFB</a> |
+    <strong>NHL</strong> |
+    <a href="http://www.sports-reference.com/olympics/">Oly</a> |
+    <a href="http://www.sports-reference.com/blog/">Blog</a>
+    <br>
+  </div>
+  
+  <div class="clearfix padding_top_half float_right clear_both">
+    <div class="padding_left_half float_right"><a class="sprite-twitter" title="Follow us on Twitter" href="http://twitter.com/hockey_ref"></a><a class="sprite-facebook" title="Become a Fan on FaceBook" href="http://www.facebook.com/Hockey.Reference"></a>
+    </div>
+    <div class="float_right">
+       <form method="get" id="f" name="f" action="/player_search.cgi">
+         <input x-webkit-speech type="search" placeholder="click 'Tips' for shortcuts" id="search" name="search" class="search long"> 
+         <input type="submit" value="Search" class="submit">
+         <a class="padding_left_half small_text" href="/about/findstuff.shtml">Tips</a>
+       </form>
+    </div>
+  </div>
+  </div><!-- div#sr_header -->
+  <div class="float_left padding_bottom_half"><a href="/"><img src="http://d2ft4b0ve1aur1.cloudfront.net/images-265/Hockey-Ref.png" width=373 height=73 border="0" alt="Hockey-Reference.com"></a></div>
+ </div><!-- div#site_header -->
+
+
+
+<div id="quick_index">
+<ul class="hovermenu_ajax navbar">
+<li class=""><a href="/play-index/">play index</a><ul class="li_margin" id="header_playindex"></ul></li>
+ <li class=""><a href="/boxscores/">boxscores</a><ul class="li_margin" id="header_boxscores"></ul></li>
+ <li class=""><a href="/players/">players</a><ul class="li_margin" id="header_players"></ul></li>
+ <li class=""><a href="/teams/">teams</a><ul class="li_margin" id="header_teams"></ul></li>
+ <li class="active"><a href="/leagues/">seasons</a><ul class="li_margin" id="header_leagues"></ul></li>
+ <li class=""><a href="/coaches/">coaches</a><ul class="li_margin" id="header_coaches"></ul></li>
+ <li class=""><a href="/leaders/">leaders</a><ul class="li_margin" id="header_leaders"></ul></li>
+ <li class=""><a href="/awards/">awards</a><ul class="li_margin" id="header_awards"></ul></li>
+ <li class=""><a href="/playoffs/">playoffs</a><ul class="li_margin" id="header_playoffs"></ul></li>
+ <li class=""><a href="/draft/">draft</a><ul class="li_margin" id="header_draft"></ul></li>
+ <li class=""><a href="">more [+]</a><ul class="li_margin" id="header_more_links"></ul></li>
+
+</ul>
+</div>
+<div id="you_are_here">
+<p class="padding_left0"><a class="mobile_link" href="http://m.hkref.com/m?p=XXleaguesXXNHL_1945_games.html">Mobile Site</a> <span class="bold_text">You Are Here</span>&nbsp;&gt;&nbsp;<a href="/">HR</a>&nbsp;&gt;&nbsp;<a href="/leagues/">Leagues</a>&nbsp;&gt;&nbsp;<a href="/leagues/NHL_1945.html">1944-45 NHL</a>&nbsp;&gt;&nbsp;<strong>Season Schedule and Results</strong></p>
+</div>
+<div class="site_news"><p><span class="bold_text">News:</span> <span class="poptip" tip="With the NHL starting back up after the lockout, here's a reminder that we offer our familiar Play Index tools for hockey, too: Player Game FinderSearch through NHL regular season and playoff game logs spanning from 1987-88 to today for games that match your criteria. Player Season FinderSearch through NHL regular season statistics spanning from [...]">s-r blog:<a onClick="try { pageTracker._trackEvent('blog','click','area-yah'); } catch (err) {};"
+ href="http://www.sports-reference.com/blog/2013/01/hockey-reference-play-index/">Hockey-Reference Play Index</a> <span class="small_text"></span></span></p></div>
+
+</div>
+<div id="restofsite_launchpad" class="advertlaunchpad">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/launchpad/sports/hockey/general', [970,66] ,             'restofsite_launchpad').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_launchpad");
+</script>
+</div><!-- div.#restofsite_launchpad.advertlaunchpad -->
+
+<div id="info_box">
+<div id="restofsite_300x250_atf1" class="advert300x250">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/300x250_1a/sports/hockey/general', [[300,250],[300,600]] ,             'restofsite_300x250_atf1').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_300x250_atf1");
+</script>
+</div><!-- div.#restofsite_300x250_atf1.advert300x250 -->
+
+<h1>1944-45 NHL Season Schedule and Results</h1>
+<p><a href="/leagues/NHL_1944_games.html">Previous Season</a>&nbsp;&#9642;&nbsp;<a href="/leagues/NHL_1946_games.html">Next Season</a></p>
+<div class="margin_bottom no_mobile"><form class="sr_standard inline" name="pages" action="">
+<strong>Navigation:</strong>
+<select name="hr_pages" onchange="sr_goto_page('hr_pages','',this.form);">
+<option value="" disabled >Select Page
+<option value="/leagues/NHL_1945.html" >Summary
+<option value="/leagues/NHL_1945_standings.html" >Standings
+<option value="/leagues/NHL_1945_leaders.html" >Leaders
+<option value="/leagues/NHL_1945_games.html" selected>Schedule and Results
+<option value="/leagues/NHL_1945_skaters.html" >Skater Statistics
+<option value="/leagues/NHL_1945_goalies.html" >Goalie Statistics
+<option value="/leagues/NHL_1945_numbers.html" >Sweater Numbers
+<option value="/leagues/NHL_1945_debut.html" >Debuts
+<option value="/leagues/NHL_1945_final.html" >Final Season
+</select>
+</form>
+</div>
+<p><strong>League Champion:</strong> <a href="/teams/TOR/1945.html">Toronto Maple Leafs</a>
+<p><strong>Hart Memorial Trophy:</strong> <a href="/players/l/lachel01.html">Elmer Lach</a> (26 G, 54 A, 80 P)<br><strong>Vezina Trophy:</strong> <a href="/players/d/durnabi01.html">Bill Durnan</a> (38-8-4, 2.42 GAA)<br><strong>Calder Memorial Trophy:</strong> <a href="/players/m/mccoofr01.html">Frank McCool</a> (24-22-4, 3.22 GAA)<br><p><strong>Goals Leader:</strong> <a href="/players/r/richama01.html">Maurice Richard</a> (50)<br><strong>Assists Leader:</strong> <a href="/players/l/lachel01.html">Elmer Lach</a> (54)<br><strong>Points Leader:</strong> <a href="/players/l/lachel01.html">Elmer Lach</a> (80)<br></div>
+<div id="restofsite_728x90_atf1" class="advert728x90">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/728x90_1a/sports/hockey/general', [728,90] ,             'restofsite_728x90_atf1').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_728x90_atf1");
+</script>
+</div><!-- div.#restofsite_728x90_atf1.advert728x90 -->
+
+<div id="page_content">
+<div class="table_heading">
+<h2 data-mobile-header="" style="">Regular Season</h2>
+<div class="table_heading_text"></div>
+</div>
+<div class="table_container" id="div_games">
+<table class="sortable  stats_table" id="games">
+<colgroup><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr class="">
+  <th align="left"  class="tooltip sort_default_asc" >Date</th>
+  <th align="left"  class="tooltip sort_default_asc" >Visitor</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="left"  class="tooltip sort_default_asc" >Home</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="center"  class="tooltip" ></th>
+  <th align="left"  class="tooltip sort_default_asc show_partial_when_sorting" >Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr  class="">
+   <td align="left"  csk="194410280MTL">Sat, Oct 28, 1944</td>
+   <td align="left"  csk="BOS.194410280MTL"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.194410280MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194410280TOR">Sat, Oct 28, 1944</td>
+   <td align="left"  csk="NYR.194410280TOR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.194410280TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194410290CBH">Sun, Oct 29, 1944</td>
+   <td align="left"  csk="TOR.194410290CBH"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >11</td>
+   <td align="left"  csk="CBH.194410290CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194410290DET">Sun, Oct 29, 1944</td>
+   <td align="left"  csk="BOS.194410290DET"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.194410290DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411010CBH">Wed, Nov 1, 1944</td>
+   <td align="left"  csk="NYR.194411010CBH"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.194411010CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411020DET">Thu, Nov 2, 1944</td>
+   <td align="left"  csk="NYR.194411020DET"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.194411020DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >10</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411020MTL">Thu, Nov 2, 1944</td>
+   <td align="left"  csk="TOR.194411020MTL"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.194411020MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411040MTL">Sat, Nov 4, 1944</td>
+   <td align="left"  csk="DET.194411040MTL"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.194411040MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411040TOR">Sat, Nov 4, 1944</td>
+   <td align="left"  csk="BOS.194411040TOR"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.194411040TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411050CBH">Sun, Nov 5, 1944</td>
+   <td align="left"  csk="BOS.194411050CBH"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="CBH.194411050CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411050DET">Sun, Nov 5, 1944</td>
+   <td align="left"  csk="MTL.194411050DET"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.194411050DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411090MTL">Thu, Nov 9, 1944</td>
+   <td align="left"  csk="CBH.194411090MTL"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.194411090MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >9</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411090NYR">Thu, Nov 9, 1944</td>
+   <td align="left"  csk="TOR.194411090NYR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="NYR.194411090NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411110NYR">Sat, Nov 11, 1944</td>
+   <td align="left"  csk="DET.194411110NYR"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.194411110NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411110TOR">Sat, Nov 11, 1944</td>
+   <td align="left"  csk="MTL.194411110TOR"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.194411110TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411120CBH">Sun, Nov 12, 1944</td>
+   <td align="left"  csk="MTL.194411120CBH"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.194411120CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411120DET">Sun, Nov 12, 1944</td>
+   <td align="left"  csk="TOR.194411120DET"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.194411120DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411120NYR">Sun, Nov 12, 1944</td>
+   <td align="left"  csk="BOS.194411120NYR"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="NYR.194411120NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411140BOS">Tue, Nov 14, 1944</td>
+   <td align="left"  csk="CBH.194411140BOS"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="BOS.194411140BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411150TOR">Wed, Nov 15, 1944</td>
+   <td align="left"  csk="DET.194411150TOR"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >8</td>
+   <td align="left"  csk="TOR.194411150TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411180MTL">Sat, Nov 18, 1944</td>
+   <td align="left"  csk="BOS.194411180MTL"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.194411180MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411180NYR">Sat, Nov 18, 1944</td>
+   <td align="left"  csk="DET.194411180NYR"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.194411180NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411180TOR">Sat, Nov 18, 1944</td>
+   <td align="left"  csk="CBH.194411180TOR"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.194411180TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411190CBH">Sun, Nov 19, 1944</td>
+   <td align="left"  csk="TOR.194411190CBH"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.194411190CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411190DET">Sun, Nov 19, 1944</td>
+   <td align="left"  csk="BOS.194411190DET"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.194411190DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411190NYR">Sun, Nov 19, 1944</td>
+   <td align="left"  csk="MTL.194411190NYR"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="NYR.194411190NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411210BOS">Tue, Nov 21, 1944</td>
+   <td align="left"  csk="MTL.194411210BOS"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.194411210BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411230BOS">Thu, Nov 23, 1944</td>
+   <td align="left"  csk="TOR.194411230BOS"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.194411230BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411230CBH">Thu, Nov 23, 1944</td>
+   <td align="left"  csk="NYR.194411230CBH"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.194411230CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411230DET">Thu, Nov 23, 1944</td>
+   <td align="left"  csk="MTL.194411230DET"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.194411230DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411250DET">Sat, Nov 25, 1944</td>
+   <td align="left"  csk="CBH.194411250DET"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.194411250DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411250TOR">Sat, Nov 25, 1944</td>
+   <td align="left"  csk="MTL.194411250TOR"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.194411250TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411260BOS">Sun, Nov 26, 1944</td>
+   <td align="left"  csk="NYR.194411260BOS"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.194411260BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411260CBH">Sun, Nov 26, 1944</td>
+   <td align="left"  csk="DET.194411260CBH"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="CBH.194411260CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411260MTL">Sun, Nov 26, 1944</td>
+   <td align="left"  csk="TOR.194411260MTL"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.194411260MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411290BOS">Wed, Nov 29, 1944</td>
+   <td align="left"  csk="DET.194411290BOS"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="BOS.194411290BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411300CBH">Thu, Nov 30, 1944</td>
+   <td align="left"  csk="BOS.194411300CBH"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="CBH.194411300CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194411300MTL">Thu, Nov 30, 1944</td>
+   <td align="left"  csk="NYR.194411300MTL"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="MTL.194411300MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412020TOR">Sat, Dec 2, 1944</td>
+   <td align="left"  csk="NYR.194412020TOR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.194412020TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412030BOS">Sun, Dec 3, 1944</td>
+   <td align="left"  csk="TOR.194412030BOS"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.194412030BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412030CBH">Sun, Dec 3, 1944</td>
+   <td align="left"  csk="MTL.194412030CBH"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.194412030CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412050BOS">Tue, Dec 5, 1944</td>
+   <td align="left"  csk="MTL.194412050BOS"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.194412050BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412070NYR">Thu, Dec 7, 1944</td>
+   <td align="left"  csk="DET.194412070NYR"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.194412070NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412090TOR">Sat, Dec 9, 1944</td>
+   <td align="left"  csk="BOS.194412090TOR"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="TOR.194412090TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412100DET">Sun, Dec 10, 1944</td>
+   <td align="left"  csk="BOS.194412100DET"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="DET.194412100DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412100NYR">Sun, Dec 10, 1944</td>
+   <td align="left"  csk="CBH.194412100NYR"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.194412100NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412120BOS">Tue, Dec 12, 1944</td>
+   <td align="left"  csk="NYR.194412120BOS"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="BOS.194412120BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412140MTL">Thu, Dec 14, 1944</td>
+   <td align="left"  csk="TOR.194412140MTL"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.194412140MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412160MTL">Sat, Dec 16, 1944</td>
+   <td align="left"  csk="BOS.194412160MTL"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="MTL.194412160MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412160TOR">Sat, Dec 16, 1944</td>
+   <td align="left"  csk="DET.194412160TOR"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.194412160TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412170CBH">Sun, Dec 17, 1944</td>
+   <td align="left"  csk="DET.194412170CBH"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.194412170CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412170NYR">Sun, Dec 17, 1944</td>
+   <td align="left"  csk="MTL.194412170NYR"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.194412170NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412190BOS">Tue, Dec 19, 1944</td>
+   <td align="left"  csk="DET.194412190BOS"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="BOS.194412190BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412200CBH">Wed, Dec 20, 1944</td>
+   <td align="left"  csk="NYR.194412200CBH"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.194412200CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412210DET">Thu, Dec 21, 1944</td>
+   <td align="left"  csk="NYR.194412210DET"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.194412210DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >11</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412230MTL">Sat, Dec 23, 1944</td>
+   <td align="left"  csk="CBH.194412230MTL"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.194412230MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412230TOR">Sat, Dec 23, 1944</td>
+   <td align="left"  csk="DET.194412230TOR"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="TOR.194412230TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412240NYR">Sun, Dec 24, 1944</td>
+   <td align="left"  csk="CBH.194412240NYR"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.194412240NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412250DET">Mon, Dec 25, 1944</td>
+   <td align="left"  csk="TOR.194412250DET"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.194412250DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412270NYR">Wed, Dec 27, 1944</td>
+   <td align="left"  csk="TOR.194412270NYR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >8</td>
+   <td align="left"  csk="NYR.194412270NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412280BOS">Thu, Dec 28, 1944</td>
+   <td align="left"  csk="CBH.194412280BOS"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.194412280BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412280MTL">Thu, Dec 28, 1944</td>
+   <td align="left"  csk="DET.194412280MTL"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.194412280MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >9</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412300MTL">Sat, Dec 30, 1944</td>
+   <td align="left"  csk="NYR.194412300MTL"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.194412300MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412300TOR">Sat, Dec 30, 1944</td>
+   <td align="left"  csk="CBH.194412300TOR"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.194412300TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412310DET">Sun, Dec 31, 1944</td>
+   <td align="left"  csk="CBH.194412310DET"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.194412310DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194412310NYR">Sun, Dec 31, 1944</td>
+   <td align="left"  csk="BOS.194412310NYR"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.194412310NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501010CBH">Mon, Jan 1, 1945</td>
+   <td align="left"  csk="DET.194501010CBH"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.194501010CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501020BOS">Tue, Jan 2, 1945</td>
+   <td align="left"  csk="MTL.194501020BOS"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="BOS.194501020BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501040NYR">Thu, Jan 4, 1945</td>
+   <td align="left"  csk="DET.194501040NYR"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.194501040NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501040TOR">Thu, Jan 4, 1945</td>
+   <td align="left"  csk="MTL.194501040TOR"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.194501040TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501060MTL">Sat, Jan 6, 1945</td>
+   <td align="left"  csk="CBH.194501060MTL"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.194501060MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >10</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501060TOR">Sat, Jan 6, 1945</td>
+   <td align="left"  csk="DET.194501060TOR"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="TOR.194501060TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501070DET">Sun, Jan 7, 1945</td>
+   <td align="left"  csk="BOS.194501070DET"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.194501070DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501070NYR">Sun, Jan 7, 1945</td>
+   <td align="left"  csk="CBH.194501070NYR"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYR.194501070NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501090TOR">Tue, Jan 9, 1945</td>
+   <td align="left"  csk="NYR.194501090TOR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="TOR.194501090TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501110MTL">Thu, Jan 11, 1945</td>
+   <td align="left"  csk="TOR.194501110MTL"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.194501110MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501110NYR">Thu, Jan 11, 1945</td>
+   <td align="left"  csk="BOS.194501110NYR"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.194501110NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501130MTL">Sat, Jan 13, 1945</td>
+   <td align="left"  csk="DET.194501130MTL"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.194501130MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501130TOR">Sat, Jan 13, 1945</td>
+   <td align="left"  csk="BOS.194501130TOR"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.194501130TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501140CBH">Sun, Jan 14, 1945</td>
+   <td align="left"  csk="BOS.194501140CBH"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.194501140CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501140DET">Sun, Jan 14, 1945</td>
+   <td align="left"  csk="TOR.194501140DET"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.194501140DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501140NYR">Sun, Jan 14, 1945</td>
+   <td align="left"  csk="MTL.194501140NYR"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="NYR.194501140NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501160BOS">Tue, Jan 16, 1945</td>
+   <td align="left"  csk="TOR.194501160BOS"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.194501160BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501170CBH">Wed, Jan 17, 1945</td>
+   <td align="left"  csk="MTL.194501170CBH"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.194501170CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501180DET">Thu, Jan 18, 1945</td>
+   <td align="left"  csk="NYR.194501180DET"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.194501180DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501200MTL">Sat, Jan 20, 1945</td>
+   <td align="left"  csk="NYR.194501200MTL"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.194501200MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501200TOR">Sat, Jan 20, 1945</td>
+   <td align="left"  csk="CBH.194501200TOR"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.194501200TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501210BOS">Sun, Jan 21, 1945</td>
+   <td align="left"  csk="NYR.194501210BOS"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.194501210BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >14</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501210CBH">Sun, Jan 21, 1945</td>
+   <td align="left"  csk="TOR.194501210CBH"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="CBH.194501210CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501210DET">Sun, Jan 21, 1945</td>
+   <td align="left"  csk="MTL.194501210DET"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="DET.194501210DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501230BOS">Tue, Jan 23, 1945</td>
+   <td align="left"  csk="DET.194501230BOS"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="BOS.194501230BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501240CBH">Wed, Jan 24, 1945</td>
+   <td align="left"  csk="NYR.194501240CBH"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.194501240CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501270DET">Sat, Jan 27, 1945</td>
+   <td align="left"  csk="CBH.194501270DET"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.194501270DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501270MTL">Sat, Jan 27, 1945</td>
+   <td align="left"  csk="BOS.194501270MTL"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.194501270MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >11</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501270TOR">Sat, Jan 27, 1945</td>
+   <td align="left"  csk="NYR.194501270TOR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.194501270TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501280BOS">Sun, Jan 28, 1945</td>
+   <td align="left"  csk="MTL.194501280BOS"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.194501280BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501280CBH">Sun, Jan 28, 1945</td>
+   <td align="left"  csk="DET.194501280CBH"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.194501280CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501280NYR">Sun, Jan 28, 1945</td>
+   <td align="left"  csk="TOR.194501280NYR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="NYR.194501280NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194501300BOS">Tue, Jan 30, 1945</td>
+   <td align="left"  csk="CBH.194501300BOS"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="BOS.194501300BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502010MTL">Thu, Feb 1, 1945</td>
+   <td align="left"  csk="CBH.194502010MTL"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.194502010MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502030MTL">Sat, Feb 3, 1945</td>
+   <td align="left"  csk="DET.194502030MTL"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.194502030MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502030TOR">Sat, Feb 3, 1945</td>
+   <td align="left"  csk="BOS.194502030TOR"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.194502030TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502040BOS">Sun, Feb 4, 1945</td>
+   <td align="left"  csk="NYR.194502040BOS"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.194502040BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502040CBH">Sun, Feb 4, 1945</td>
+   <td align="left"  csk="TOR.194502040CBH"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.194502040CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502040DET">Sun, Feb 4, 1945</td>
+   <td align="left"  csk="MTL.194502040DET"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.194502040DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502060BOS">Tue, Feb 6, 1945</td>
+   <td align="left"  csk="TOR.194502060BOS"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="BOS.194502060BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502080MTL">Thu, Feb 8, 1945</td>
+   <td align="left"  csk="NYR.194502080MTL"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.194502080MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >9</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502100MTL">Sat, Feb 10, 1945</td>
+   <td align="left"  csk="DET.194502100MTL"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.194502100MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502100TOR">Sat, Feb 10, 1945</td>
+   <td align="left"  csk="CBH.194502100TOR"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.194502100TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502110BOS">Sun, Feb 11, 1945</td>
+   <td align="left"  csk="DET.194502110BOS"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.194502110BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502110CBH">Sun, Feb 11, 1945</td>
+   <td align="left"  csk="TOR.194502110CBH"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.194502110CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502110NYR">Sun, Feb 11, 1945</td>
+   <td align="left"  csk="MTL.194502110NYR"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.194502110NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502130BOS">Tue, Feb 13, 1945</td>
+   <td align="left"  csk="CBH.194502130BOS"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.194502130BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502140DET">Wed, Feb 14, 1945</td>
+   <td align="left"  csk="NYR.194502140DET"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.194502140DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502150NYR">Thu, Feb 15, 1945</td>
+   <td align="left"  csk="CBH.194502150NYR"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.194502150NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502170BOS">Sat, Feb 17, 1945</td>
+   <td align="left"  csk="NYR.194502170BOS"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.194502170BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502170TOR">Sat, Feb 17, 1945</td>
+   <td align="left"  csk="MTL.194502170TOR"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.194502170TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502180CBH">Sun, Feb 18, 1945</td>
+   <td align="left"  csk="MTL.194502180CBH"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="CBH.194502180CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502180DET">Sun, Feb 18, 1945</td>
+   <td align="left"  csk="TOR.194502180DET"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.194502180DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502180NYR">Sun, Feb 18, 1945</td>
+   <td align="left"  csk="BOS.194502180NYR"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.194502180NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502210CBH">Wed, Feb 21, 1945</td>
+   <td align="left"  csk="BOS.194502210CBH"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="CBH.194502210CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502220NYR">Thu, Feb 22, 1945</td>
+   <td align="left"  csk="DET.194502220NYR"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.194502220NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502240DET">Sat, Feb 24, 1945</td>
+   <td align="left"  csk="CBH.194502240DET"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.194502240DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502240TOR">Sat, Feb 24, 1945</td>
+   <td align="left"  csk="NYR.194502240TOR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.194502240TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502250CBH">Sun, Feb 25, 1945</td>
+   <td align="left"  csk="DET.194502250CBH"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.194502250CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502250MTL">Sun, Feb 25, 1945</td>
+   <td align="left"  csk="TOR.194502250MTL"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.194502250MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502250NYR">Sun, Feb 25, 1945</td>
+   <td align="left"  csk="BOS.194502250NYR"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.194502250NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194502270TOR">Tue, Feb 27, 1945</td>
+   <td align="left"  csk="CBH.194502270TOR"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.194502270TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503010NYR">Thu, Mar 1, 1945</td>
+   <td align="left"  csk="CBH.194503010NYR"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="NYR.194503010NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503030TOR">Sat, Mar 3, 1945</td>
+   <td align="left"  csk="MTL.194503030TOR"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.194503030TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503040CBH">Sun, Mar 4, 1945</td>
+   <td align="left"  csk="MTL.194503040CBH"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.194503040CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503040DET">Sun, Mar 4, 1945</td>
+   <td align="left"  csk="BOS.194503040DET"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.194503040DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >10</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503040NYR">Sun, Mar 4, 1945</td>
+   <td align="left"  csk="TOR.194503040NYR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="NYR.194503040NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503060BOS">Tue, Mar 6, 1945</td>
+   <td align="left"  csk="TOR.194503060BOS"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="BOS.194503060BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503070CBH">Wed, Mar 7, 1945</td>
+   <td align="left"  csk="NYR.194503070CBH"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.194503070CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503080DET">Thu, Mar 8, 1945</td>
+   <td align="left"  csk="NYR.194503080DET"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.194503080DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503080MTL">Thu, Mar 8, 1945</td>
+   <td align="left"  csk="BOS.194503080MTL"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.194503080MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503100MTL">Sat, Mar 10, 1945</td>
+   <td align="left"  csk="NYR.194503100MTL"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.194503100MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503100TOR">Sat, Mar 10, 1945</td>
+   <td align="left"  csk="BOS.194503100TOR"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.194503100TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >9</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503110BOS">Sun, Mar 11, 1945</td>
+   <td align="left"  csk="CBH.194503110BOS"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.194503110BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503110DET">Sun, Mar 11, 1945</td>
+   <td align="left"  csk="TOR.194503110DET"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.194503110DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503110NYR">Sun, Mar 11, 1945</td>
+   <td align="left"  csk="MTL.194503110NYR"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >11</td>
+   <td align="left"  csk="NYR.194503110NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503130BOS">Tue, Mar 13, 1945</td>
+   <td align="left"  csk="DET.194503130BOS"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.194503130BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503150CBH">Thu, Mar 15, 1945</td>
+   <td align="left"  csk="BOS.194503150CBH"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="CBH.194503150CBH"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503150DET">Thu, Mar 15, 1945</td>
+   <td align="left"  csk="MTL.194503150DET"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.194503150DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503170MTL">Sat, Mar 17, 1945</td>
+   <td align="left"  csk="CBH.194503170MTL"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.194503170MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503170TOR">Sat, Mar 17, 1945</td>
+   <td align="left"  csk="DET.194503170TOR"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.194503170TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503180BOS">Sun, Mar 18, 1945</td>
+   <td align="left"  csk="MTL.194503180BOS"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.194503180BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503180DET">Sun, Mar 18, 1945</td>
+   <td align="left"  csk="CBH.194503180DET"><a href="/teams/CBH/1945.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="DET.194503180DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503180NYR">Sun, Mar 18, 1945</td>
+   <td align="left"  csk="TOR.194503180NYR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="NYR.194503180NYR"><a href="/teams/NYR/1945.html">New York Rangers</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+</tbody>
+</table>
+</div><!-- div.table_container#div_xxxx -->
+<div class="table_heading">
+<h2 data-mobile-header="" style="">Playoffs</h2>
+<div class="table_heading_text"></div>
+</div>
+<div class="table_container" id="div_games_playoffs">
+<table class="sortable  stats_table" id="games_playoffs">
+<colgroup><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr class="">
+  <th align="left"  class="tooltip sort_default_asc" >Date</th>
+  <th align="left"  class="tooltip sort_default_asc" >Visitor</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="left"  class="tooltip sort_default_asc" >Home</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="center"  class="tooltip" ></th>
+  <th align="left"  class="tooltip sort_default_asc show_partial_when_sorting" >Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr  class="">
+   <td align="left"  csk="194503200DET">Tue, Mar 20, 1945</td>
+   <td align="left"  csk="BOS.194503200DET"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.194503200DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503200MTL">Tue, Mar 20, 1945</td>
+   <td align="left"  csk="TOR.194503200MTL"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.194503200MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503220DET">Thu, Mar 22, 1945</td>
+   <td align="left"  csk="BOS.194503220DET"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.194503220DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503220MTL">Thu, Mar 22, 1945</td>
+   <td align="left"  csk="TOR.194503220MTL"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.194503220MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503240TOR">Sat, Mar 24, 1945</td>
+   <td align="left"  csk="MTL.194503240TOR"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.194503240TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503250BOS">Sun, Mar 25, 1945</td>
+   <td align="left"  csk="DET.194503250BOS"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.194503250BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503270BOS">Tue, Mar 27, 1945</td>
+   <td align="left"  csk="DET.194503270BOS"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.194503270BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503270TOR">Tue, Mar 27, 1945</td>
+   <td align="left"  csk="MTL.194503270TOR"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.194503270TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503290DET">Thu, Mar 29, 1945</td>
+   <td align="left"  csk="BOS.194503290DET"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.194503290DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503290MTL">Thu, Mar 29, 1945</td>
+   <td align="left"  csk="TOR.194503290MTL"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.194503290MTL"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >10</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194503310TOR">Sat, Mar 31, 1945</td>
+   <td align="left"  csk="MTL.194503310TOR"><a href="/teams/MTL/1945.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.194503310TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194504010BOS">Sun, Apr 1, 1945</td>
+   <td align="left"  csk="DET.194504010BOS"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.194504010BOS"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194504030DET">Tue, Apr 3, 1945</td>
+   <td align="left"  csk="BOS.194504030DET"><a href="/teams/BOS/1945.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.194504030DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194504060DET">Fri, Apr 6, 1945</td>
+   <td align="left"  csk="TOR.194504060DET"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.194504060DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194504080DET">Sun, Apr 8, 1945</td>
+   <td align="left"  csk="TOR.194504080DET"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.194504080DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194504120TOR">Thu, Apr 12, 1945</td>
+   <td align="left"  csk="DET.194504120TOR"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.194504120TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194504140TOR">Sat, Apr 14, 1945</td>
+   <td align="left"  csk="DET.194504140TOR"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="TOR.194504140TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194504190DET">Thu, Apr 19, 1945</td>
+   <td align="left"  csk="TOR.194504190DET"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.194504190DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194504210TOR">Sat, Apr 21, 1945</td>
+   <td align="left"  csk="DET.194504210TOR"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.194504210TOR"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="194504220DET">Sun, Apr 22, 1945</td>
+   <td align="left"  csk="TOR.194504220DET"><a href="/teams/TOR/1945.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.194504220DET"><a href="/teams/DET/1945.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+</tbody>
+</table>
+</div><!-- div.table_container#div_xxxx -->
+</div>
+<div id="sr_js"></div>
+<script type="text/javascript">
+(function () {
+    var sr_js_file = 'http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr-hr-min.js';
+    if (sr_gzipEnabled) {
+       sr_js_file = 'http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr-hr-min.js.jgz';
+    }
+    var sr_script_tag = document.getElementById("sr_js");         
+    if (sr_script_tag) {
+	var scriptStyles = document.createElement("script");
+	scriptStyles.type = "text/javascript";
+	scriptStyles.src = sr_js_file;
+	sr_script_tag.appendChild(scriptStyles);
+	//alert('adding js to footer:'+sr_js_file);
+    }
+}());
+</script>
+
+<div id="site_footer">
+<div class="margin border">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5319453360923253";
+/* Page Bottom - HR */
+google_ad_slot = "1698819814";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<div id="sr_footer">
+Copyright &copy; 2000-2013 <a href="http://www.sports-reference.com">Sports
+Reference LLC</a>. All rights reserved.
+
+<form class="inline margin_left" method="get" name="f_footer" action="/player_search.cgi" style="margin-left:5em;">
+<input x-webkit-speech type="text" id="search_footer" name="search" class="search long"> 
+<input type="submit" value="Search" class="submit">
+</form>
+
+<div class="margin_top">Tools: <a href="/linker/">Automatic Player
+Linker</a>&nbsp;|&nbsp;<a href="/friv/linkify.cgi">Basic Player
+Linker</a></div>
+  
+<div class="blockquote italic_text clear_both margin_top">
+Most historical data provided by <a 
+href="http://www.nhlofficialguide.com/">Dan Diamond and Associates</a>. 
+Current season data provided by <a href="http://www.xmlteam.com">XML Team 
+Solutions</a>.<br>
+Other data sources include the <a
+href="http://groups.yahoo.com/group/hockey_summary_project">Hockey Summary
+Project</a> and <a
+href="http://groups.yahoo.com/group/hockey-databank/">Hockey Databank</a>.
+</div>
+
+<div class="blockquote clear_both margin_top">
+<a href="http://www.sports-reference.com/">A Sports Reference Site</a>:
+<a href="/about/">About HR</a>&nbsp;|
+<a href="/feedback/">Found a bug or have a suggestion?</a><br>
+<a href="http://www.sports-reference.com/privacy.shtml">Privacy Statement</a>&nbsp;|
+<a href="http://www.sports-reference.com/termsofuse.shtml">Conditions &amp; Terms of Service</a> | 
+<a href="http://www.sports-reference.com/data_use.shtml">Use of Data</a>
+</div>
+
+<div class="blockquote clear_both margin_bottom margin_top">
+<a target="_blank" title="USA TODAY Sports" href="http://Sports.USATODAY.com/"><img src="http://d2ft4b0ve1aur1.cloudfront.net/images-252/USATSdp.png" width="193" height="41" border="0"  style="width:193px;height:41px;vertical-align:middle"></a>
+Partner of <a target="_blank" title="USA TODAY Sports" href="http://Sports.USATODAY.com/">USA TODAY Sports Digital Properties</a>.
+</div>
+
+</div><!-- div#sr_footer -->
+</div><!-- div#site_footer -->
+
+<script type="text/javascript"> 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+   var pageTracker = _gat._createTracker("UA-1890630-5");
+   pageTracker._trackPageview();
+   pageTracker._trackPageLoadTime();
+   var sr_tracker = _gat._createTracker("UA-1890630-9");
+   sr_tracker._setDomainName('none'); 
+   sr_tracker._setAllowLinker(true); 
+   sr_tracker._setAllowHash(false);
+   sr_tracker._setCustomVar(1,"site","hr",3);
+   sr_tracker._trackPageview();
+} catch(err) {}</script>
+        
+<!-- Begin comScore Tag -->
+<script type="text/deferscript">
+    document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js' %3E%3C/script%3E"));
+</script>
+
+<script type="text/deferscript">
+  COMSCORE.beacon({
+    c1:2,
+    c2:"6035210",
+    c3:"",
+    c4:"www.hockey-reference.com",
+    c5:"",
+    c6:"",
+    c15:""
+  });
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/b?c1=2&amp;c2=6035210&amp;c3=&amp;c4=www.baseball-reference.com&amp;c5=&amp;c6=&amp;c15=&amp;cv=1.3&amp;cj=1" width="0" height="0" alt="" />
+</noscript>
+<!-- End comScore Tag -->
+
+<!-- google +1 code -->
+<script type="text/deferscript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<!-- facebook code -->
+<script type="text/deferscript">
+     window.fbAsyncInit = function() {
+        FB.init({appId: '212945115395487', status: true, cookie: true,
+                 xfbml: true, channelUrl  : 'http://www.hockey-reference.com/channel.html'});
+      };
+      (function() {
+        var fb_root = document.getElementById('fb-root');
+        if (fb_root) {
+           var e = document.createElement('script');
+           e.type = 'text/javascript';
+           e.src = document.location.protocol +
+              '//connect.facebook.net/en_US/all.js';
+           e.async = true;
+           fb_root.appendChild(e);
+        }
+      }());
+</script>
+
+
+</div><!-- div#Page container -->
+</body>
+</html>

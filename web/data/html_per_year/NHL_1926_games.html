@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/website" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" lang="en">
+ <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script>
+/*
+ * JS Redirection Mobile
+ *
+ * Developed by
+ * Sebastiano Armeli-Battana (@sebarmeli) - http://www.sebastianoarmelibattana.com
+ * Release under the MIT licence
+ */
+ if(!window.SA){window.SA={}}SA.redirection_mobile=function(d){var b=function(k){var j=new Date();j.setTime(j.getTime()+k);return j};var i=function(o){if(!o){return}var j=document.location.search,p=j&&j.substring(1).split("&"),l=0,n=p.length;for(;l<n;l++){var k=p[l],m=k&&k.substring(0,k.indexOf("="));if(m===o){return k.substring(k.indexOf("=")+1,k.length)}}};var f=navigator.userAgent.toLowerCase(),h="false",g="true",d=d||{},redirection_param=d.redirection_paramName||"mobile",redirection_param_long=d.redirection_paramName_long||"mobile_long",mobile_prefix=d.mobile_prefix||"m",mobile_url=d.mobile_url,mobile_protocol=d.mobile_scheme?d.mobile_scheme+":":document.location.protocol,host=document.location.host,queryValue=i(redirection_param),queryValue_long=i(redirection_param_long),mobile_host=mobile_url||(mobile_prefix+"."+(!!host.match(/^www./i)?host.substring(4):host)),cookie_hours=d.cookie_hours||1,isUAMobile=false;
+
+if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(f)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(f.substr(0,4))) { isUAMobile = true; }
+
+if(queryValue_long===h){if(window.localStorage){window.localStorage.setItem(redirection_param_long,h)}else{document.cookie=redirection_param+"="+h+";expires="+b(3600*1000*cookie_hours*7*24*31).toUTCString()}}else{if((queryValue_long===g)||(queryValue===g)){if(window.localStorage){window.localStorage.setItem(redirection_param_long,g)}else{document.cookie=redirection_param+"="+h+";expires="+b(-3600*1000*cookie_hours*7*24*31).toUTCString()}if(window.localStorage){window.sessionStorage.setItem(redirection_param,g)}else{document.cookie=redirection_param+"="+h+";expires="+b(-3600*1000*cookie_hours*7*24*31).toUTCString()}}else{if(document.referrer.indexOf(mobile_host)>=0||queryValue===h){if(window.sessionStorage){window.sessionStorage.setItem(redirection_param,h)}else{document.cookie=redirection_param+"="+h+";expires="+b(3600*1000*cookie_hours).toUTCString()}}}}var a=(window.sessionStorage)?(window.sessionStorage.getItem(redirection_param)===h):false,e=(window.localStorage)?(window.localStorage.getItem(redirection_param_long)===h):false,c=document.cookie?(document.cookie.indexOf(redirection_param)>=0):false;if(isUAMobile&&!(c||a||e)){document.location.href=mobile_protocol+"//"+mobile_host}};
+
+SA.redirection_mobile({mobile_url:"m.hkref.com/m?p=XXleaguesXXNHL_1926_games.html",redirection_paramName:"mobile",redirection_paramName_long:"mobile_long",cookie_hours:6});
+</script> 
+
+<!-- CRITEO -->
+<script type="text/javascript"> 
+var crtg_nid="1631"; 
+var crtg_cookiename="cto_usatd"; 
+function crtg_getCookie(c_name){var i,x,y,ARRcookies=document.cookie.split(";");for(i=0;i<ARRcookies.length;i++){x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);x=x.replace(/^\s+|\s+$/g,"");if(x==c_name){return unescape(y);}}return'';} var crtg_content=crtg_getCookie(crtg_cookiename);var crtg_rnd=Math.floor(Math.random()*99999999999);var crtg_url='http://rtax.criteo.com/delivery/rta/rta.js?netId='+escape(crtg_nid);crtg_url+='&cookieName='+escape(crtg_cookiename);crtg_url+='&rnd='+crtg_rnd;crtg_url+='&varName=crtg_content';var crtg_script=document.createElement('script');crtg_script.type='text/javascript';crtg_script.src=crtg_url;crtg_script.async=true;if(document.getElementsByTagName("head").length>0)document.getElementsByTagName("head")[0].appendChild(crtg_script);else if(document.getElementsByTagName("body").length>0)document.getElementsByTagName("body")[0].appendChild(crtg_script); 
+var crtg_ap=new Array();var crtg_cp=(crtg_content!=null&&crtg_content.length>0)?crtg_content.split(';'):null;if(crtg_cp){for(var crtg_kidx in crtg_cp){if(crtg_cp[crtg_kidx].length>0){var crtg_apa=crtg_cp[crtg_kidx].split('=');if(crtg_apa[1]==1){crtg_ap.push(crtg_apa[0].replace(/usatd/,''))}}}}
+</script>
+<!--  SYNCHRONOUS:googletag -->
+<script type="text/deferscript">
+  (function() {
+    var useSSL = 'https:' == document.location.protocol;
+    var src = (useSSL ? 'https:' : 'http:') +       '//www.googletagservices.com/tag/js/gpt.js';
+    document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+  })();
+</script>
+<script type="text/deferscript">
+googletag.pubads().enableSyncRendering();
+googletag.pubads().setTargeting("usatcriteo",crtg_ap);
+</script>
+
+<title>1925-26 NHL Season Schedule and Results | Hockey-Reference.com</title>
+<script type="text/javascript">var sr_gzipEnabled = false;</script>
+<script type="text/javascript" src="http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr.gzipcheck.js.jgz"></script>
+
+<noscript>
+  <link type="text/css" rel="stylesheet" href="http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min.css">
+</noscript>
+<script type="text/javascript">
+(function () {
+    var sr_css_file = 'http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min.css';
+    if (sr_gzipEnabled) {
+       sr_css_file = 'http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min-gz.css';
+    }
+    var head = document.getElementsByTagName("head")[0];
+    if (head) {
+	var scriptStyles = document.createElement("link");
+	scriptStyles.rel = "stylesheet";
+	scriptStyles.type = "text/css";
+	scriptStyles.href = sr_css_file;
+	head.appendChild(scriptStyles);
+	//alert('adding css to header:'+sr_css_file);
+    }
+}());
+</script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="nhl, wha, hockey, stats, statistics, history, 1925-26, schedule, results, games, scores">
+<meta property="fb:admins" content="1016660168">
+<meta property="fb:page_id" content="145429948844751">
+<meta property="og:site_name"  content="Hockey-Reference.com"> 
+<meta property="og:image"      content="http://d2ft4b0ve1aur1.cloudfront.net/images-241/Hockey-Ref.png"> 
+
+<link rel="icon"          type="image/vnd.microsoft.icon" href="http://d2ft4b0ve1aur1.cloudfront.net/images-290/favicon-hr.ico">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://d2ft4b0ve1aur1.cloudfront.net/images-290/favicon-hr.ico">
+<link rel="search"        type="application/opensearchdescription+xml" href="http://d2ft4b0ve1aur1.cloudfront.net/os-290/opensearch-hr.xml" title="Hockey-Ref Search">
+<!--[if lte IE 7 ]>
+<style type="text/css">
+.uni_holder { display: none; }
+</style>
+<![endif]-->
+<!--[if lte IE 6]>
+<style type="text/css">
+.hovermenu,.hovermenu_ajax,.sub_index,#quick_index {display:none!important}
+</style>
+<![endif]-->
+</head>
+
+<body onload="">
+
+<div id="page_container">
+
+<div id="top_nav">
+
+<div id="site_header">
+ <div id="sr_header">
+  <div class="float_right">
+    <a href="http://www.sports-reference.com">S-R</a>:
+    <a href="http://www.baseball-reference.com">MLB</a> | 
+    <a href="http://www.basketball-reference.com">NBA</a> &#183;
+    <a href="http://www.sports-reference.com/cbb/">CBB</a> |
+    <a href="http://www.pro-football-reference.com">NFL</a> &#183;
+    <a href="http://www.sports-reference.com/cfb/">CFB</a> |
+    <strong>NHL</strong> |
+    <a href="http://www.sports-reference.com/olympics/">Oly</a> |
+    <a href="http://www.sports-reference.com/blog/">Blog</a>
+    <br>
+  </div>
+  
+  <div class="clearfix padding_top_half float_right clear_both">
+    <div class="padding_left_half float_right"><a class="sprite-twitter" title="Follow us on Twitter" href="http://twitter.com/hockey_ref"></a><a class="sprite-facebook" title="Become a Fan on FaceBook" href="http://www.facebook.com/Hockey.Reference"></a>
+    </div>
+    <div class="float_right">
+       <form method="get" id="f" name="f" action="/player_search.cgi">
+         <input x-webkit-speech type="search" placeholder="click 'Tips' for shortcuts" id="search" name="search" class="search long"> 
+         <input type="submit" value="Search" class="submit">
+         <a class="padding_left_half small_text" href="/about/findstuff.shtml">Tips</a>
+       </form>
+    </div>
+  </div>
+  </div><!-- div#sr_header -->
+  <div class="float_left padding_bottom_half"><a href="/"><img src="http://d2ft4b0ve1aur1.cloudfront.net/images-265/Hockey-Ref.png" width=373 height=73 border="0" alt="Hockey-Reference.com"></a></div>
+ </div><!-- div#site_header -->
+
+
+
+<div id="quick_index">
+<ul class="hovermenu_ajax navbar">
+<li class=""><a href="/play-index/">play index</a><ul class="li_margin" id="header_playindex"></ul></li>
+ <li class=""><a href="/boxscores/">boxscores</a><ul class="li_margin" id="header_boxscores"></ul></li>
+ <li class=""><a href="/players/">players</a><ul class="li_margin" id="header_players"></ul></li>
+ <li class=""><a href="/teams/">teams</a><ul class="li_margin" id="header_teams"></ul></li>
+ <li class="active"><a href="/leagues/">seasons</a><ul class="li_margin" id="header_leagues"></ul></li>
+ <li class=""><a href="/coaches/">coaches</a><ul class="li_margin" id="header_coaches"></ul></li>
+ <li class=""><a href="/leaders/">leaders</a><ul class="li_margin" id="header_leaders"></ul></li>
+ <li class=""><a href="/awards/">awards</a><ul class="li_margin" id="header_awards"></ul></li>
+ <li class=""><a href="/playoffs/">playoffs</a><ul class="li_margin" id="header_playoffs"></ul></li>
+ <li class=""><a href="/draft/">draft</a><ul class="li_margin" id="header_draft"></ul></li>
+ <li class=""><a href="">more [+]</a><ul class="li_margin" id="header_more_links"></ul></li>
+
+</ul>
+</div>
+<div id="you_are_here">
+<p class="padding_left0"><a class="mobile_link" href="http://m.hkref.com/m?p=XXleaguesXXNHL_1926_games.html">Mobile Site</a> <span class="bold_text">You Are Here</span>&nbsp;&gt;&nbsp;<a href="/">HR</a>&nbsp;&gt;&nbsp;<a href="/leagues/">Leagues</a>&nbsp;&gt;&nbsp;<a href="/leagues/NHL_1926.html">1925-26 NHL</a>&nbsp;&gt;&nbsp;<strong>Season Schedule and Results</strong></p>
+</div>
+<div class="site_news"><p><span class="bold_text">News:</span> <span class="poptip" tip="With the NHL starting back up after the lockout, here's a reminder that we offer our familiar Play Index tools for hockey, too: Player Game FinderSearch through NHL regular season and playoff game logs spanning from 1987-88 to today for games that match your criteria. Player Season FinderSearch through NHL regular season statistics spanning from [...]">s-r blog:<a onClick="try { pageTracker._trackEvent('blog','click','area-yah'); } catch (err) {};"
+ href="http://www.sports-reference.com/blog/2013/01/hockey-reference-play-index/">Hockey-Reference Play Index</a> <span class="small_text"></span></span></p></div>
+
+</div>
+<div id="restofsite_launchpad" class="advertlaunchpad">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/launchpad/sports/hockey/general', [970,66] ,             'restofsite_launchpad').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_launchpad");
+</script>
+</div><!-- div.#restofsite_launchpad.advertlaunchpad -->
+
+<div id="info_box">
+<div id="restofsite_300x250_atf1" class="advert300x250">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/300x250_1a/sports/hockey/general', [[300,250],[300,600]] ,             'restofsite_300x250_atf1').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_300x250_atf1");
+</script>
+</div><!-- div.#restofsite_300x250_atf1.advert300x250 -->
+
+<h1>1925-26 NHL Season Schedule and Results</h1>
+<p><a href="/leagues/NHL_1925_games.html">Previous Season</a>&nbsp;&#9642;&nbsp;<a href="/leagues/NHL_1927_games.html">Next Season</a></p>
+<div class="margin_bottom no_mobile"><form class="sr_standard inline" name="pages" action="">
+<strong>Navigation:</strong>
+<select name="hr_pages" onchange="sr_goto_page('hr_pages','',this.form);">
+<option value="" disabled >Select Page
+<option value="/leagues/NHL_1926.html" >Summary
+<option value="/leagues/NHL_1926_standings.html" >Standings
+<option value="/leagues/NHL_1926_leaders.html" >Leaders
+<option value="/leagues/NHL_1926_games.html" selected>Schedule and Results
+<option value="/leagues/NHL_1926_skaters.html" >Skater Statistics
+<option value="/leagues/NHL_1926_goalies.html" >Goalie Statistics
+<option value="/leagues/NHL_1926_numbers.html" >Sweater Numbers
+<option value="/leagues/NHL_1926_debut.html" >Debuts
+<option value="/leagues/NHL_1926_final.html" >Final Season
+</select>
+</form>
+</div>
+<p><strong>League Champion:</strong> <a href="/teams/MTM/1926.html">Montreal Maroons</a>
+<p><strong>Hart Memorial Trophy:</strong> <a href="/players/s/stewane01.html">Nels Stewart</a> (34 G, 8 A, 42 P)<br><p><strong>Goals Leader:</strong> <a href="/players/s/stewane01.html">Nels Stewart</a> (34)<br><strong>Assists Leader:</strong> <a href="/players/n/nighbfr01.html">Frank Nighbor</a> (13)<br><strong>Points Leader:</strong> <a href="/players/s/stewane01.html">Nels Stewart</a> (42)<br></div>
+<div id="restofsite_728x90_atf1" class="advert728x90">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/728x90_1a/sports/hockey/general', [728,90] ,             'restofsite_728x90_atf1').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_728x90_atf1");
+</script>
+</div><!-- div.#restofsite_728x90_atf1.advert728x90 -->
+
+<div id="page_content">
+<div class="table_heading">
+<h2 data-mobile-header="" style="">Regular Season</h2>
+<div class="table_heading_text"></div>
+</div>
+<div class="table_container" id="div_games">
+<table class="sortable  stats_table" id="games">
+<colgroup><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr class="">
+  <th align="left"  class="tooltip sort_default_asc" >Date</th>
+  <th align="left"  class="tooltip sort_default_asc" >Visitor</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="left"  class="tooltip sort_default_asc" >Home</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="center"  class="tooltip" ></th>
+  <th align="left"  class="tooltip sort_default_asc show_partial_when_sorting" >Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr  class="">
+   <td align="left"  csk="192511260BOS">Thu, Nov 26, 1925</td>
+   <td align="left"  csk="PTP.192511260BOS"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.192511260BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192511280MTL">Sat, Nov 28, 1925</td>
+   <td align="left"  csk="PTP.192511280MTL"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.192511280MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192511280OTS">Sat, Nov 28, 1925</td>
+   <td align="left"  csk="MTM.192511280OTS"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="OTS.192511280OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192511280TRS">Sat, Nov 28, 1925</td>
+   <td align="left"  csk="BOS.192511280TRS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TRS.192511280TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512010BOS">Tue, Dec 1, 1925</td>
+   <td align="left"  csk="MTL.192512010BOS"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.192512010BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512010MTM">Tue, Dec 1, 1925</td>
+   <td align="left"  csk="TRS.192512010MTM"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTM.192512010MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512020PTP">Wed, Dec 2, 1925</td>
+   <td align="left"  csk="NYA.192512020PTP"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="PTP.192512020PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512030MTL">Thu, Dec 3, 1925</td>
+   <td align="left"  csk="MTM.192512030MTL"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.192512030MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512030OTS">Thu, Dec 3, 1925</td>
+   <td align="left"  csk="BOS.192512030OTS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192512030OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512050MTM">Sat, Dec 5, 1925</td>
+   <td align="left"  csk="BOS.192512050MTM"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTM.192512050MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512050OTS">Sat, Dec 5, 1925</td>
+   <td align="left"  csk="PTP.192512050OTS"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192512050OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512050TRS">Sat, Dec 5, 1925</td>
+   <td align="left"  csk="NYA.192512050TRS"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TRS.192512050TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512080BOS">Tue, Dec 8, 1925</td>
+   <td align="left"  csk="MTM.192512080BOS"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.192512080BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512080MTL">Tue, Dec 8, 1925</td>
+   <td align="left"  csk="NYA.192512080MTL"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="MTL.192512080MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512090PTP">Wed, Dec 9, 1925</td>
+   <td align="left"  csk="TRS.192512090PTP"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="PTP.192512090PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512100OTS">Thu, Dec 10, 1925</td>
+   <td align="left"  csk="NYA.192512100OTS"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192512100OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512110PTP">Fri, Dec 11, 1925</td>
+   <td align="left"  csk="BOS.192512110PTP"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="PTP.192512110PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512120MTM">Sat, Dec 12, 1925</td>
+   <td align="left"  csk="OTS.192512120MTM"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTM.192512120MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512120TRS">Sat, Dec 12, 1925</td>
+   <td align="left"  csk="MTL.192512120TRS"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TRS.192512120TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512150BOS">Tue, Dec 15, 1925</td>
+   <td align="left"  csk="OTS.192512150BOS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.192512150BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512150NYA">Tue, Dec 15, 1925</td>
+   <td align="left"  csk="MTL.192512150NYA"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYA.192512150NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512160PTP">Wed, Dec 16, 1925</td>
+   <td align="left"  csk="MTM.192512160PTP"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="PTP.192512160PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512170OTS">Thu, Dec 17, 1925</td>
+   <td align="left"  csk="MTL.192512170OTS"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192512170OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512180PTP">Fri, Dec 18, 1925</td>
+   <td align="left"  csk="NYA.192512180PTP"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="PTP.192512180PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512190MTL">Sat, Dec 19, 1925</td>
+   <td align="left"  csk="BOS.192512190MTL"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="MTL.192512190MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512190NYA">Sat, Dec 19, 1925</td>
+   <td align="left"  csk="MTM.192512190NYA"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYA.192512190NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512190TRS">Sat, Dec 19, 1925</td>
+   <td align="left"  csk="PTP.192512190TRS"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TRS.192512190TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512220BOS">Tue, Dec 22, 1925</td>
+   <td align="left"  csk="NYA.192512220BOS"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.192512220BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512230MTM">Wed, Dec 23, 1925</td>
+   <td align="left"  csk="PTP.192512230MTM"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTM.192512230MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512230OTS">Wed, Dec 23, 1925</td>
+   <td align="left"  csk="TRS.192512230OTS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="OTS.192512230OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512260MTL">Sat, Dec 26, 1925</td>
+   <td align="left"  csk="OTS.192512260MTL"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.192512260MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512260NYA">Sat, Dec 26, 1925</td>
+   <td align="left"  csk="PTP.192512260NYA"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYA.192512260NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512260TRS">Sat, Dec 26, 1925</td>
+   <td align="left"  csk="MTM.192512260TRS"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TRS.192512260TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512290BOS">Tue, Dec 29, 1925</td>
+   <td align="left"  csk="TRS.192512290BOS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.192512290BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512300MTM">Wed, Dec 30, 1925</td>
+   <td align="left"  csk="MTL.192512300MTM"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="MTM.192512300MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512300NYA">Wed, Dec 30, 1925</td>
+   <td align="left"  csk="TRS.192512300NYA"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYA.192512300NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192512300PTP">Wed, Dec 30, 1925</td>
+   <td align="left"  csk="OTS.192512300PTP"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="PTP.192512300PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601010PTP">Fri, Jan 1, 1926</td>
+   <td align="left"  csk="MTL.192601010PTP"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="PTP.192601010PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601010TRS">Fri, Jan 1, 1926</td>
+   <td align="left"  csk="OTS.192601010TRS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TRS.192601010TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601020MTM">Sat, Jan 2, 1926</td>
+   <td align="left"  csk="NYA.192601020MTM"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTM.192601020MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601050BOS">Tue, Jan 5, 1926</td>
+   <td align="left"  csk="PTP.192601050BOS"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.192601050BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601050MTL">Tue, Jan 5, 1926</td>
+   <td align="left"  csk="TRS.192601050MTL"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.192601050MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601050OTS">Tue, Jan 5, 1926</td>
+   <td align="left"  csk="MTM.192601050OTS"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192601050OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601070MTM">Thu, Jan 7, 1926</td>
+   <td align="left"  csk="OTS.192601070MTM"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192601070MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601070NYA">Thu, Jan 7, 1926</td>
+   <td align="left"  csk="BOS.192601070NYA"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYA.192601070NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601090MTL">Sat, Jan 9, 1926</td>
+   <td align="left"  csk="NYA.192601090MTL"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.192601090MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601090TRS">Sat, Jan 9, 1926</td>
+   <td align="left"  csk="BOS.192601090TRS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TRS.192601090TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601110NYA">Mon, Jan 11, 1926</td>
+   <td align="left"  csk="OTS.192601110NYA"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYA.192601110NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601120BOS">Tue, Jan 12, 1926</td>
+   <td align="left"  csk="MTL.192601120BOS"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.192601120BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601120MTM">Tue, Jan 12, 1926</td>
+   <td align="left"  csk="TRS.192601120MTM"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTM.192601120MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601130NYA">Wed, Jan 13, 1926</td>
+   <td align="left"  csk="MTL.192601130NYA"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYA.192601130NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601130OTS">Wed, Jan 13, 1926</td>
+   <td align="left"  csk="PTP.192601130OTS"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192601130OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601150PTP">Fri, Jan 15, 1926</td>
+   <td align="left"  csk="BOS.192601150PTP"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="PTP.192601150PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601150TRS">Fri, Jan 15, 1926</td>
+   <td align="left"  csk="NYA.192601150TRS"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TRS.192601150TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601160MTM">Sat, Jan 16, 1926</td>
+   <td align="left"  csk="MTL.192601160MTM"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTM.192601160MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601190BOS">Tue, Jan 19, 1926</td>
+   <td align="left"  csk="MTM.192601190BOS"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.192601190BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601190MTL">Tue, Jan 19, 1926</td>
+   <td align="left"  csk="OTS.192601190MTL"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.192601190MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601190NYA">Tue, Jan 19, 1926</td>
+   <td align="left"  csk="PTP.192601190NYA"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYA.192601190NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601210OTS">Thu, Jan 21, 1926</td>
+   <td align="left"  csk="NYA.192601210OTS"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="OTS.192601210OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601210PTP">Thu, Jan 21, 1926</td>
+   <td align="left"  csk="TRS.192601210PTP"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="PTP.192601210PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601230MTM">Sat, Jan 23, 1926</td>
+   <td align="left"  csk="PTP.192601230MTM"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192601230MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601230NYA">Sat, Jan 23, 1926</td>
+   <td align="left"  csk="BOS.192601230NYA"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYA.192601230NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601230TRS">Sat, Jan 23, 1926</td>
+   <td align="left"  csk="MTL.192601230TRS"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TRS.192601230TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601250NYA">Mon, Jan 25, 1926</td>
+   <td align="left"  csk="MTM.192601250NYA"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYA.192601250NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601260BOS">Tue, Jan 26, 1926</td>
+   <td align="left"  csk="OTS.192601260BOS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >8</td>
+   <td align="left"  csk="BOS.192601260BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601260MTL">Tue, Jan 26, 1926</td>
+   <td align="left"  csk="TRS.192601260MTL"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.192601260MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601270PTP">Wed, Jan 27, 1926</td>
+   <td align="left"  csk="MTM.192601270PTP"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="PTP.192601270PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601280OTS">Thu, Jan 28, 1926</td>
+   <td align="left"  csk="MTL.192601280OTS"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="OTS.192601280OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601290TRS">Fri, Jan 29, 1926</td>
+   <td align="left"  csk="PTP.192601290TRS"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TRS.192601290TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601300MTM">Sat, Jan 30, 1926</td>
+   <td align="left"  csk="BOS.192601300MTM"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="MTM.192601300MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192601300NYA">Sat, Jan 30, 1926</td>
+   <td align="left"  csk="OTS.192601300NYA"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYA.192601300NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602020BOS">Tue, Feb 2, 1926</td>
+   <td align="left"  csk="TRS.192602020BOS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.192602020BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602020MTL">Tue, Feb 2, 1926</td>
+   <td align="left"  csk="MTM.192602020MTL"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.192602020MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602020PTP">Tue, Feb 2, 1926</td>
+   <td align="left"  csk="OTS.192602020PTP"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="PTP.192602020PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602030NYA">Wed, Feb 3, 1926</td>
+   <td align="left"  csk="TRS.192602030NYA"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYA.192602030NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602040OTS">Thu, Feb 4, 1926</td>
+   <td align="left"  csk="BOS.192602040OTS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="OTS.192602040OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602060MTL">Sat, Feb 6, 1926</td>
+   <td align="left"  csk="BOS.192602060MTL"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.192602060MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602060NYA">Sat, Feb 6, 1926</td>
+   <td align="left"  csk="PTP.192602060NYA"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="NYA.192602060NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602060TRS">Sat, Feb 6, 1926</td>
+   <td align="left"  csk="OTS.192602060TRS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TRS.192602060TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602090BOS">Tue, Feb 9, 1926</td>
+   <td align="left"  csk="NYA.192602090BOS"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.192602090BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602090MTL">Tue, Feb 9, 1926</td>
+   <td align="left"  csk="PTP.192602090MTL"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.192602090MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602090TRS">Tue, Feb 9, 1926</td>
+   <td align="left"  csk="MTM.192602090TRS"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="TRS.192602090TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602110OTS">Thu, Feb 11, 1926</td>
+   <td align="left"  csk="TRS.192602110OTS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="OTS.192602110OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602130MTM">Sat, Feb 13, 1926</td>
+   <td align="left"  csk="NYA.192602130MTM"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192602130MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602130PTP">Sat, Feb 13, 1926</td>
+   <td align="left"  csk="MTL.192602130PTP"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="PTP.192602130PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602130TRS">Sat, Feb 13, 1926</td>
+   <td align="left"  csk="BOS.192602130TRS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="TRS.192602130TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602160BOS">Tue, Feb 16, 1926</td>
+   <td align="left"  csk="PTP.192602160BOS"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.192602160BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602160MTL">Tue, Feb 16, 1926</td>
+   <td align="left"  csk="OTS.192602160MTL"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.192602160MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602160NYA">Tue, Feb 16, 1926</td>
+   <td align="left"  csk="TRS.192602160NYA"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYA.192602160NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602180MTM">Thu, Feb 18, 1926</td>
+   <td align="left"  csk="TRS.192602180MTM"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTM.192602180MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602180NYA">Thu, Feb 18, 1926</td>
+   <td align="left"  csk="BOS.192602180NYA"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="NYA.192602180NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602180OTS">Thu, Feb 18, 1926</td>
+   <td align="left"  csk="MTL.192602180OTS"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="OTS.192602180OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602190PTP">Fri, Feb 19, 1926</td>
+   <td align="left"  csk="NYA.192602190PTP"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="PTP.192602190PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602200MTL">Sat, Feb 20, 1926</td>
+   <td align="left"  csk="BOS.192602200MTL"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.192602200MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602200OTS">Sat, Feb 20, 1926</td>
+   <td align="left"  csk="MTM.192602200OTS"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192602200OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602200TRS">Sat, Feb 20, 1926</td>
+   <td align="left"  csk="PTP.192602200TRS"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TRS.192602200TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602220BOS">Mon, Feb 22, 1926</td>
+   <td align="left"  csk="TRS.192602220BOS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.192602220BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602230MTM">Tue, Feb 23, 1926</td>
+   <td align="left"  csk="OTS.192602230MTM"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192602230MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602230PTP">Tue, Feb 23, 1926</td>
+   <td align="left"  csk="MTL.192602230PTP"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="PTP.192602230PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602240NYA">Wed, Feb 24, 1926</td>
+   <td align="left"  csk="MTL.192602240NYA"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYA.192602240NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602260PTP">Fri, Feb 26, 1926</td>
+   <td align="left"  csk="MTM.192602260PTP"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="PTP.192602260PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602270MTL">Sat, Feb 27, 1926</td>
+   <td align="left"  csk="NYA.192602270MTL"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.192602270MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602270OTS">Sat, Feb 27, 1926</td>
+   <td align="left"  csk="BOS.192602270OTS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="OTS.192602270OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192602270TRS">Sat, Feb 27, 1926</td>
+   <td align="left"  csk="MTM.192602270TRS"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TRS.192602270TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603020BOS">Tue, Mar 2, 1926</td>
+   <td align="left"  csk="MTL.192603020BOS"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.192603020BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603020MTM">Tue, Mar 2, 1926</td>
+   <td align="left"  csk="PTP.192603020MTM"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTM.192603020MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603020OTS">Tue, Mar 2, 1926</td>
+   <td align="left"  csk="NYA.192603020OTS"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="OTS.192603020OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603040MTM">Thu, Mar 4, 1926</td>
+   <td align="left"  csk="BOS.192603040MTM"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTM.192603040MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603040NYA">Thu, Mar 4, 1926</td>
+   <td align="left"  csk="OTS.192603040NYA"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYA.192603040NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603040PTP">Thu, Mar 4, 1926</td>
+   <td align="left"  csk="TRS.192603040PTP"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="PTP.192603040PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603060BOS">Sat, Mar 6, 1926</td>
+   <td align="left"  csk="OTS.192603060BOS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.192603060BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603060MTL">Sat, Mar 6, 1926</td>
+   <td align="left"  csk="MTM.192603060MTL"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.192603060MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603060TRS">Sat, Mar 6, 1926</td>
+   <td align="left"  csk="NYA.192603060TRS"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TRS.192603060TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603080OTS">Mon, Mar 8, 1926</td>
+   <td align="left"  csk="PTP.192603080OTS"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192603080OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603090BOS">Tue, Mar 9, 1926</td>
+   <td align="left"  csk="NYA.192603090BOS"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.192603090BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603090MTL">Tue, Mar 9, 1926</td>
+   <td align="left"  csk="PTP.192603090MTL"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.192603090MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603110MTM">Thu, Mar 11, 1926</td>
+   <td align="left"  csk="NYA.192603110MTM"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192603110MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603110TRS">Thu, Mar 11, 1926</td>
+   <td align="left"  csk="MTL.192603110TRS"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TRS.192603110TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603120PTP">Fri, Mar 12, 1926</td>
+   <td align="left"  csk="BOS.192603120PTP"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="PTP.192603120PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603130MTM">Sat, Mar 13, 1926</td>
+   <td align="left"  csk="MTL.192603130MTM"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTM.192603130MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603130TRS">Sat, Mar 13, 1926</td>
+   <td align="left"  csk="OTS.192603130TRS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TRS.192603130TRS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603150PTP">Mon, Mar 15, 1926</td>
+   <td align="left"  csk="OTS.192603150PTP"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="PTP.192603150PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603160BOS">Tue, Mar 16, 1926</td>
+   <td align="left"  csk="MTM.192603160BOS"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.192603160BOS"><a href="/teams/BOS/1926.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603160MTL">Tue, Mar 16, 1926</td>
+   <td align="left"  csk="TRS.192603160MTL"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.192603160MTL"><a href="/teams/MTL/1926.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603170NYA">Wed, Mar 17, 1926</td>
+   <td align="left"  csk="MTM.192603170NYA"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYA.192603170NYA"><a href="/teams/NYA/1926.html">New York Americans</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603170OTS">Wed, Mar 17, 1926</td>
+   <td align="left"  csk="TRS.192603170OTS"><a href="/teams/TRS/1926.html">Toronto St. Patricks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="OTS.192603170OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+</tbody>
+</table>
+</div><!-- div.table_container#div_xxxx -->
+<div class="table_heading">
+<h2 data-mobile-header="" style="">Playoffs</h2>
+<div class="table_heading_text"></div>
+</div>
+<div class="table_container" id="div_games_playoffs">
+<table class="sortable  stats_table" id="games_playoffs">
+<colgroup><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr class="">
+  <th align="left"  class="tooltip sort_default_asc" >Date</th>
+  <th align="left"  class="tooltip sort_default_asc" >Visitor</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="left"  class="tooltip sort_default_asc" >Home</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="center"  class="tooltip" ></th>
+  <th align="left"  class="tooltip sort_default_asc show_partial_when_sorting" >Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr  class="">
+   <td align="left"  csk="192603200PTP">Sat, Mar 20, 1926</td>
+   <td align="left"  csk="MTM.192603200PTP"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="PTP.192603200PTP"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603230MTM">Tue, Mar 23, 1926</td>
+   <td align="left"  csk="PTP.192603230MTM"><a href="/teams/PTP/1926.html">Pittsburgh Pirates</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTM.192603230MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603250MTM">Thu, Mar 25, 1926</td>
+   <td align="left"  csk="OTS.192603250MTM"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTM.192603250MTM"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="192603270OTS">Sat, Mar 27, 1926</td>
+   <td align="left"  csk="MTM.192603270OTS"><a href="/teams/MTM/1926.html">Montreal Maroons</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="OTS.192603270OTS"><a href="/teams/OTS/1926.html">Ottawa Senators</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+</tbody>
+</table>
+</div><!-- div.table_container#div_xxxx -->
+</div>
+<div id="sr_js"></div>
+<script type="text/javascript">
+(function () {
+    var sr_js_file = 'http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr-hr-min.js';
+    if (sr_gzipEnabled) {
+       sr_js_file = 'http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr-hr-min.js.jgz';
+    }
+    var sr_script_tag = document.getElementById("sr_js");         
+    if (sr_script_tag) {
+	var scriptStyles = document.createElement("script");
+	scriptStyles.type = "text/javascript";
+	scriptStyles.src = sr_js_file;
+	sr_script_tag.appendChild(scriptStyles);
+	//alert('adding js to footer:'+sr_js_file);
+    }
+}());
+</script>
+
+<div id="site_footer">
+<div class="margin border">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5319453360923253";
+/* Page Bottom - HR */
+google_ad_slot = "1698819814";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<div id="sr_footer">
+Copyright &copy; 2000-2013 <a href="http://www.sports-reference.com">Sports
+Reference LLC</a>. All rights reserved.
+
+<form class="inline margin_left" method="get" name="f_footer" action="/player_search.cgi" style="margin-left:5em;">
+<input x-webkit-speech type="text" id="search_footer" name="search" class="search long"> 
+<input type="submit" value="Search" class="submit">
+</form>
+
+<div class="margin_top">Tools: <a href="/linker/">Automatic Player
+Linker</a>&nbsp;|&nbsp;<a href="/friv/linkify.cgi">Basic Player
+Linker</a></div>
+  
+<div class="blockquote italic_text clear_both margin_top">
+Most historical data provided by <a 
+href="http://www.nhlofficialguide.com/">Dan Diamond and Associates</a>. 
+Current season data provided by <a href="http://www.xmlteam.com">XML Team 
+Solutions</a>.<br>
+Other data sources include the <a
+href="http://groups.yahoo.com/group/hockey_summary_project">Hockey Summary
+Project</a> and <a
+href="http://groups.yahoo.com/group/hockey-databank/">Hockey Databank</a>.
+</div>
+
+<div class="blockquote clear_both margin_top">
+<a href="http://www.sports-reference.com/">A Sports Reference Site</a>:
+<a href="/about/">About HR</a>&nbsp;|
+<a href="/feedback/">Found a bug or have a suggestion?</a><br>
+<a href="http://www.sports-reference.com/privacy.shtml">Privacy Statement</a>&nbsp;|
+<a href="http://www.sports-reference.com/termsofuse.shtml">Conditions &amp; Terms of Service</a> | 
+<a href="http://www.sports-reference.com/data_use.shtml">Use of Data</a>
+</div>
+
+<div class="blockquote clear_both margin_bottom margin_top">
+<a target="_blank" title="USA TODAY Sports" href="http://Sports.USATODAY.com/"><img src="http://d2ft4b0ve1aur1.cloudfront.net/images-252/USATSdp.png" width="193" height="41" border="0"  style="width:193px;height:41px;vertical-align:middle"></a>
+Partner of <a target="_blank" title="USA TODAY Sports" href="http://Sports.USATODAY.com/">USA TODAY Sports Digital Properties</a>.
+</div>
+
+</div><!-- div#sr_footer -->
+</div><!-- div#site_footer -->
+
+<script type="text/javascript"> 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+   var pageTracker = _gat._createTracker("UA-1890630-5");
+   pageTracker._trackPageview();
+   pageTracker._trackPageLoadTime();
+   var sr_tracker = _gat._createTracker("UA-1890630-9");
+   sr_tracker._setDomainName('none'); 
+   sr_tracker._setAllowLinker(true); 
+   sr_tracker._setAllowHash(false);
+   sr_tracker._setCustomVar(1,"site","hr",3);
+   sr_tracker._trackPageview();
+} catch(err) {}</script>
+        
+<!-- Begin comScore Tag -->
+<script type="text/deferscript">
+    document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js' %3E%3C/script%3E"));
+</script>
+
+<script type="text/deferscript">
+  COMSCORE.beacon({
+    c1:2,
+    c2:"6035210",
+    c3:"",
+    c4:"www.hockey-reference.com",
+    c5:"",
+    c6:"",
+    c15:""
+  });
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/b?c1=2&amp;c2=6035210&amp;c3=&amp;c4=www.baseball-reference.com&amp;c5=&amp;c6=&amp;c15=&amp;cv=1.3&amp;cj=1" width="0" height="0" alt="" />
+</noscript>
+<!-- End comScore Tag -->
+
+<!-- google +1 code -->
+<script type="text/deferscript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<!-- facebook code -->
+<script type="text/deferscript">
+     window.fbAsyncInit = function() {
+        FB.init({appId: '212945115395487', status: true, cookie: true,
+                 xfbml: true, channelUrl  : 'http://www.hockey-reference.com/channel.html'});
+      };
+      (function() {
+        var fb_root = document.getElementById('fb-root');
+        if (fb_root) {
+           var e = document.createElement('script');
+           e.type = 'text/javascript';
+           e.src = document.location.protocol +
+              '//connect.facebook.net/en_US/all.js';
+           e.async = true;
+           fb_root.appendChild(e);
+        }
+      }());
+</script>
+
+
+</div><!-- div#Page container -->
+</body>
+</html>
