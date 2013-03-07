@@ -12,6 +12,7 @@ web/*.db
 
 # ignore usual suspects
 *.pyc
+*~
 
 # dbvcs fixture backups
 *.json.backup
