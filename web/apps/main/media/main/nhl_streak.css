@@ -3,12 +3,21 @@
 }
 
 #sliders {
+    position: relative;
     float: left;
+    /* border:2px solid orange; */
 }
 
+#slider_svg{
+    position: absolute;
+    /* border:2px solid teal; */
+    left:0;
+    top:0;
+}
 #streak_holder{
-    margin-top: 10px;
+    margin-top: 30px;
     width:480px;
+    /* border:2px solid blue; */
 }
 
 #streak_length{
@@ -23,25 +32,24 @@
 #season_holder{
     clear:both;
     width:480px;
-    margin-top:10px;
-
+    margin-top:30px;
+    /* border:2px solid pink; */
 }
 #seasons{   
     float:left;
 }
 
-#year_slider{
+#season_slider{
     float:right;
     width:360px;
 }
 
 #stats_box{
     float: left;
-    margin-left: 30px;
+    margin-left: 20px;
     position: relative;
     top: -80px;
-    border:2px solid black;
-    width:200px;
+    /* border:2px solid black; */
 }
 
 
