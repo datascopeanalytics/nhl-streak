@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title%}NHL Streak{% endblock title%}
+
+
+{% block content %}
+<link rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../media/main/jquery-ui.css" />
+<link rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../media/main/dc.css" />
+
+<link rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../media/main/nhl_streak.css" />
+
+<div id="main">
+  <div id="static_text">    
+    <strong>Playoff chances:</strong> 
+    <p>From 1960 to 2012 with streaks of 
+      <span id="static_streak">0 to 16</span>
+    </p>
+  </div>
+  <div id="percent_text">    
+    <strong>Playoff chances:</strong> 
+    <p>From <span id="percent_year">1960 to 2012</span> with streaks of 
+      <span id="percent_streak">0 to 16</span>
+    </p>
+  </div>
+  <div id="clear"></div>
+  <div id="static_percentage"></div>
+
+  <div id="playoff_percentage"></div>
+  <div id="legend"></div>
+  <div id="metrics">
+    <p><strong id="team_number"></strong> teams match filters</p>
+    <p><strong id="playoff_chance"></strong> made the playoffs</p>
+    <p><strong id="final_chance"></strong> made the finals</p>
+    <p><strong id="stanley_chance"></strong> won the Stanley Cup</p>
+  </div>
+  <div id="clear"></div>
+
+  <div id="season_text">    
+    <strong>NHL Seasons</strong> 
+  </div>
+  
+  <div id="streak_text">    
+    <strong>NHL Streaks</strong> 
+  </div>
+
+  <div id="season_slider"></div>
+  <div id="streak_slider"></div>
+
+</div>  
+{% endblock content %}
+  
+  {% block dynamic_javascript %}
+{{block.super}}
+<script src="../media/main/jquery.js"></script>
+<script src="../media/main/jquery-ui.js"></script>
+<script src="../media/main/d3/d3.v3.min.js"></script>
+<script src="../media/main/crossfilter.js"></script>
+<script src="../media/main/dc.js"></script>
+<script src="../media/main/underscore.js"></script>
+<script>
+  {% include "main/nhl_dc.js" %}
+</script>
+{% endblock dynamic_javascript %}

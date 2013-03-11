@@ -82,9 +82,22 @@ for fname in filenames:
     # For every year, figure out the streak
     for team, value in nhl_dict[year].iteritems():
         counter = 0
+        max_streak = 0
+        current_streak = 0;
         while value['reg'][counter] != 0:
             counter += 1
         value['streak'] = counter
+
+        # adding code to include max streak throughout the season as well
+        for point in value['reg'][counter:]:
+            if point != 0:
+                current_streak += 1
+            else:
+                max_streak = max(current_streak,max_streak)
+                current_streak = 0
+        max_streak = max(current_streak,max_streak)
+        value['max_streak'] = max_streak
+
 
     # For every year, assign playoff value to applicable teams
     playoff_teams=[]
@@ -125,14 +138,14 @@ for fname in filenames:
 
     # print playoff_teams
 
-    # print nhl_dict[year]
+    print nhl_dict[year]
     #nhl2012=nhl_dict[year]
     #tempout=open('tempout.pkl','wb')
     #pickle.dump(nhl2012,tempout)
     #tempout.close()
 
-
-pickle.dump(nhl_dict,open('nhl_streak_pickle.p', "wb"))
+print "dumping the file"
+pickle.dump(nhl_dict,open('nhl_streak_pickle_max.p', "wb"))
 
 
                 

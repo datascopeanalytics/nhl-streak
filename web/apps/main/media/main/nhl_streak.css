@@ -24,11 +24,11 @@
     float:left;
 }
 
-#streak_slider{
+/*#streak_slider{
     float:right;
     width:360px;
 }
-
+*/
 #season_holder{
     clear:both;
     width:480px;
@@ -39,11 +39,11 @@
     float:left;
 }
 
-#season_slider{
+/*#season_slider{
     float:right;
     width:360px;
 }
-
+*/
 #stats_box{
     float: left;
     margin-left: 20px;
