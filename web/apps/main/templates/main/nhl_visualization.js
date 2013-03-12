@@ -14,6 +14,7 @@ $(function(){
     var final_year = 2012;
     var lowest_sel_streak = 0;
     var highest_sel_streak = 16;
+    var games_in_range = 0;
     
     // Arrays to hold & access data of interest
     var results_combined = [];
@@ -26,19 +27,19 @@ $(function(){
     //width and height
     var w = 500;
     var h = 350;
-    var r = 90;
+    var r = 80;
     
     // padded like bike shorts
     var padding = 10;
     var topPadding = 50;
     var allPadding = 70;
     var selPadding = 50;
-    
+
     var dur = 300; //transition duration
     
     //blackhawks colors
     var color = d3.scale.ordinal()
-	.range(["gray", "black", "orange", "yellow", "green", "red"]);
+	.range(["white", "black", "orange", "yellow", "green", "red"]);
     
     // vars for statsboxx2000
     var chance_playoffs = 0;
@@ -52,6 +53,7 @@ $(function(){
 	.append("svg")
 	.attr("width", 2 * w)
 	.attr("height", h);
+
     
     var slider_svg = d3.select("#sliders")
 	.append("svg")
@@ -61,8 +63,7 @@ $(function(){
 
     var streak_scale = d3.scale.linear()
 	.domain([lowest_streak, highest_streak])
-	.range([$('#streak_holder').width() - $('#streak_slider').width(),
-		$('#streak_holder').width()]);
+	.range([$('#streak_holder').width() - $('#streak_slider').width() +padding , $('#streak_holder').width() + padding]);
     var y_streak_scale = $("#streak_holder").css("margin-top");
     
     y_streak_scale = parseInt(y_streak_scale)*.7;
@@ -85,18 +86,17 @@ $(function(){
 	.attr('x',function(d){return streak_scale(d.val)})
 	.attr('y',y_streak_scale)
 	.attr('text-anchor','middle')
-	.attr('font-size','12px');
+	.attr('font-size','14px');
     
    
     var year_scale = d3.scale.linear()
 	.domain([start_year,final_year])
-	.range([$('#season_holder').width() - $('#season_slider').width(),
-		$('#season_holder').width()]);
+	.range([$('#season_holder').width() - $('#season_slider').width() + padding, $('#season_holder').width() + padding]);
 
-    var y_year_scale = parseInt($("#streak_holder").height()) + 
+    var y_year_scale = 8 +//parseInt($("#streak_holder").height()) + 
 	parseInt($("#season_holder").css("margin-top"))*1.7;
 
-    console.log("y_year_scale: ", y_year_scale);
+    console.log("y_year_scale: ", y_year_scale,parseInt($("#streak_slider").height()));
 
     var year_points = [{val:1960,label:"'60"},
 		       {val:1965,label:"•"},
@@ -116,11 +116,11 @@ $(function(){
 	.attr('x',function(d){return year_scale(d.val)})
 	.attr('y',y_year_scale)
 	.attr('text-anchor','middle')
-	.attr('font-size','12px');
+	.attr('font-size','14px');
 
-    var statsbox_svg = d3.select("#stats_box")
-	.append("svg")
-	.attr("id","statsbox_svg")
+    var statsbox_div = d3.select("#stats_box")
+	.append("div")
+	.attr("id","statsbox_div")
 	.attr("width",w/1.2)
 	.attr("height",h/2);
     
@@ -144,7 +144,7 @@ $(function(){
     var donut_g = svg
 	.append("g")
 	.attr("class", "donut")
-	.attr("transform", "translate(" + (w + r * 1.2 + 40) + "," + (r * 1.2 + 40) + ")");
+	.attr("transform", "translate(" + (w/1.27 + r * 1.2) + "," + (r * 1.2 + 40) + ")");
     
     var donut = donut_g.selectAll("g.arc")
 	.data(pie(results_combined))
@@ -209,6 +209,20 @@ $(function(){
 	    .domain([0, d3.max(results_all)])
 	    .range([h - padding, topPadding]);
 
+	var x_axis = [[padding,-1],[w - padding,-1]];
+
+	var sep_line = d3.svg.line()
+	    .x(function(d) {
+		console.log("in line:",d);
+		return d[0];})
+	    .y(function(d) {return allScale(d[1]);});
+	
+	svg.selectAll(".xaxis")
+	    .data([x_axis])
+	    .enter().append("path")
+	    .attr("d",sep_line)
+	    .attr("class","xaxis");
+
 	//all_bars display the #of team*seasons to finish at that level
 	//of playoff, regardless of opening streak (baseline)
 	var all_bars = svg.selectAll(".all_rect")
@@ -219,7 +233,7 @@ $(function(){
 	all_bars.transition().duration(dur)
 	    .attr("class", "all_rect")
 	    .attr("x", function(d, i) {
-		return i * (w / results_all.length);
+		return i * (w / results_all.length)+padding;
 	    })
 	    .attr("y", function(d) {
 		return allScale(d);
@@ -239,7 +253,7 @@ $(function(){
 	sel_bars.transition().duration(dur)
 	    .attr("class", "sel_rect")
 	    .attr("x", function(d, i) {
-		return i * (w / results_combined.length) + selPadding / 2;
+		return i * (w / results_combined.length) + selPadding / 2+padding;
 	    })
 	    .attr("y", function(d) {
 		return allScale(d);
@@ -248,7 +262,6 @@ $(function(){
 	    .attr("height", function(d) {
 		return h - allScale(d) - padding;
 	    })  
-	//.style("fill","orange");
 	    .style("fill", function(d, i) {
 		return color(i)
 	    });
@@ -268,8 +281,8 @@ $(function(){
 	
 	arc_text.transition().duration(dur)
 	    .attr("transform", function(d,i) {                
-		console.log("Eating donuts: ",d);	  	
-		return "translate(" + text_arc.centroid(d) + ")";
+		// console.log("Eating donuts: ",d);	  	
+		// return "translate(" + text_arc.centroid(d) + ")";
 	    })
 	.text(function(d,i){return percentage(playoff_percentage[i])});
 	
@@ -277,69 +290,54 @@ $(function(){
 	
     //statsboxxx 
 	// string the data
+	ystring = year_string();
+	sstring = streak_string();
+
 	stats_strings = [
 	    {
-		str: "between "+start_year+" & "+final_year+",",
-		size:14,
-		x:10,
-		y:20
+		str: ystring,
+		cls: "stats_lang"
 	    },
 	    {
-		str: "for an opening season no-lose streak between "+lowest_sel_streak+" & "+highest_sel_streak,
-		size:16,
-		x:10,
-		y:45
+		str: sstring,
+		cls: "stats_lang"
 	    },
 	    {
-		str: chance_playoffs+"%", 
-		size:32,
-		x:10,
-		y:80
+		str: chance_playoffs+"%",
+		cls: "percent"
 	    },
 	    {
-		str: "chance of making the playoffs", 
-		size:20,
-		x:80,
-		y:80
+		str: "made the playoffs",
+		cls: "action"
 	    },
 	    {
 		str: chance_cupfinals+"%",
-		size:32,
-		x:10,
-		y:115
+		cls: "percent"
 	    },
 	    {
-		str: "chance of playing for the cup",
-		size:20,
-		x:80,
-		y:115
+		str: "won their conference",
+		cls: "action"
 	    },
 	    {
 		str: chance_cup+"%",
-		size:32,
-		x:10,
-		y:150
+		cls: "percent"
 	    },
 	    {
-		str: "chance of winning the Stanley Cup",
-		size:20,
-		x:80,
-		y:150
+		str: "won the Stanley Cup",
+		cls: "action"
 	    },
 	];
 	
 	
-	var stxbox = d3.select("#statsbox_svg").selectAll("text")
+	var stxbox = d3.select("#statsbox_div").selectAll("p")
 	    .data(stats_strings);
-	stxbox.enter().append("text");
+	stxbox.enter().append("p");
+
+//	stxbox.enter().append("div").append("p").text("hello");
 	
 	stxbox.transition().duration(dur)
 	    .text(function(d){return d.str;})
-	    .attr("font-size",function(d){
-		//console.log(d.size);
-		return d.size+"px";})
-	    .attr("x",function(d){return d.x;})
-	    .attr("y",function(d){return d.y;});
+	    .attr("class",function(d){return d.cls;});
 	
     };
     
@@ -365,14 +363,13 @@ $(function(){
 		return d;
 	    })
 	    .attr("x", function(d, i) {
-		return i * (w / results_all.length) + (w / results_combined.length - selPadding) / 2 + selPadding / 2;
+		return i * (w / results_all.length) + (w / results_combined.length - selPadding) / 2 + selPadding / 2+padding;
 	    })
 	    .attr("y", function(d) {
 		return allScale(d) - 1;
 	    })
-	    .attr("font-family", "sans-serif")
 	    .attr("font-size", "18px")
-	    .attr("fill", "red")
+	    // .attr("fill", "red")
 	    .attr("text-anchor", "middle");
 	
 	var all_labels = svg.selectAll(".all_text")
@@ -386,13 +383,12 @@ $(function(){
 		return d;
 	    })
 	    .attr("x", function(d, i) {
-		return i * (w / results_all.length) + (w / results_all.length - allPadding) / 2;
+		return i * (w / results_all.length) + (w / results_all.length - allPadding) / 2+padding;
 	    })
 	    .attr("y", function(d) {
 		return allScale(d) - 1;
 	    })
-	    .attr("font-family", "sans-serif")
-	    .attr("font-size", "12px")
+	    .attr("font-size", "14px")
 	    .attr("fill", "rgb(92,92,92)")
 	    .attr("text-anchor", "middle");
 	
@@ -422,8 +418,8 @@ $(function(){
 		    
 		});
 	    }
-	    
 	});
+	games_in_range = in_range;
 	
 	var num_playoffs = in_range - results_combined[0];
 	var conf_finals = results_combined[5] + results_combined[4] + results_combined[3];
@@ -455,6 +451,44 @@ $(function(){
 	console.log("Chance of Stanley Cup: " + chance_cup);
 	console.log("Playoff percentages: ", playoff_percentage);
 	
+    }
+
+    function year_string(){
+	var str1 = "For the "+games_in_range+" teams ";
+	var str2 = ""
+	if (start_year === final_year){
+	    str2="in "+start_year;
+	}
+	else {
+	    str2="between "+start_year+" & "+final_year;
+	}
+	return str1+str2;
+
+    }
+
+    function streak_string(){
+	var a = lowest_sel_streak;
+	var b = highest_sel_streak;
+	var str_hdr = "with a season-opening point streak ";
+	var str = "";
+	if (b===16){
+	    if (a===0){
+		str = str_hdr+"of any length,";
+	    }
+	    else if (a===1){
+		str = "who won or tied the first game of the season,";
+	    }
+	    else{
+		str = str_hdr+"of at least "+a+" games,";
+	    }
+	}
+	else if (a===0){
+	    str = str_hdr+"of "+b+" games or fewer,";
+	}
+	else{
+	    str = str_hdr+"between "+a+" & "+b+" games,";
+	}
+	return str;
     }
 //good-bye... thanks for stopping by... 
 });

@@ -1,11 +1,24 @@
 #main{
     position:relative;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+#content{
+    background:rgba(0,0,0,.25);
+}
+
+#svg_placer{
+    background-image:url('images/ChicagoBlackhawks.png');
+    background-repeat:no-repeat;
+    background-size: 85px;
+    background-position: 453px 107px;
 }
 
 #sliders {
     position: relative;
     float: left;
-    /* border:2px solid orange; */
+    /* margin-left:10px; */
+/* border:2px solid orange; */
 }
 
 #slider_svg{
@@ -16,40 +29,74 @@
 }
 #streak_holder{
     margin-top: 30px;
-    width:480px;
+    width:470px;
+    margin-left:10px;
     /* border:2px solid blue; */
 }
 
 #streak_length{
     float:left;
+    font-size:30px;
+    position:absolute;
+    top:18px;
+    margin-left:28px;
 }
 
-/*#streak_slider{
-    float:right;
-    width:360px;
+#streak_slider{
+    margin-left:130px;
 }
-*/
 #season_holder{
     clear:both;
-    width:480px;
-    margin-top:30px;
+    width:470px;
+    margin-top:40px;
+    margin-left: 10px;
     /* border:2px solid pink; */
 }
 #seasons{   
     float:left;
+    font-size:30px;
+    position:absolute;
+    top:74px;
 }
 
-/*#season_slider{
-    float:right;
-    width:360px;
+.xaxis{
+    stroke: #ccc;
+    shape-rendering: crispEdges;
+    stroke-width:2px;
 }
-*/
+#season_slider{
+    margin-left:130px;
+}
+
+#season_slider .ui-widget-header{
+    background:black;
+}
 #stats_box{
     float: left;
     margin-left: 20px;
     position: relative;
-    top: -80px;
+    top: -60px;
     /* border:2px solid black; */
 }
 
+.stats_lang {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.percent, .action {
+    float: left;
+}
+.percent {
+    width: 100px;
+    text-align: right;
+    clear: both;
+    font-size: 36px;
+    line-height: 50px;
+}
+.action {
+    padding-left: 10px;
+    font-size: 24px;
+    margin-top: 14px;
+}
 
