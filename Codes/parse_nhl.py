@@ -13,7 +13,7 @@ for fname in filenames:
         
         #what year is it
         year = fname.split("_")[3]
-        if int(year) < 1960:
+        if int(year) < 1940:
             continue
         nhl_dict[year] = {}
 
@@ -145,7 +145,7 @@ for fname in filenames:
     #tempout.close()
 
 print "dumping the file"
-pickle.dump(nhl_dict,open('nhl_streak_pickle_max.p', "wb"))
+pickle.dump(nhl_dict,open('nhl_streak_40.p', "wb"))
 
 
                 

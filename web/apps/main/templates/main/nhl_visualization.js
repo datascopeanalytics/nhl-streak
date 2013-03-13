@@ -10,7 +10,7 @@ $(function(){
     var highest_streak = 16;
     
     // These numbers must change when we manipulate the slider bar
-    var start_year = 1960;
+    var start_year = 1940;
     var final_year = 2012;
     var lowest_sel_streak = 0;
     var highest_sel_streak = 16;
@@ -98,17 +98,22 @@ $(function(){
 
     console.log("y_year_scale: ", y_year_scale,parseInt($("#streak_slider").height()));
 
-    var year_points = [{val:1960,label:"'60"},
-		       {val:1965,label:"•"},
-		       {val:1970,label:"'70"},
-		       {val:1975,label:"•"},
-		       {val:1980,label:"'80"},
-		       {val:1985,label:"•"},
-		       {val:1990,label:"'90"},
-		       {val:1995,label:"•"},
-		       {val:2000,label:"'00"},
-		       {val:2005,label:"•"},
-		       {val:2010,label:"'10"},];
+    var year_points = [
+	{val:1940,label:"'40"},
+	{val:1945,label:"•"},
+	{val:1950,label:"'50"},
+	{val:1955,label:"•"},
+	{val:1960,label:"'60"},
+	{val:1965,label:"•"},
+	{val:1970,label:"'70"},
+	{val:1975,label:"•"},
+	{val:1980,label:"'80"},
+	{val:1985,label:"•"},
+	{val:1990,label:"'90"},
+	{val:1995,label:"•"},
+	{val:2000,label:"'00"},
+	{val:2005,label:"•"},
+	{val:2010,label:"'10"},];
 
     var year_axis = slider_svg.selectAll('.year_text')
 	.data(year_points).enter().append('text')
@@ -282,7 +287,7 @@ $(function(){
 	arc_text.transition().duration(dur)
 	    .attr("transform", function(d,i) {                
 		// console.log("Eating donuts: ",d);	  	
-		// return "translate(" + text_arc.centroid(d) + ")";
+		return "translate(" + text_arc.centroid(d) + ")";
 	    })
 	.text(function(d,i){return percentage(playoff_percentage[i])});
 	
@@ -395,7 +400,7 @@ $(function(){
     }; //transition_labels
     
     function calculate_data() {
-	console.log("~~~~ new calculate_data ~~~~");
+	// console.log("~~~~ new calculate_data ~~~~");
 	for (i = 0; i < 6; i++) {
 	    results_combined[i] = 0;
 	    results_all[i] = 0;
@@ -439,17 +444,17 @@ $(function(){
 	playoff_percentage.push(results_combined[4]/in_range);
 	playoff_percentage.push(results_combined[5]/in_range);
 	
-	console.log("Results combined: ", results_combined);
-	console.log("Seasons: " + start_year + "-" + final_year);
-	console.log("Total team*years: " + total_teams);
-	console.log("For a streak length: " + lowest_sel_streak + "-" + highest_sel_streak);
-	console.log("Total team*years in streak range:" + in_range);
-	console.log("Number in playoffs: " + num_playoffs);
-	console.log("Chance of playoffs: " + chance_playoffs);
-	console.log("Chance of conf. finals: " + chance_cf);
-	console.log("Chance cup finals: " + chance_cupfinals);
-	console.log("Chance of Stanley Cup: " + chance_cup);
-	console.log("Playoff percentages: ", playoff_percentage);
+	// console.log("Results combined: ", results_combined);
+	// console.log("Seasons: " + start_year + "-" + final_year);
+	// console.log("Total team*years: " + total_teams);
+	// console.log("For a streak length: " + lowest_sel_streak + "-" + highest_sel_streak);
+	// console.log("Total team*years in streak range:" + in_range);
+	// console.log("Number in playoffs: " + num_playoffs);
+	// console.log("Chance of playoffs: " + chance_playoffs);
+	// console.log("Chance of conf. finals: " + chance_cf);
+	// console.log("Chance cup finals: " + chance_cupfinals);
+	// console.log("Chance of Stanley Cup: " + chance_cup);
+	// console.log("Playoff percentages: ", playoff_percentage);
 	
     }
 

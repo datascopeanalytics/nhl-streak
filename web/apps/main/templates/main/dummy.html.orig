@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title%}NHL Streak{% endblock title%}
+
+
+{% block content %}
+<link rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../media/main/jquery-ui.css" />
+<link rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../media/main/nhl_streak.css" />
+
+<div id="main">
+  <div id="svg_placer"></div>
+  <div id="sliders">
+    <div id="streak_holder">
+      <div id="streak_length">streak length</div>
+      <div id="streak_slider" class="slider"></div>
+      <div class="clear"></div>
+    </div>
+    <div id="season_holder">
+      <div id="seasons">seasons</div>
+      <div id="year_slider" class="slider"></div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div id="stats_box">
+    <p>Confession: I am experiencing a visceral dislike for donut charts.</p>
+  </div>
+  <div class="clear"></div>
+</div>  
+{% endblock content %}
+  
+  {% block dynamic_javascript %}
+{{block.super}}
+<script src="../media/main/jquery.js"></script>
+<script src="../media/main/jquery-ui.js"></script>
+<script src="../media/main/d3/d3.v3.min.js"></script>
+<script src="../media/main/underscore.js"></script>
+<script>
+  {% include "main/nhl_visualization.js" %}
+</script>
+{% endblock dynamic_javascript %}

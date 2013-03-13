@@ -8,7 +8,7 @@ from django.template import RequestContext
 
 def nhl_visualization(request):    
 
-    filename = os.path.join(settings.PROJECT_ROOT,"data","nhl_streak_pickle.p")
+    filename = os.path.join(settings.PROJECT_ROOT,"data","nhl_streak_40.p")
     with open(filename) as stream:
         data = pickle.load(stream)
 
