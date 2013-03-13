@@ -193,7 +193,7 @@ $(function(){
 
     $("#season_slider").slider({
 	range: true,
-	min: 1960,
+	min: 1940,
 	max: 2012,
 	step: 1,
 	values: [start_year, final_year],
