@@ -2,7 +2,7 @@ $(function(){
     // this is a django template. we can use the django variables to
     // extract data. weeeeee!
     var data = {{data_json}};
-    console.log(data);
+    // console.log(data);
     var percentage = d3.format("%");
     
     //set static values for background histogram
@@ -20,11 +20,14 @@ $(function(){
     var results_combined = [];
     var results_all = [];
     var playoff_percentage = [];
+
+    var po_sorg = [];
+    var sc_sorg = [];
     
     // Remember the law of 2005
     calculate_data();
     
-    //width and height
+    //width and height for main svg #svg_placer
     var w = 500;
     var h = 350;
     var r = 80;
@@ -47,6 +50,7 @@ $(function(){
     var chance_cupfinals = 0;
     var chance_cup = 0;
     var stats_strings = [];
+
     
     //create svg elements
     var svg = d3.select("#svg_placer")
@@ -67,7 +71,7 @@ $(function(){
     var y_streak_scale = $("#streak_holder").css("margin-top");
     
     y_streak_scale = parseInt(y_streak_scale)*.7;
-    console.log("y_streak_scale: ", y_streak_scale);
+    // console.log("y_streak_scale: ", y_streak_scale);
 
     var streak_points =     [{val:0,label:"0"},
 			     {val:2,label:"•"},
@@ -96,7 +100,7 @@ $(function(){
     var y_year_scale = 8 +//parseInt($("#streak_holder").height()) + 
 	parseInt($("#season_holder").css("margin-top"))*1.7;
 
-    console.log("y_year_scale: ", y_year_scale,parseInt($("#streak_slider").height()));
+    // console.log("y_year_scale: ", y_year_scale,parseInt($("#streak_slider").height()));
 
     var year_points = [
 	{val:1940,label:"'40"},
@@ -174,6 +178,70 @@ $(function(){
 	    this._current = text_arc.centroid(d);
 	});
     
+// LINE GRAPH 
+
+
+    var lmargin = {top:20,right:20,left:40,bottom:20};
+    var lh = 200 - lmargin.top - lmargin.bottom;
+    var lw = 200 - lmargin.left - lmargin.right;
+
+    var lx = d3.scale.linear()
+	.range([0,lw]);
+    var ly = d3.scale.linear()
+	.range([lh,0]);
+
+    var lxAxis = d3.svg.axis()
+	.scale(lx)
+	.orient("bottom")
+	.tickValues([0,4,8,12,16]);
+    var lyAxis = d3.svg.axis()
+	.scale(ly)
+	.orient("left")
+	.ticks(5);
+
+    var lsvg = d3.select("#main").append("svg")
+	.attr("id","lsvg")
+	.attr("width",lw+lmargin.left+lmargin.right)
+	.attr("height",lh+lmargin.top+lmargin.bottom)
+	.append("g")
+	.attr("transform","translate("+lmargin.left+","+lmargin.top+")");
+
+
+    //add line graph for stanley cup ~cdf
+    lx.domain(d3.extent(graph_cdfs, function(d) {return d.streak;}));
+    ly.domain([0,1]);
+
+    lsvg.append("g")
+	.attr("class","x axis")
+	.attr("transform", "translate(0,"+lh+")")
+	.call(lxAxis);
+
+    lsvg.append("g")
+	.attr("class","y axis")
+	.call(lyAxis);
+
+    var another_line = d3.svg.line()
+	.x(function(d){return lx(d.streak)})
+	.y(function(d){return ly(d.po)})
+    lsvg.append("path")
+	.datum(graph_cdfs)
+	.attr("class","another_line")
+	.attr("fill", "none")
+	.attr("stroke", "black")
+	.attr("stroke-width", 2)
+	.attr("d",another_line);
+
+    var line = d3.svg.line()
+	.x(function(d){return lx(d.streak)})
+	.y(function(d){return ly(d.sc)})
+    lsvg.append("path")
+	.datum(graph_cdfs)
+	.attr("class","line")
+	.attr("fill", "none")
+	.attr("stroke", "red")
+	.attr("stroke-width", 2)
+	.attr("d",line);
+
     //call "transition" to update & draw charts
     transition();
 
@@ -205,6 +273,8 @@ $(function(){
 });
     
     
+
+
     function transition() {
 	
 	//recalculate the data based on the slider inputs
@@ -289,11 +359,15 @@ $(function(){
 		// console.log("Eating donuts: ",d);	  	
 		return "translate(" + text_arc.centroid(d) + ")";
 	    })
-	.text(function(d,i){return percentage(playoff_percentage[i])});
+	    .attr("fill-opacity", function (d, i){
+		if(playoff_percentage[i]>0){
+		    return 1;
+		} else {
+		    return 0;
+		}})
+	    .text(function(d,i){return percentage(playoff_percentage[i])});
 	
-	
-	
-    //statsboxxx 
+	//statsboxxx 
 	// string the data
 	ystring = year_string();
 	sstring = streak_string();
@@ -338,11 +412,20 @@ $(function(){
 	    .data(stats_strings);
 	stxbox.enter().append("p");
 
-//	stxbox.enter().append("div").append("p").text("hello");
-	
 	stxbox.transition().duration(dur)
 	    .text(function(d){return d.str;})
 	    .attr("class",function(d){return d.cls;});
+
+
+	// transition the "cdfs" that aren't really monotonically
+	// increasing and therefore not a cdf. nice try.
+	lsvg.select("path.another_line")
+	    .transition(dur)
+	    .attr("d",another_line);
+
+	lsvg.select("path.line")
+	    .transition(dur)
+	    .attr("d",line);
 	
     };
     
@@ -398,7 +481,10 @@ $(function(){
 	    .attr("text-anchor", "middle");
 	
     }; //transition_labels
-    
+
+
+
+    var graph_cdfs;
     function calculate_data() {
 	// console.log("~~~~ new calculate_data ~~~~");
 	for (i = 0; i < 6; i++) {
@@ -409,6 +495,15 @@ $(function(){
 	var year_range = d3.range(start_year, final_year + 1);
 	var total_teams = 0;
 	var in_range = 0;
+	var po_count = [];
+	var sc_count = [];
+	var tot_count = [];
+	for (i = 0; i<17; i++){
+	    po_count[i]=0;
+	    sc_count[i]=0;
+	    tot_count[i]=0;
+	}
+
 	_.each(year_range, function(year) {
 	    if (year != 2005) {
 		_.each(data[year], function(team) {
@@ -420,12 +515,64 @@ $(function(){
 			results_all[team.playoffs] += 1;
 			total_teams += 1;
 		    }
-		    
+		    if (team.playoffs >=1){
+			po_count[team.streak] += 1;
+		    }
+		    if (team.playoffs === 5){
+			sc_count[team.streak] += 1;
+		    }
+		    tot_count[team.streak] += 1;
 		});
 	    }
 	});
+
 	games_in_range = in_range;
+
+
+	var tmpp=0, tmps=0, tmpt=0;
+
+	for(i=po_count.length-1;i>=0;i--){
+	    tmpt=tmpt+tot_count[i];
+	    //console.log("i ",i,"tot_count[i]",tot_count[i],"tmpt ",tmpt);
+	    tmpp=tmpp+po_count[i];
+	    //console.log("tmpp ",tmpp);
+	    po_sorg[i]=tmpp/tmpt;
+	    tmps=tmps+sc_count[i];
+	    //console.log("tmps ",tmps);
+	    sc_sorg[i]=tmps/tmpt;
+	}
+
 	
+	if(graph_cdfs === undefined) {
+	    graph_cdfs = po_sorg.map(function (number, index, array) {
+    		return {}
+	    });
+	}
+
+	graph_cdfs.forEach(function (o, index) {
+    	    o.po = po_sorg[index];
+	    o.streak = index;
+	    o.sc = sc_sorg[index];
+	});
+
+
+
+	console.log("tc "+tot_count);
+	console.log("pc "+po_count);
+	console.log("sc "+sc_count+"\n");
+
+	var fpc = [];	
+	po_sorg.forEach(function(val,i,array){
+	    fpc[i]=val.toFixed(3);
+	});
+	console.log("fpc "+fpc);
+	var fsc = [];	
+	sc_sorg.forEach(function(val,i,array){
+	    fsc[i]=val.toFixed(3);
+	});
+	console.log("fsc "+fsc+"\n\n");
+
+
 	var num_playoffs = in_range - results_combined[0];
 	var conf_finals = results_combined[5] + results_combined[4] + results_combined[3];
 	var num_cupfs = results_combined[5] + results_combined[4];
@@ -495,5 +642,9 @@ $(function(){
 	}
 	return str;
     }
-//good-bye... thanks for stopping by... 
+
+
+
+
+
 });
