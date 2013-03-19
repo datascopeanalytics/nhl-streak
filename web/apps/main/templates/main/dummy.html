@@ -18,6 +18,7 @@
 
 <div id="main">
   <div id="svg_placer"></div>
+  <div id="lsvg_placer"></div>
   <div id="sliders">
     <div id="streak_holder">
       <div id="streak_length">streak</div>
@@ -30,11 +31,9 @@
       <div class="clear"></div>
     </div>
   </div>
-  <div id="stats_box">
-    <!-- <p>some text goes in here</p> -->
-  </div>
-  <div class="clear"></div>
-  <div class="lgrph_svg"></div>
+  <div id="stats_box"></div>
+
+ 
 </div>  
 {% endblock content %}
   
@@ -43,7 +42,7 @@
 <script src="../media/main/jquery.js"></script>
 <script src="../media/main/jquery-ui.js"></script>
 <script src="../media/main/d3/d3.v3.min.js"></script>
-<script src="../media/main/crossfilter.js"></script>
+<script src="../media/main/nvtooltip.js"></script>
 <script src="../media/main/dc.js"></script>
 <script src="../media/main/underscore.js"></script>
 <script>

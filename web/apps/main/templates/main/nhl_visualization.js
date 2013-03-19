@@ -55,6 +55,7 @@ $(function(){
     //create svg elements
     var svg = d3.select("#svg_placer")
 	.append("svg")
+	.attr("id","bars_svg")
 	.attr("width", 2 * w)
 	.attr("height", h);
 
@@ -144,7 +145,7 @@ $(function(){
     
     var pie = d3.layout.pie()
 	.value(function(d) {
-	    return d;
+	    return d.data;
 	})
 	.sort(function(a, b) {
 	    return 1;
@@ -153,7 +154,7 @@ $(function(){
     var donut_g = svg
 	.append("g")
 	.attr("class", "donut")
-	.attr("transform", "translate(" + (w/1.27 + r * 1.2) + "," + (r * 1.2 + 40) + ")");
+	.attr("transform", "translate(" + (w/1.35 + r * 1.2) + "," + (r * 1.2 + 40) + ")");
     
     var donut = donut_g.selectAll("g.arc")
 	.data(pie(results_combined))
@@ -181,13 +182,18 @@ $(function(){
 	    //console.log("inside text: ", text_arc.centroid(d));
 	    this._current = text_arc.centroid(d);
 	});
+
+    donut.append("svg:title")
+	.text(function(d,i){
+	    return results_combined[i].label+" (selected streak range)";
+	});
     
 // LINE GRAPH 
 
 
-    var lmargin = {top:20,right:20,left:40,bottom:20};
+    var lmargin = {top:20,right:20,left:20,bottom:20};
     var lh = 200 - lmargin.top - lmargin.bottom;
-    var lw = 200 - lmargin.left - lmargin.right;
+    var lw = 180 - lmargin.left - lmargin.right;
 
     var lx = d3.scale.linear()
 	.range([0,lw]);
@@ -203,12 +209,14 @@ $(function(){
 	.orient("left")
 	.ticks(5);
 
+    var scooter = lmargin.left;
+
     var lsvg = d3.select("#main").append("svg")
 	.attr("id","lsvg")
 	.attr("width",lw+lmargin.left+lmargin.right)
 	.attr("height",lh+lmargin.top+lmargin.bottom)
 	.append("g")
-	.attr("transform","translate("+lmargin.left+","+lmargin.top+")");
+	.attr("transform","translate("+scooter+","+lmargin.top+")");
 
 
     //add line graph for stanley cup ~cdf
@@ -230,6 +238,8 @@ $(function(){
 	    .y(function(d){return ly(d.po)});
 	return _another_line(datum.filter(function(d, i){return !isNaN(d.po)}));
     }
+    
+
     lsvg.append("path")
 	.datum(graph_cdfs)
 	.attr("class","another_line")
@@ -242,11 +252,11 @@ $(function(){
 	var _line = d3.svg.line()
 	    .x(function(d){return lx(d.streak)})
 	    .y(function(d){
-		//	    console.log("SC!!!", d.sc, ly(d.sc));
 		return ly(d.sc)
 	    })
 	return _line(datum.filter(function (d, i){return !isNaN(d.sc)}));
     }
+
     lsvg.append("path")
 	.datum(graph_cdfs)
 	.attr("class","line")
@@ -258,6 +268,7 @@ $(function(){
     //call "transition" to update & draw charts
     transition();
 
+  
     //initiate slider jquery objects
     $("#streak_slider").slider({
 	range: true,
@@ -285,8 +296,6 @@ $(function(){
 	}//listens for slider event & updates data arrays
 });
     
-    
-
 
     function transition() {
 	
@@ -330,6 +339,12 @@ $(function(){
 		return h - allScale(d) - padding;
 	    })
 	    .style("fill", "rgb(92,92,92)");
+
+	all_bars.append("svg:title")
+	    .text(function(d,i) {
+		all_title = results_combined[i].label + " (any length streak)";
+		return all_title;
+	    });
 	
 	var sel_bars = svg.selectAll(".sel_rect")
 	    .data(results_combined);
@@ -343,16 +358,22 @@ $(function(){
 		return i * (w / results_combined.length) + selPadding / 2+padding;
 	    })
 	    .attr("y", function(d) {
-		return allScale(d);
+		return allScale(d.data);
 	    })
 	    .attr("width", w / results_combined.length - selPadding)
 	    .attr("height", function(d) {
-		return h - allScale(d) - padding;
+		return h - allScale(d.data) - padding;
 	    })  
 	    .style("fill", function(d, i) {
 		return color(i)
 	    });
 	
+	sel_bars.append("svg:title")
+	    .text(function(d) {
+		sel_title = d.label + " (selected streak range)";
+		return sel_title;
+	    });
+
 	transition_labels(allScale);
 	
 	
@@ -459,13 +480,13 @@ $(function(){
 	sel_labels.transition().duration(dur)
 	    .attr("class", "sel_text")
 	    .text(function(d) {
-		return d;
+		return d.data;
 	    })
 	    .attr("x", function(d, i) {
 		return i * (w / results_all.length) + (w / results_combined.length - selPadding) / 2 + selPadding / 2+padding;
 	    })
 	    .attr("y", function(d) {
-		return allScale(d) - 1;
+		return allScale(d.data) - 1;
 	    })
 	    .attr("font-size", "18px")
 	    // .attr("fill", "red")
@@ -537,6 +558,35 @@ $(function(){
 	    }
 	});
 
+	var temp = results_combined;
+
+results_combined = [
+    {
+	data:temp[0],
+	label:"No Playoffs"
+    },
+    {
+	data:temp[1],
+	label:"Lost in First Round"
+    },
+    {
+	data:temp[2],
+	label:"Lost in Conference Semis"
+    },
+    {
+	data:temp[3],
+	label:"Lost in Conference Finals"
+    },
+    {
+	data:temp[4],
+	label:"Lost in Stanley Cup Finals"
+    },
+    {
+	data:temp[5],
+	label:"Stanley Cup Champions"
+    }
+];
+
 	games_in_range = in_range;
 
 
@@ -583,10 +633,10 @@ $(function(){
 	// console.log("fsc "+fsc+"\n\n");
 
 
-	var num_playoffs = in_range - results_combined[0];
-	var conf_finals = results_combined[5] + results_combined[4] + results_combined[3];
-	var num_cupfs = results_combined[5] + results_combined[4];
-	var num_cup = results_combined[5];
+	var num_playoffs = in_range - results_combined[0].data;
+	var conf_finals = results_combined[5].data + results_combined[4].data + results_combined[3].data;
+	var num_cupfs = results_combined[5].data + results_combined[4].data;
+	var num_cup = results_combined[5].data;
 	
 	chance_playoffs =Math.round(100* num_playoffs / in_range);
 	chance_cf = Math.round(100*conf_finals / in_range);
@@ -594,12 +644,12 @@ $(function(){
 	chance_cup = Math.round(100*num_cup / in_range);
 	
 	playoff_percentage = [];
-	playoff_percentage.push(results_combined[0]/in_range);
-	playoff_percentage.push(results_combined[1]/in_range);
-	playoff_percentage.push(results_combined[2]/in_range);
-	playoff_percentage.push(results_combined[3]/in_range);
-	playoff_percentage.push(results_combined[4]/in_range);
-	playoff_percentage.push(results_combined[5]/in_range);
+	playoff_percentage.push(results_combined[0].data/in_range);
+	playoff_percentage.push(results_combined[1].data/in_range);
+	playoff_percentage.push(results_combined[2].data/in_range);
+	playoff_percentage.push(results_combined[3].data/in_range);
+	playoff_percentage.push(results_combined[4].data/in_range);
+	playoff_percentage.push(results_combined[5].data/in_range);
 	
 	// console.log("Results combined: ", results_combined);
 	// console.log("Seasons: " + start_year + "-" + final_year);

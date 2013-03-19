@@ -3,15 +3,28 @@
     font-family: 'PT Sans Narrow', sans-serif;
 }
 
+
+#bars_svg{
+    position:relative;
+}
+
+#lsvg{
+    position:relative;
+    float:right;
+    margin-right:115px;
+    top:-520px;
+}
+
 #content{
     background:rgba(0,0,0,.25);
 }
 
 #svg_placer{
+    position:relative;
     background-image:url('images/ChicagoBlackhawks.png');
     background-repeat:no-repeat;
     background-size: 85px;
-    background-position: 453px 107px;
+    background-position: 428px 107px;
 }
 
 #sliders {
@@ -57,6 +70,7 @@
     font-size:30px;
     position:absolute;
     top:74px;
+    margin-left:12px;
 }
 
 .domain {
@@ -74,9 +88,9 @@
 }
 #stats_box{
     float: left;
-    margin-left: 20px;
+    margin-left: 40px;
     position: relative;
-    top: -60px;
+    top: -80px;
     /* border:2px solid black; */
 }
 
