@@ -59,10 +59,11 @@
     top:74px;
 }
 
-.xaxis{
-    stroke: #ccc;
-    shape-rendering: crispEdges;
-    stroke-width:2px;
+.domain {
+    fill: none;
+    stroke: black; 
+    stroke-width: 1px;
+    /* opacity: 1; */
 }
 #season_slider{
     margin-left:130px;

@@ -158,7 +158,7 @@ $(function(){
     var donut = donut_g.selectAll("g.arc")
 	.data(pie(results_combined))
 	.enter().append('g')
-	.attr("class",arc);
+	.attr("class","arc");
     
     donut.append("path")
 	.attr("class", "arc_path")
@@ -166,6 +166,10 @@ $(function(){
 	    return color(i)
 	})
 	.attr("d", arc)
+	// .attr("d", function (d, i) {
+	//     console.log(d);
+	//     return arc(d,i);
+	// })
 	.each(function(d) {
 	    this._current = d
 	});
@@ -220,9 +224,12 @@ $(function(){
 	.attr("class","y axis")
 	.call(lyAxis);
 
-    var another_line = d3.svg.line()
-	.x(function(d){return lx(d.streak)})
-	.y(function(d){return ly(d.po)})
+    function another_line(datum, i) {
+	var _another_line = d3.svg.line()
+	    .x(function(d){return lx(d.streak)})
+	    .y(function(d){return ly(d.po)});
+	return _another_line(datum.filter(function(d, i){return !isNaN(d.po)}));
+    }
     lsvg.append("path")
 	.datum(graph_cdfs)
 	.attr("class","another_line")
@@ -231,9 +238,15 @@ $(function(){
 	.attr("stroke-width", 2)
 	.attr("d",another_line);
 
-    var line = d3.svg.line()
-	.x(function(d){return lx(d.streak)})
-	.y(function(d){return ly(d.sc)})
+    function line (datum, i) {
+	var _line = d3.svg.line()
+	    .x(function(d){return lx(d.streak)})
+	    .y(function(d){
+		//	    console.log("SC!!!", d.sc, ly(d.sc));
+		return ly(d.sc)
+	    })
+	return _line(datum.filter(function (d, i){return !isNaN(d.sc)}));
+    }
     lsvg.append("path")
 	.datum(graph_cdfs)
 	.attr("class","line")
@@ -288,7 +301,6 @@ $(function(){
 
 	var sep_line = d3.svg.line()
 	    .x(function(d) {
-		console.log("in line:",d);
 		return d[0];})
 	    .y(function(d) {return allScale(d[1]);});
 	
@@ -347,7 +359,7 @@ $(function(){
 	//transition the donut!
 	var arcs = donut_g.selectAll(".arc_path")
 	    .data(pie(results_combined));
-	
+
 	arcs.transition().duration(dur)
 	    .attrTween("d", arcTween);
 	
@@ -356,7 +368,6 @@ $(function(){
 	
 	arc_text.transition().duration(dur)
 	    .attr("transform", function(d,i) {                
-		// console.log("Eating donuts: ",d);	  	
 		return "translate(" + text_arc.centroid(d) + ")";
 	    })
 	    .attr("fill-opacity", function (d, i){
@@ -417,7 +428,7 @@ $(function(){
 	    .attr("class",function(d){return d.cls;});
 
 
-	// transition the "cdfs" that aren't really monotonically
+	// transition the "cdfs" that aren't really monotonically`
 	// increasing and therefore not a cdf. nice try.
 	lsvg.select("path.another_line")
 	    .transition(dur)
@@ -542,7 +553,6 @@ $(function(){
 	    sc_sorg[i]=tmps/tmpt;
 	}
 
-	
 	if(graph_cdfs === undefined) {
 	    graph_cdfs = po_sorg.map(function (number, index, array) {
     		return {}
@@ -557,20 +567,20 @@ $(function(){
 
 
 
-	console.log("tc "+tot_count);
-	console.log("pc "+po_count);
-	console.log("sc "+sc_count+"\n");
+	// console.log("tc "+tot_count);
+	// console.log("pc "+po_count);
+	// console.log("sc "+sc_count+"\n");
 
 	var fpc = [];	
 	po_sorg.forEach(function(val,i,array){
 	    fpc[i]=val.toFixed(3);
 	});
-	console.log("fpc "+fpc);
+	// console.log("fpc "+fpc);
 	var fsc = [];	
 	sc_sorg.forEach(function(val,i,array){
 	    fsc[i]=val.toFixed(3);
 	});
-	console.log("fsc "+fsc+"\n\n");
+	// console.log("fsc "+fsc+"\n\n");
 
 
 	var num_playoffs = in_range - results_combined[0];
