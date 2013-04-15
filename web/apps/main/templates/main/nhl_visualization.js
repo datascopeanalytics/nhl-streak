@@ -198,10 +198,10 @@ $(function(){
 // LINE GRAPH 
 
 
-    var lmargin = {top:20,right:20,left:80,bottom:50};
-    var lh = 270 - lmargin.top - lmargin.bottom;
-    var lw = 280 - lmargin.left - lmargin.right;
-    var axis_label_padding = 30;
+    var lmargin = {top:20,right:20,left:100,bottom:50};
+    var lh = 280 - lmargin.top - lmargin.bottom;
+    var lw = 290 - lmargin.left - lmargin.right;
+    var axis_label_padding = 40;
 
     var lx = d3.scale.linear()
 	.range([0,lw]);
@@ -226,6 +226,48 @@ $(function(){
 	.attr("height",lh+lmargin.top+lmargin.bottom)
 	.append("g")
 	.attr("transform","translate("+scooter+","+lmargin.top+")");
+
+    lsvg.append("text")
+	.attr("class","x axis_label")
+	.attr("x",lw/2)
+	.attr("y",lh+axis_label_padding)
+	.style("text-anchor","middle")
+	.style("font-size","18px")
+	.text("Streak length")
+
+    lsvg.append("text")
+	.attr("class","y axis_label")
+	.attr("x",0-lh/2)
+	.attr("y",0-1.5*axis_label_padding)
+	.attr("transform","rotate(-90)")
+	.style("text-anchor","middle")
+	.style("font-size","18px")
+	.text("Probability of making playoffs")
+
+    lsvg.append("text")
+	.attr("class","y axis_label")
+	.attr("x",0-lh/2)
+	.attr("y",0-axis_label_padding)
+	.attr("transform","rotate(-90)")
+	.style("text-anchor","middle")
+	.style("font-size","18px")
+	.text("or winning stanley cup")
+
+    lsvg.append("text")
+	.attr("class","playoff data_label")
+	.attr("x", lw/10)
+	.attr("y", 10)
+	.text("playoffs")
+	.style("fill","rgba(255,0,0,.3)")
+	.style("font-size","18px")
+
+    lsvg.append("text")
+	.attr("class","stanley data_label")
+	.attr("x", lw/1.6)
+	.attr("y", lh/1.1)
+	.text("stanley cup")
+	.style("fill","rgb(255,0,0)")
+	.style("font-size","18px")
 
 
     //add line graph for stanley cup ~cdf
@@ -259,7 +301,7 @@ $(function(){
 	.attr("stroke-opacity",.3)
 	.attr("d",another_line);  
 
-    console.log(line);
+  //  console.log(line);
 
     function line (datum, i) {
 	var _line = d3.svg.line()
