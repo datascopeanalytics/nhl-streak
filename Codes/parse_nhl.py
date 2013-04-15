@@ -1,3 +1,5 @@
+import sys
+
 from bs4 import BeautifulSoup
 import glob
 import pickle
@@ -5,17 +7,26 @@ from pprint import pprint
 
 filenames = glob.glob('../web/data/html_per_year/*')
 filenames = sorted(filenames,reverse=True)
+# filenames = ['../web/data/html_per_year/NHL_1993_games.html']
 
 nhl_dict = {}
+
+tie_count=0
+game_count=0
+ppg = []
+
 for fname in filenames:
-    print 'opening ' + fname
+    print >> sys.stderr, 'opening ' + fname
     with open('nhl_parse_out.txt', 'w') as outfile:
-        
+        tie_count = 0
+        game_count = 0
+        score_sum = 0
         #what year is it
         year = fname.split("_")[3]
         if int(year) < 1940:
             continue
         nhl_dict[year] = {}
+    
 
         #find the table in the html
         f=open(fname)
@@ -32,7 +43,7 @@ for fname in filenames:
             cols=row.findAll('td')
             if len(cols):
 
-                
+                game_count += 1
                 # identify home team, away team 
                 # decide point value for each team
                 hometeam = str(cols[1].string)
@@ -40,15 +51,19 @@ for fname in filenames:
                 
                 awayteam = str(cols[3].string)
                 at_score = int(cols[4].string)
-                
+
+                score_sum = score_sum + at_score + ht_score
+
                 # Away team wins!
                 if ht_score < at_score:
                     at_points = 2
 
                     # Checking to see if the home team deserves a
                     # point in the case of a shootout or OT
+
                     if cols[5].string:
                         ht_points = 1
+                        tie_count += 1
                     else:
                         ht_points = 0
 
@@ -60,6 +75,7 @@ for fname in filenames:
                     # point in the case of a shootout or OT
                     if cols[5].string:
                         at_points = 1
+                        tie_count += 1
                     else:
                         at_points = 0
                 # We have a tie :( Only occurs in years previous to
@@ -67,6 +83,7 @@ for fname in filenames:
                 else:
                     at_points = 1
                     ht_points = 1
+                    tie_count += 1
                     
                 try:
                     nhl_dict[year][hometeam]['reg'].append(ht_points)
@@ -78,12 +95,17 @@ for fname in filenames:
                 except KeyError:
                     nhl_dict[year][awayteam] = {'reg':[at_points],
                                                 'playoffs':0}
+        # print year,tie_count,game_count
+        ppgame = score_sum*1.0/game_count
+        print year,',', score_sum,',', game_count
+
+        print >> sys.stderr, "in",year,"ppg =",ppgame
 
     # For every year, figure out the streak
     for team, value in nhl_dict[year].iteritems():
         counter = 0
         max_streak = 0
-        current_streak = 0;
+        current_streak = 0
         while value['reg'][counter] != 0:
             counter += 1
         value['streak'] = counter
@@ -98,6 +120,17 @@ for fname in filenames:
         max_streak = max(current_streak,max_streak)
         value['max_streak'] = max_streak
 
+        # count up longest win streak
+        win_streak = 0
+        current_streak = 0
+        for point in value['reg']:
+            if point == 2:
+                current_streak += 1
+            else:
+                win_streak = max(current_streak,win_streak)
+                current_streak = 0
+        win_streak = max(current_streak,win_streak)
+        value['win_streak'] = win_streak
 
     # For every year, assign playoff value to applicable teams
     playoff_teams=[]
@@ -145,10 +178,12 @@ for fname in filenames:
     #tempout.close()
 
 print "dumping the file"
-pickle.dump(nhl_dict,open('nhl_streak_40.p', "wb"))
+pickle.dump(nhl_dict,open('nhl_streak_wwin.p', "wb"))
 
+print >> sys.stderr, tie_count
+print >> sys.stderr, game_count
+print >> sys.stderr, tie_count*1.0/game_count
 
-                
 
 
 

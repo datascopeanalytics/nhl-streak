@@ -2,15 +2,17 @@ $(function(){
     // this is a django template. we can use the django variables to
     // extract data. weeeeee!
     var data = {{data_json}};
-    // console.log(data);
+    console.log(data);
     var percentage = d3.format("%");
     
     //set static values for background histogram
     var lowest_streak = 0;
     var highest_streak = 16;
+    var year_min = 1940;
+    var year_max = 2012;
     
     // These numbers must change when we manipulate the slider bar
-    var start_year = 1940;
+    var start_year = 1968;
     var final_year = 2012;
     var lowest_sel_streak = 0;
     var highest_sel_streak = 16;
@@ -64,7 +66,9 @@ $(function(){
 	.append("svg")
 	.attr("id","slider_svg")
 	.attr("width", w)
-	.attr("height", h/2);
+	.attr("height", h/3);
+
+
 
     var streak_scale = d3.scale.linear()
 	.domain([lowest_streak, highest_streak])
@@ -74,15 +78,17 @@ $(function(){
     y_streak_scale = parseInt(y_streak_scale)*.7;
     // console.log("y_streak_scale: ", y_streak_scale);
 
-    var streak_points =     [{val:0,label:"0"},
-			     {val:2,label:"•"},
-			     {val:4,label:"4"},
-			     {val:6,label:"•"},
-			     {val:8,label:"8"},
-			     {val:10,label:"•"},
-			     {val:12,label:"12"},
-			     {val:14,label:"•"},
-			     {val:16,label:"16"},];
+    var streak_points =     [
+	{val:0,label:"0"},
+	{val:2,label:"•"},
+	{val:4,label:"4"},
+	{val:6,label:"•"},
+	{val:8,label:"8"},
+	{val:10,label:"•"},
+	{val:12,label:"12"},
+	{val:14,label:"•"},
+	{val:16,label:"16"},
+    ];
     
     var streak_axis = slider_svg.selectAll('.streak_text')
 	.data(streak_points)
@@ -95,7 +101,7 @@ $(function(){
     
    
     var year_scale = d3.scale.linear()
-	.domain([start_year,final_year])
+	.domain([year_min,year_max])
 	.range([$('#season_holder').width() - $('#season_slider').width() + padding, $('#season_holder').width() + padding]);
 
     var y_year_scale = 8 +//parseInt($("#streak_holder").height()) + 
@@ -118,7 +124,8 @@ $(function(){
 	{val:1995,label:"•"},
 	{val:2000,label:"'00"},
 	{val:2005,label:"•"},
-	{val:2010,label:"'10"},];
+	{val:2010,label:"'10"},
+    ];
 
     var year_axis = slider_svg.selectAll('.year_text')
 	.data(year_points).enter().append('text')
@@ -154,7 +161,7 @@ $(function(){
     var donut_g = svg
 	.append("g")
 	.attr("class", "donut")
-	.attr("transform", "translate(" + (w/1.35 + r * 1.2) + "," + (r * 1.2 + 40) + ")");
+	.attr("transform", "translate(" + (w/1.4 + r * 1.2) + "," + (r * 1.2 + 40) + ")");
     
     var donut = donut_g.selectAll("g.arc")
 	.data(pie(results_combined))
@@ -191,9 +198,10 @@ $(function(){
 // LINE GRAPH 
 
 
-    var lmargin = {top:20,right:20,left:20,bottom:20};
-    var lh = 200 - lmargin.top - lmargin.bottom;
-    var lw = 180 - lmargin.left - lmargin.right;
+    var lmargin = {top:20,right:20,left:80,bottom:50};
+    var lh = 270 - lmargin.top - lmargin.bottom;
+    var lw = 280 - lmargin.left - lmargin.right;
+    var axis_label_padding = 30;
 
     var lx = d3.scale.linear()
 	.range([0,lw]);
@@ -211,7 +219,8 @@ $(function(){
 
     var scooter = lmargin.left;
 
-    var lsvg = d3.select("#main").append("svg")
+  
+    var lsvg  = d3.select("#main").append("svg")
 	.attr("id","lsvg")
 	.attr("width",lw+lmargin.left+lmargin.right)
 	.attr("height",lh+lmargin.top+lmargin.bottom)
@@ -232,6 +241,7 @@ $(function(){
 	.attr("class","y axis")
 	.call(lyAxis);
 
+
     function another_line(datum, i) {
 	var _another_line = d3.svg.line()
 	    .x(function(d){return lx(d.streak)})
@@ -244,9 +254,12 @@ $(function(){
 	.datum(graph_cdfs)
 	.attr("class","another_line")
 	.attr("fill", "none")
-	.attr("stroke", "black")
+	.attr("stroke", "red")
 	.attr("stroke-width", 2)
-	.attr("d",another_line);
+	.attr("stroke-opacity",.3)
+	.attr("d",another_line);  
+
+    console.log(line);
 
     function line (datum, i) {
 	var _line = d3.svg.line()
@@ -285,8 +298,8 @@ $(function(){
 
     $("#season_slider").slider({
 	range: true,
-	min: 1940,
-	max: 2012,
+	min: year_min,
+	max: year_max,
 	step: 1,
 	values: [start_year, final_year],
 	slide: function(event, ui) {
@@ -295,7 +308,79 @@ $(function(){
 	    transition();
 	}//listens for slider event & updates data arrays
 });
-    
+  
+
+
+// bar chart legend
+    // add svg element
+    d3.select("#bar_legend")
+	.append("svg")
+	.attr("width",w)
+	.attr("height",h/5);
+
+    var bar_legend = d3.select('#bar_legend').selectAll('svg');
+
+    legend = bar_legend.selectAll(".legend_g")
+	.data(results_all).enter()
+	.append('g')
+	.attr("class","legend_g");  
+
+    legend.append('rect')
+	.attr("x", function(d, i) {
+		return i * (w / results_all.length)+padding/2;
+	})
+	.attr("y",0)
+	.attr("rx",5)
+	.attr("ry",5)
+	.attr("width",(w-2*padding)/results_all.length-padding/2)
+	.attr("height",h/5)
+	.style("fill", function(d, i) {
+		return color(i)
+	})
+	.style("fill-opacity","0.4");
+
+    var legend_text = [
+	['Did not','make','playoffs'],
+	['Lost in','first','round'],
+	['Lost in','conference','semis'],
+	['Lost in','conference','finals'],
+	['Lost in','stanley','cup finals'],
+	['Won','stanley','cup']
+    ];
+ 
+    var legend_labels = legend.append('text')
+	.style("font-size","18")
+	.style("text-anchor","middle");
+	
+    var leg_x = w/results_all.length;
+
+    legend_labels.append('tspan')
+	.attr("x",function(d,i){
+	    return i * leg_x + leg_x/2;
+	})
+	.attr("y",20)
+	.text(function(d,i){
+	    return legend_text[i][0];
+	});
+    legend_labels.append('tspan')
+	.attr("x",function(d,i){
+	    return i * leg_x + leg_x/2;	  
+	})
+	.attr("y",40)
+	.text(function(d,i){
+	    return legend_text[i][1];
+	});
+    legend_labels.append('tspan')
+	.attr("x",function(d,i){
+	    return i * leg_x + leg_x/2;
+	})
+	.attr("y",60)
+	.text(function(d,i){
+	    return legend_text[i][2];
+	});
+
+
+
 
     function transition() {
 	

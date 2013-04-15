@@ -11,8 +11,8 @@
 #lsvg{
     position:relative;
     float:right;
-    margin-right:115px;
-    top:-520px;
+    margin-right:90px;
+    top:-590px;
 }
 
 #content{
@@ -24,7 +24,7 @@
     background-image:url('images/ChicagoBlackhawks.png');
     background-repeat:no-repeat;
     background-size: 85px;
-    background-position: 428px 107px;
+    background-position: 416px 107px;
 }
 
 #sliders {
@@ -84,13 +84,18 @@
 }
 
 #season_slider .ui-widget-header{
-    background:black;
+    background:#5c5c5c;
 }
+
+.ui-slider-handle{
+    background-color:rgb(0,0,0)
+}
+
 #stats_box{
     float: left;
     margin-left: 40px;
     position: relative;
-    top: -80px;
+    top: -87px;
     /* border:2px solid black; */
 }
 
@@ -114,4 +119,3 @@
     font-size: 24px;
     margin-top: 14px;
 }
-
