@@ -11,7 +11,7 @@
 #lsvg{
     position:relative;
     float:right;
-    margin-right:90px;
+    margin-right:120px;
     top:-590px;
 }
 
@@ -24,7 +24,7 @@
     background-image:url('images/ChicagoBlackhawks.png');
     background-repeat:no-repeat;
     background-size: 85px;
-    background-position: 416px 107px;
+    background-position: 380px 105px;
 }
 
 #sliders {

@@ -8,7 +8,7 @@ $(function(){
     //set static values for background histogram
     var lowest_streak = 0;
     var highest_streak = 16;
-    var year_min = 1940;
+    var year_min = 1942;
     var year_max = 2012;
     
     // These numbers must change when we manipulate the slider bar
@@ -161,7 +161,7 @@ $(function(){
     var donut_g = svg
 	.append("g")
 	.attr("class", "donut")
-	.attr("transform", "translate(" + (w/1.4 + r * 1.2) + "," + (r * 1.2 + 40) + ")");
+	.attr("transform", "translate(" + (w/1.55 + r * 1.2) + "," + (r * 1.2 + 40) + ")");
     
     var donut = donut_g.selectAll("g.arc")
 	.data(pie(results_combined))
@@ -233,7 +233,7 @@ $(function(){
 	.attr("y",lh+axis_label_padding)
 	.style("text-anchor","middle")
 	.style("font-size","18px")
-	.text("Streak length")
+	.text("Streak (n games or greater)")
 
     lsvg.append("text")
 	.attr("class","y axis_label")
@@ -824,8 +824,11 @@ results_combined = [
 	else if (a===0){
 	    str = str_hdr+"of "+b+" games or fewer,";
 	}
+	else if (a===b) {
+	    str = str_hdr+"of exactly "+b+" games,";
+	}
 	else{
-	    str = str_hdr+"between "+a+" & "+b+" games,";
+	    str = str_hdr+"of "+a+" to "+b+" games,";
 	}
 	return str;
     }

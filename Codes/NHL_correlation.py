@@ -2,7 +2,7 @@ import pickle
 from numpy import *
 from pylab import *
 
-nhl = pickle.load(open("nhl_streak_40.p"))
+nhl = pickle.load(open("nhl_streak_42.p"))
 whl = pickle.load(open('nhl_streak_wwin.p'))
 
 first_game = []
@@ -20,12 +20,15 @@ seasons = sorted(seasons,reverse=True)
 # seasons.sort()
 # print seasons
 
+total_games = 0
 
 for season in nhl:
     for team  in nhl[season]:
         # print team
         # print nhl[season][team]
         
+        total_games += len(nhl[season][team]['reg'])
+
         playoffs=(nhl[season][team]['playoffs'])
         outcome.append(playoffs)
 
@@ -73,6 +76,16 @@ for season in nhl:
             reg=reg[:82]
             games.append(reg)
 
+print 'Total games played since 1942',total_games, total_games/2
+
+def sc_bin(x):
+    if x == 5:
+        return 1
+    else:
+        return 0
+
+outcome_sc = [sc_bin(x) for x in outcome]
+
 years = sorted(whl.keys())
 for year in years:
     for team in whl[year]:
@@ -81,23 +94,39 @@ for year in years:
         woutcome = whl[year][team]['playoffs']
         woutcomes.append(woutcome)
         
+woutcome_sc = [sc_bin(x) for x in woutcomes]
+
 win_corr = corrcoef(wstreaks,woutcomes)[0][1]
 print 'corr coef btw win streak and playoff outcome:'
 print win_corr
-# print first_game, outcome
-# print len(first_game), len(outcome)
+
+win_sc_corr = corrcoef(wstreaks,woutcome_sc)[0][1]
+print 'corr coef btw win streak and stanley cup outcome:'
+print win_sc_corr
 
 first_corr = corrcoef(first_game,outcome)[0][1]
 print 'corr coef btw first game and playoff outcome:'
 print first_corr
 
+first_sc_corr = corrcoef(first_game,outcome_sc)[0][1]
+print 'corr coef btw first game and stanley cup outcome'
+print first_sc_corr
+
 ostreak_corr = corrcoef(ostreaks,outcome)[0][1]
 print 'corr coef btw opening season streak and playoff outcome:'
 print ostreak_corr
 
+ostreak_sc_corr = corrcoef(ostreaks,outcome_sc)[0][1]
+print 'corr coef btw opening season streak and stanley cup outcome:'
+print ostreak_sc_corr
+
 mstreak_corr = corrcoef(mstreaks,outcome)[0][1]
 print 'corr coef btw longest point streak and playoff outcome:'
 print mstreak_corr
+
+mstreak_sc_corr = corrcoef(mstreaks,outcome_sc)[0][1]
+print 'corr coef btw longest point streak and stanley cup outcome:'
+print mstreak_sc_corr
 
 # maxes = mstreaks
 # maxes = sorted(maxes,reverse=True)
@@ -116,17 +145,18 @@ print mstreak_corr
 # title('point streak histogram (opening season)')
 # show()
 # savefig('opening_streak_histogram')
-print 'max win streak :',max(wstreaks)
-hist(wstreaks,21)
+
+#print 'max win streak :',max(wstreaks)
+# hist(wstreaks,21)
 # show()
 
-print 'Top point streak teams and outcome'
-for year in nhl:
-    for team in nhl[year]:
-        value = nhl[year][team]['max_streak']
-        outcome = nhl[year][team]['playoffs']
-        if value > 20:
-            print year, team, value, 'playoffs:',outcome
+# print 'Top point streak teams and outcome'
+# for year in nhl:
+#     for team in nhl[year]:
+#         value = nhl[year][team]['max_streak']
+#         outcome = nhl[year][team]['playoffs']
+#         if value > 20:
+#             print year, team, value, 'playoffs:',outcome
 
 # print 'Top opening season point streaks and outcome'
 # for year in nhl:
@@ -161,12 +191,7 @@ for i in range(0,82):
 
 # print correlations
 
-# duh this is by game-within-season, not by season
-# x2 = sorted(nhl.keys())
-# x3=[int(year) for year in x2]
-# print x3
-
-# attempt running average
+# # attempt running average
 # c=correlations
 # n=5 #window
 # ravg=convolve(c, np.ones((n,))/n)[(n-1):]
@@ -174,12 +199,15 @@ for i in range(0,82):
 # header=[c[0],mean(c[:2]),mean(c[:3]),mean(c[:4])]
 # running_avg=header
 # running_avg.extend(ravg)
-
-
 # plot(correlations,'b.')
 # plot(running_avg,'r')
 # show()
 
 
+# for team in nhl['2008']:
+#     print team, nhl['2008'][team]['streak']
 
-
+# print nhl['1977']['Montreal Canadiens']
+# reg = nhl['1977']['Montreal Canadiens']['reg']
+# print reg
+# print len(reg),reg.count(0)
