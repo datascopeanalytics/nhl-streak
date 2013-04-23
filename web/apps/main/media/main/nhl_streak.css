@@ -1,8 +1,15 @@
 #main{
     position:relative;
-    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
+.legend_g>text{
+    font-weight: 300;
+}
+
+.axis_label{
+    font-weight: 300;
+}
 
 #bars_svg{
     position:relative;
@@ -24,7 +31,7 @@
     background-image:url('images/ChicagoBlackhawks.png');
     background-repeat:no-repeat;
     background-size: 85px;
-    background-position: 380px 105px;
+    background-position: 380px 115px;
 }
 
 #sliders {
@@ -100,7 +107,7 @@
 }
 
 .stats_lang {
-    font-size: 20px;
+    font-size: 19px;
     margin-left: 10px;
 }
 
@@ -118,4 +125,11 @@
     padding-left: 10px;
     font-size: 24px;
     margin-top: 14px;
+}
+
+.colorbar_text {
+    font-weight: 300;
+    
+    margin-top:20px;
+    margin-left:100px;
 }

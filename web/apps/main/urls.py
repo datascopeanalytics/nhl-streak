@@ -6,8 +6,7 @@ urlpatterns = patterns(
     '',
 
     url(r'^$', views.nhl_visualization, name="nhl_visualization"),
-    url(r'test2$', views.nhl_test2, name="nhl_test2"),
-    url(r'dc$',views.nhl_dc, name="nhl_dc"),
+    url(r'corrs$', views.nhl_corrs, name="nhl_corrs"),
 )
 
 

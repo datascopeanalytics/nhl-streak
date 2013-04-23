@@ -1,3 +1,4 @@
+s
 $(function(){
     // this is a django template. we can use the django variables to
     // extract data. weeeeee!

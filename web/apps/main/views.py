@@ -8,9 +8,13 @@ from django.template import RequestContext
 
 def nhl_visualization(request):    
 
-    filename = os.path.join(settings.PROJECT_ROOT,"data","nhl_streak_40.p")
+    filename = os.path.join(settings.PROJECT_ROOT,"data","nhl_streak_42.p")
     with open(filename) as stream:
         data = pickle.load(stream)
+
+    with open("kk", 'w') as stream:
+        s = json.dumps(data)
+        stream.write(json.dumps(data))
 
     return render_to_response(
         'main/dummy.html', {
@@ -19,15 +23,15 @@ def nhl_visualization(request):
         context_instance=RequestContext(request)
         )
 
-def nhl_test2(request):
+def nhl_corrs(request):
 
-    filename = os.path.join(settings.PROJECT_ROOT,"data","nhl_streak_pickle.p")
+    filename = os.path.join(settings.PROJECT_ROOT,"data","nhl_streak_42.p")
 
     with open(filename) as stream:
         data = pickle.load(stream)
 
     return render_to_response(
-        'main/test2.html', {
+        'main/nhl_corrs.html', {
             'data_json': json.dumps(data),
             },
         context_instance=RequestContext(request)
