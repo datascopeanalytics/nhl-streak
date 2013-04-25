@@ -12,10 +12,6 @@ def nhl_visualization(request):
     with open(filename) as stream:
         data = pickle.load(stream)
 
-    with open("kk", 'w') as stream:
-        s = json.dumps(data)
-        stream.write(json.dumps(data))
-
     return render_to_response(
         'main/dummy.html', {
             'data_json': json.dumps(data),
@@ -37,15 +33,15 @@ def nhl_corrs(request):
         context_instance=RequestContext(request)
         )
 
-def nhl_dc(request):
+def nhl_transcorr(request):
 
-    filename = os.path.join(settings.PROJECT_ROOT,"data","nhl_streak_pickle.p")
+    filename = os.path.join(settings.PROJECT_ROOT,"data","nhl_streak_42.p")
 
     with open(filename) as stream:
         data = pickle.load(stream)
 
     return render_to_response(
-        'main/test2.html', {
+        'main/transcorr.html', {
             'data_json': json.dumps(data),
             },
         context_instance=RequestContext(request)
