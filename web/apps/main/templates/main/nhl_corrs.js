@@ -118,7 +118,7 @@ mstreak_rects
     .data(mrects)
     .enter().append('rect')
     .attr('x',function(rect){return rect.x*xlen/rect.norm+border;})
-    .attr('y',function(rect){return rect.y*ylen/6+border;})
+    .attr('y',function(rect){return (5-rect.y)*ylen/6+border;})
     .attr('height',ylen/6-border)
     .attr('width',function(rect){return xlen/rect.norm-border;})
     .style('fill',function(rect){return rgb(rect.value);});
@@ -128,7 +128,7 @@ ostreak_rects
     .data(orects)
     .enter().append('rect')
     .attr('x',function(rect){return rect.x*xlen/rect.norm+border;})
-    .attr('y',function(rect){return rect.y*ylen/6+border;})
+    .attr('y',function(rect){return (5-rect.y)*ylen/6+border;})
     .attr('height',ylen/6-border)
     .attr('width',function(rect){return xlen/rect.norm-border;})
     .style('fill',function(rect){return rgb(rect.value);});
@@ -138,7 +138,7 @@ wstreak_rects
     .data(wrects)
     .enter().append('rect')
     .attr('x',function(rect){return rect.x*xlen/rect.norm+border;})
-    .attr('y',function(rect){return rect.y*ylen/6+border;})
+    .attr('y',function(rect){return (5-rect.y)*ylen/6+border;})
     .attr('height',ylen/6-border)
     .attr('width',function(rect){return xlen/rect.norm-border;})
     .style('fill',function(rect){return rgb(rect.value);});
