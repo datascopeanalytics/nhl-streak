@@ -2,6 +2,7 @@ import pickle
 from numpy import *
 from pylab import *
 import random
+from scipy import stats
 
 nhl = pickle.load(open("nhl_streak_42.p"))
 whl = pickle.load(open('nhl_streak_wwin.p'))
@@ -99,36 +100,42 @@ for year in years:
 woutcome_sc = [sc_bin(x) for x in woutcomes]
 
 win_corr = corrcoef(wstreaks,woutcomes)[0][1]
+wslope, wint, wr, wp, wstderr = stats.linregress(wstreaks,woutcomes)
 print 'corr coef btw win streak and playoff outcome:'
 print win_corr
+print 'slope ',wslope,', int ',wint,', r=',wr,', p=',wp
 
-win_sc_corr = corrcoef(wstreaks,woutcome_sc)[0][1]
-print 'corr coef btw win streak and stanley cup outcome:'
-print win_sc_corr
+# win_sc_corr = corrcoef(wstreaks,woutcome_sc)[0][1]
+# print 'corr coef btw win streak and stanley cup outcome:'
+# print win_sc_corr
 
-first_corr = corrcoef(first_game,outcome)[0][1]
-print 'corr coef btw first game and playoff outcome:'
-print first_corr
+# first_corr = corrcoef(first_game,outcome)[0][1]
+# print 'corr coef btw first game and playoff outcome:'
+# print first_corr
 
-first_sc_corr = corrcoef(first_game,outcome_sc)[0][1]
-print 'corr coef btw first game and stanley cup outcome'
-print first_sc_corr
+# first_sc_corr = corrcoef(first_game,outcome_sc)[0][1]
+# print 'corr coef btw first game and stanley cup outcome'
+# print first_sc_corr
 
 ostreak_corr = corrcoef(ostreaks,outcome)[0][1]
-print 'corr coef btw opening season streak and playoff outcome:'
+oslope, oint, o_r, op, ostderr = stats.linregress(ostreaks,outcome)
+print '\n\ncorr coef btw opening season streak and playoff outcome:'
 print ostreak_corr
+print 'slope ',oslope,', int ',oint,', r=',o_r,', p=',op
 
-ostreak_sc_corr = corrcoef(ostreaks,outcome_sc)[0][1]
-print 'corr coef btw opening season streak and stanley cup outcome:'
-print ostreak_sc_corr
+# ostreak_sc_corr = corrcoef(ostreaks,outcome_sc)[0][1]
+# print 'corr coef btw opening season streak and stanley cup outcome:'
+# print ostreak_sc_corr
 
 mstreak_corr = corrcoef(mstreaks,outcome)[0][1]
-print 'corr coef btw longest point streak and playoff outcome:'
+mslope, mint, mr, mp, mstderr = stats.linregress(mstreaks,outcome)
+print '\n\ncorr coef btw longest point streak and playoff outcome:'
 print mstreak_corr
+print 'slope ',mslope,', int ',mint,', r=',mr,', p=',mp
 
-mstreak_sc_corr = corrcoef(mstreaks,outcome_sc)[0][1]
-print 'corr coef btw longest point streak and stanley cup outcome:'
-print mstreak_sc_corr
+# mstreak_sc_corr = corrcoef(mstreaks,outcome_sc)[0][1]
+# print 'corr coef btw longest point streak and stanley cup outcome:'
+# print mstreak_sc_corr
 
 print 'longest point streak'
 print max(mstreaks)
@@ -150,10 +157,13 @@ print max(mstreaks)
 # title('point streak histogram (opening season)')
 # show()
 # savefig('opening_streak_histogram')
+mx = arange(0,35)
+mline = mslope * mx + mint
 
 _mstreaks = [o+(random.random()*.3) for o in mstreaks]
 _outcome = [o+(random.random()*.3) for o in outcome]
 plot(_mstreaks,_outcome,'.k')
+plot(mx,mline,'r-')
 show()
 
 #print 'max win streak :',max(wstreaks)
