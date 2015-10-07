@@ -219,7 +219,7 @@ $(function(){
     var scooter = lmargin.left;
 
 
-    var lsvg  = d3.select("#main").append("svg")
+    var lsvg  = d3.select("#probabilities").append("svg")
 	.attr("id","lsvg")
 	.attr("width",lw+lmargin.left+lmargin.right)
 	.attr("height",lh+lmargin.top+lmargin.bottom)

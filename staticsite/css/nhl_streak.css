@@ -2,6 +2,7 @@
     position:relative;
     font-family: 'Roboto Condensed', sans-serif;
     background-color: #ddd;
+    padding-bottom: 100px;
 }
 
 .legend_g>text{
@@ -16,11 +17,18 @@
     position:relative;
 }
 
+#bar_legend {
+    position:relative;
+    top: 20px;
+}
+
 #lsvg{
     position:relative;
-    float:right;
-    margin-right:120px;
-    top:-590px;
+}
+
+#more {
+    position: relative;
+    top: 40px;
 }
 
 #content{
@@ -28,11 +36,12 @@
 }
 
 #svg_placer{
+    top: 20px;
     position:relative;
     background-image:url('images/ChicagoBlackhawks.png');
     background-repeat:no-repeat;
     background-size: 85px;
-    background-position: 380px 115px;
+    background-position: 380px 215px;
 }
 
 #sliders {
@@ -103,7 +112,7 @@
     float: left;
     margin-left: 40px;
     position: relative;
-    top: -87px;
+    /*top: -87px;*/
     /* border:2px solid black; */
 }
 
@@ -121,6 +130,8 @@
     clear: both;
     font-size: 36px;
     line-height: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 .action {
     padding-left: 10px;

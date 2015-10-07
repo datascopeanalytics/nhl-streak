@@ -12,15 +12,12 @@
 
     <title>NHL Streak</title>
 
-    <!-- {# include the HTML5 boilerplate css here #}
     <link rel="stylesheet" type="text/x-scss"
-	  href="{{STATIC_URL}}common/css/h5bp_normalize.scss" />
+	  href="css/h5bp_normalize.scss" />
     <link rel="stylesheet" type="text/x-scss"
-	  href="{{STATIC_URL}}common/css/h5bp_cross_browser.scss" />
-
-    {# reset all of the padding/margin/borders to zero #}
+	  href="css/h5bp_cross_browser.scss" />
     <link rel="stylesheet" type="text/x-scss"
-	  href="{{STATIC_URL}}common/css/reset.scss" /> -->
+	  href="common/css/reset.scss" />
 
 
 
@@ -47,8 +44,6 @@
     <![endif]-->
 
     <div id="main">
-      <div id="svg_placer"></div>
-      <div id="bar_legend"></div>
       <div id="sliders">
         <div id="streak_holder">
           <div id="streak_length">streak</div>
@@ -61,7 +56,12 @@
           <div class="clear"></div>
         </div>
       </div>
-      <div id="stats_box"></div>
+      <div id="svg_placer"></div>
+      <div id="bar_legend"></div>
+      <div id="more">
+        <div id="stats_box"></div>
+        <div id="probabilities"></div>        
+      </div>
     </div>
 
     <script src="js/jquery.js"></script>
