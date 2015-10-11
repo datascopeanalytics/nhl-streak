@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title%}NHL Streak{% endblock title%}
+
+
+{% block content %}
+<link rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../media/main/jquery-ui.css" />
+<link rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../media/main/nhl_streak.css" />
+<link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700"
+      rel="stylesheet"
+      type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700" 
+      rel="stylesheet" 
+      type="text/css"/>
+
+<div id="main">
+  <div id="svg_placer"></div>
+  <div id="bar_legend"></div>
+  <div id="sliders">
+    <div id="streak_holder">
+      <div id="streak_length">streak</div>
+      <div id="streak_slider" class="slider"></div>
+      <div class="clear"></div>
+    </div>
+    <div id="season_holder">
+      <div id="seasons">seasons</div>
+      <div id="season_slider" class="slider"></div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div id="stats_box"></div>
+
+ 
+</div>  
+{% endblock content %}
+  
+  {% block dynamic_javascript %}
+{{block.super}}
+<script src="../media/main/jquery.js"></script>
+<script src="../media/main/jquery-ui.js"></script>
+<script src="../media/main/d3/d3.v3.min.js"></script>
+<script src="../media/main/underscore.js"></script>
+<script>
+  {% include "main/nhl_visualization.js" %}
+</script>
+{% endblock dynamic_javascript %}

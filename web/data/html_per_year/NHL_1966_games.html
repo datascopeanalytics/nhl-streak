@@ -1,0 +1,2419 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/website" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" lang="en">
+ <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script>
+/*
+ * JS Redirection Mobile
+ *
+ * Developed by
+ * Sebastiano Armeli-Battana (@sebarmeli) - http://www.sebastianoarmelibattana.com
+ * Release under the MIT licence
+ */
+ if(!window.SA){window.SA={}}SA.redirection_mobile=function(d){var b=function(k){var j=new Date();j.setTime(j.getTime()+k);return j};var i=function(o){if(!o){return}var j=document.location.search,p=j&&j.substring(1).split("&"),l=0,n=p.length;for(;l<n;l++){var k=p[l],m=k&&k.substring(0,k.indexOf("="));if(m===o){return k.substring(k.indexOf("=")+1,k.length)}}};var f=navigator.userAgent.toLowerCase(),h="false",g="true",d=d||{},redirection_param=d.redirection_paramName||"mobile",redirection_param_long=d.redirection_paramName_long||"mobile_long",mobile_prefix=d.mobile_prefix||"m",mobile_url=d.mobile_url,mobile_protocol=d.mobile_scheme?d.mobile_scheme+":":document.location.protocol,host=document.location.host,queryValue=i(redirection_param),queryValue_long=i(redirection_param_long),mobile_host=mobile_url||(mobile_prefix+"."+(!!host.match(/^www./i)?host.substring(4):host)),cookie_hours=d.cookie_hours||1,isUAMobile=false;
+
+if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(f)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(f.substr(0,4))) { isUAMobile = true; }
+
+if(queryValue_long===h){if(window.localStorage){window.localStorage.setItem(redirection_param_long,h)}else{document.cookie=redirection_param+"="+h+";expires="+b(3600*1000*cookie_hours*7*24*31).toUTCString()}}else{if((queryValue_long===g)||(queryValue===g)){if(window.localStorage){window.localStorage.setItem(redirection_param_long,g)}else{document.cookie=redirection_param+"="+h+";expires="+b(-3600*1000*cookie_hours*7*24*31).toUTCString()}if(window.localStorage){window.sessionStorage.setItem(redirection_param,g)}else{document.cookie=redirection_param+"="+h+";expires="+b(-3600*1000*cookie_hours*7*24*31).toUTCString()}}else{if(document.referrer.indexOf(mobile_host)>=0||queryValue===h){if(window.sessionStorage){window.sessionStorage.setItem(redirection_param,h)}else{document.cookie=redirection_param+"="+h+";expires="+b(3600*1000*cookie_hours).toUTCString()}}}}var a=(window.sessionStorage)?(window.sessionStorage.getItem(redirection_param)===h):false,e=(window.localStorage)?(window.localStorage.getItem(redirection_param_long)===h):false,c=document.cookie?(document.cookie.indexOf(redirection_param)>=0):false;if(isUAMobile&&!(c||a||e)){document.location.href=mobile_protocol+"//"+mobile_host}};
+
+SA.redirection_mobile({mobile_url:"m.hkref.com/m?p=XXleaguesXXNHL_1966_games.html",redirection_paramName:"mobile",redirection_paramName_long:"mobile_long",cookie_hours:6});
+</script> 
+
+<!-- CRITEO -->
+<script type="text/javascript"> 
+var crtg_nid="1631"; 
+var crtg_cookiename="cto_usatd"; 
+function crtg_getCookie(c_name){var i,x,y,ARRcookies=document.cookie.split(";");for(i=0;i<ARRcookies.length;i++){x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);x=x.replace(/^\s+|\s+$/g,"");if(x==c_name){return unescape(y);}}return'';} var crtg_content=crtg_getCookie(crtg_cookiename);var crtg_rnd=Math.floor(Math.random()*99999999999);var crtg_url='http://rtax.criteo.com/delivery/rta/rta.js?netId='+escape(crtg_nid);crtg_url+='&cookieName='+escape(crtg_cookiename);crtg_url+='&rnd='+crtg_rnd;crtg_url+='&varName=crtg_content';var crtg_script=document.createElement('script');crtg_script.type='text/javascript';crtg_script.src=crtg_url;crtg_script.async=true;if(document.getElementsByTagName("head").length>0)document.getElementsByTagName("head")[0].appendChild(crtg_script);else if(document.getElementsByTagName("body").length>0)document.getElementsByTagName("body")[0].appendChild(crtg_script); 
+var crtg_ap=new Array();var crtg_cp=(crtg_content!=null&&crtg_content.length>0)?crtg_content.split(';'):null;if(crtg_cp){for(var crtg_kidx in crtg_cp){if(crtg_cp[crtg_kidx].length>0){var crtg_apa=crtg_cp[crtg_kidx].split('=');if(crtg_apa[1]==1){crtg_ap.push(crtg_apa[0].replace(/usatd/,''))}}}}
+</script>
+<!--  SYNCHRONOUS:googletag -->
+<script type="text/deferscript">
+  (function() {
+    var useSSL = 'https:' == document.location.protocol;
+    var src = (useSSL ? 'https:' : 'http:') +       '//www.googletagservices.com/tag/js/gpt.js';
+    document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+  })();
+</script>
+<script type="text/deferscript">
+googletag.pubads().enableSyncRendering();
+googletag.pubads().setTargeting("usatcriteo",crtg_ap);
+</script>
+
+<title>1965-66 NHL Season Schedule and Results | Hockey-Reference.com</title>
+<script type="text/javascript">var sr_gzipEnabled = false;</script>
+<script type="text/javascript" src="http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr.gzipcheck.js.jgz"></script>
+
+<noscript>
+  <link type="text/css" rel="stylesheet" href="http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min.css">
+</noscript>
+<script type="text/javascript">
+(function () {
+    var sr_css_file = 'http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min.css';
+    if (sr_gzipEnabled) {
+       sr_css_file = 'http://d2ft4b0ve1aur1.cloudfront.net/css-290/sr-hr-min-gz.css';
+    }
+    var head = document.getElementsByTagName("head")[0];
+    if (head) {
+	var scriptStyles = document.createElement("link");
+	scriptStyles.rel = "stylesheet";
+	scriptStyles.type = "text/css";
+	scriptStyles.href = sr_css_file;
+	head.appendChild(scriptStyles);
+	//alert('adding css to header:'+sr_css_file);
+    }
+}());
+</script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="nhl, wha, hockey, stats, statistics, history, 1965-66, schedule, results, games, scores">
+<meta property="fb:admins" content="1016660168">
+<meta property="fb:page_id" content="145429948844751">
+<meta property="og:site_name"  content="Hockey-Reference.com"> 
+<meta property="og:image"      content="http://d2ft4b0ve1aur1.cloudfront.net/images-241/Hockey-Ref.png"> 
+
+<link rel="icon"          type="image/vnd.microsoft.icon" href="http://d2ft4b0ve1aur1.cloudfront.net/images-290/favicon-hr.ico">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://d2ft4b0ve1aur1.cloudfront.net/images-290/favicon-hr.ico">
+<link rel="search"        type="application/opensearchdescription+xml" href="http://d2ft4b0ve1aur1.cloudfront.net/os-290/opensearch-hr.xml" title="Hockey-Ref Search">
+<!--[if lte IE 7 ]>
+<style type="text/css">
+.uni_holder { display: none; }
+</style>
+<![endif]-->
+<!--[if lte IE 6]>
+<style type="text/css">
+.hovermenu,.hovermenu_ajax,.sub_index,#quick_index {display:none!important}
+</style>
+<![endif]-->
+</head>
+
+<body onload="">
+
+<div id="page_container">
+
+<div id="top_nav">
+
+<div id="site_header">
+ <div id="sr_header">
+  <div class="float_right">
+    <a href="http://www.sports-reference.com">S-R</a>:
+    <a href="http://www.baseball-reference.com">MLB</a> | 
+    <a href="http://www.basketball-reference.com">NBA</a> &#183;
+    <a href="http://www.sports-reference.com/cbb/">CBB</a> |
+    <a href="http://www.pro-football-reference.com">NFL</a> &#183;
+    <a href="http://www.sports-reference.com/cfb/">CFB</a> |
+    <strong>NHL</strong> |
+    <a href="http://www.sports-reference.com/olympics/">Oly</a> |
+    <a href="http://www.sports-reference.com/blog/">Blog</a>
+    <br>
+  </div>
+  
+  <div class="clearfix padding_top_half float_right clear_both">
+    <div class="padding_left_half float_right"><a class="sprite-twitter" title="Follow us on Twitter" href="http://twitter.com/hockey_ref"></a><a class="sprite-facebook" title="Become a Fan on FaceBook" href="http://www.facebook.com/Hockey.Reference"></a>
+    </div>
+    <div class="float_right">
+       <form method="get" id="f" name="f" action="/player_search.cgi">
+         <input x-webkit-speech type="search" placeholder="click 'Tips' for shortcuts" id="search" name="search" class="search long"> 
+         <input type="submit" value="Search" class="submit">
+         <a class="padding_left_half small_text" href="/about/findstuff.shtml">Tips</a>
+       </form>
+    </div>
+  </div>
+  </div><!-- div#sr_header -->
+  <div class="float_left padding_bottom_half"><a href="/"><img src="http://d2ft4b0ve1aur1.cloudfront.net/images-265/Hockey-Ref.png" width=373 height=73 border="0" alt="Hockey-Reference.com"></a></div>
+ </div><!-- div#site_header -->
+
+
+
+<div id="quick_index">
+<ul class="hovermenu_ajax navbar">
+<li class=""><a href="/play-index/">play index</a><ul class="li_margin" id="header_playindex"></ul></li>
+ <li class=""><a href="/boxscores/">boxscores</a><ul class="li_margin" id="header_boxscores"></ul></li>
+ <li class=""><a href="/players/">players</a><ul class="li_margin" id="header_players"></ul></li>
+ <li class=""><a href="/teams/">teams</a><ul class="li_margin" id="header_teams"></ul></li>
+ <li class="active"><a href="/leagues/">seasons</a><ul class="li_margin" id="header_leagues"></ul></li>
+ <li class=""><a href="/coaches/">coaches</a><ul class="li_margin" id="header_coaches"></ul></li>
+ <li class=""><a href="/leaders/">leaders</a><ul class="li_margin" id="header_leaders"></ul></li>
+ <li class=""><a href="/awards/">awards</a><ul class="li_margin" id="header_awards"></ul></li>
+ <li class=""><a href="/playoffs/">playoffs</a><ul class="li_margin" id="header_playoffs"></ul></li>
+ <li class=""><a href="/draft/">draft</a><ul class="li_margin" id="header_draft"></ul></li>
+ <li class=""><a href="">more [+]</a><ul class="li_margin" id="header_more_links"></ul></li>
+
+</ul>
+</div>
+<div id="you_are_here">
+<p class="padding_left0"><a class="mobile_link" href="http://m.hkref.com/m?p=XXleaguesXXNHL_1966_games.html">Mobile Site</a> <span class="bold_text">You Are Here</span>&nbsp;&gt;&nbsp;<a href="/">HR</a>&nbsp;&gt;&nbsp;<a href="/leagues/">Leagues</a>&nbsp;&gt;&nbsp;<a href="/leagues/NHL_1966.html">1965-66 NHL</a>&nbsp;&gt;&nbsp;<strong>Season Schedule and Results</strong></p>
+</div>
+<div class="site_news"><p><span class="bold_text">News:</span> <span class="poptip" tip="With the NHL starting back up after the lockout, here's a reminder that we offer our familiar Play Index tools for hockey, too: Player Game FinderSearch through NHL regular season and playoff game logs spanning from 1987-88 to today for games that match your criteria. Player Season FinderSearch through NHL regular season statistics spanning from [...]">s-r blog:<a onClick="try { pageTracker._trackEvent('blog','click','area-yah'); } catch (err) {};"
+ href="http://www.sports-reference.com/blog/2013/01/hockey-reference-play-index/">Hockey-Reference Play Index</a> <span class="small_text"></span></span></p></div>
+
+</div>
+<div id="restofsite_launchpad" class="advertlaunchpad">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/launchpad/sports/hockey/general', [970,66] ,             'restofsite_launchpad').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_launchpad");
+</script>
+</div><!-- div.#restofsite_launchpad.advertlaunchpad -->
+
+<div id="info_box">
+<div id="restofsite_300x250_atf1" class="advert300x250">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/300x250_1a/sports/hockey/general', [[300,250],[300,600]] ,             'restofsite_300x250_atf1').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_300x250_atf1");
+</script>
+</div><!-- div.#restofsite_300x250_atf1.advert300x250 -->
+
+<h1>1965-66 NHL Season Schedule and Results</h1>
+<p><a href="/leagues/NHL_1965_games.html">Previous Season</a>&nbsp;&#9642;&nbsp;<a href="/leagues/NHL_1967_games.html">Next Season</a></p>
+<div class="margin_bottom no_mobile"><form class="sr_standard inline" name="pages" action="">
+<strong>Navigation:</strong>
+<select name="hr_pages" onchange="sr_goto_page('hr_pages','',this.form);">
+<option value="" disabled >Select Page
+<option value="/leagues/NHL_1966.html" >Summary
+<option value="/leagues/NHL_1966_standings.html" >Standings
+<option value="/leagues/NHL_1966_leaders.html" >Leaders
+<option value="/leagues/NHL_1966_games.html" selected>Schedule and Results
+<option value="/leagues/NHL_1966_skaters.html" >Skater Statistics
+<option value="/leagues/NHL_1966_goalies.html" >Goalie Statistics
+<option value="/leagues/NHL_1966_numbers.html" >Sweater Numbers
+<option value="/leagues/NHL_1966_debut.html" >Debuts
+<option value="/leagues/NHL_1966_final.html" >Final Season
+</select>
+</form>
+</div>
+<p><strong>League Champion:</strong> <a href="/teams/MTL/1966.html">Montreal Canadiens</a>
+<p><strong>Hart Memorial Trophy:</strong> <a href="/players/h/hullbo01.html">Bobby Hull</a> (54 G, 43 A, 97 P)<br><strong>Vezina Trophy:</strong> <a href="/players/h/hodgech01.html">Charlie Hodge</a> (12-7-2, 2.58 GAA) &amp; <a href="/players/w/worslgu01.html">Gump Worsley</a> (29-14-6, 2.36 GAA)<br><strong>Calder Memorial Trophy:</strong> <a href="/players/s/selbybr01.html">Brit Selby</a> (14 G, 13 A, 27 P)<br><p><strong>Goals Leader:</strong> <a href="/players/h/hullbo01.html">Bobby Hull</a> (54)<br><strong>Assists Leader:</strong> <a href="/players/b/belivje01.html">Jean Beliveau</a> (48) &amp; <a href="/players/m/mikitst01.html">Stan Mikita</a> (48) &amp; <a href="/players/r/roussbo01.html">Bobby Rousseau</a> (48)<br><strong>Points Leader:</strong> <a href="/players/h/hullbo01.html">Bobby Hull</a> (97)<br></div>
+<div id="restofsite_728x90_atf1" class="advert728x90">
+<script type='text/deferscript'>
+googletag.defineSlot('/7103/SMG_HockeyReference/728x90_1a/sports/hockey/general', [728,90] ,             'restofsite_728x90_atf1').addService(googletag.pubads());
+googletag.enableServices();
+googletag.display("restofsite_728x90_atf1");
+</script>
+</div><!-- div.#restofsite_728x90_atf1.advert728x90 -->
+
+<div id="page_content">
+<div class="table_heading">
+<h2 data-mobile-header="" style="">Regular Season</h2>
+<div class="table_heading_text"></div>
+</div>
+<div class="table_container" id="div_games">
+<table class="sortable  stats_table" id="games">
+<colgroup><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr class="">
+  <th align="left"  class="tooltip sort_default_asc" >Date</th>
+  <th align="left"  class="tooltip sort_default_asc" >Visitor</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="left"  class="tooltip sort_default_asc" >Home</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="center"  class="tooltip" ></th>
+  <th align="left"  class="tooltip sort_default_asc show_partial_when_sorting" >Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr  class="">
+   <td align="left"  csk="196510230MTL">Sat, Oct 23, 1965</td>
+   <td align="left"  csk="DET.196510230MTL"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.196510230MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196510230TOR">Sat, Oct 23, 1965</td>
+   <td align="left"  csk="CBH.196510230TOR"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.196510230TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196510240BOS">Sun, Oct 24, 1965</td>
+   <td align="left"  csk="CBH.196510240BOS"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="BOS.196510240BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196510240DET">Sun, Oct 24, 1965</td>
+   <td align="left"  csk="TOR.196510240DET"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.196510240DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196510240NYR">Sun, Oct 24, 1965</td>
+   <td align="left"  csk="MTL.196510240NYR"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.196510240NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196510270BOS">Wed, Oct 27, 1965</td>
+   <td align="left"  csk="TOR.196510270BOS"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.196510270BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196510270MTL">Wed, Oct 27, 1965</td>
+   <td align="left"  csk="NYR.196510270MTL"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.196510270MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196510280DET">Thu, Oct 28, 1965</td>
+   <td align="left"  csk="CBH.196510280DET"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="DET.196510280DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196510300BOS">Sat, Oct 30, 1965</td>
+   <td align="left"  csk="NYR.196510300BOS"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >8</td>
+   <td align="left"  csk="BOS.196510300BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196510300MTL">Sat, Oct 30, 1965</td>
+   <td align="left"  csk="CBH.196510300MTL"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="MTL.196510300MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196510300TOR">Sat, Oct 30, 1965</td>
+   <td align="left"  csk="DET.196510300TOR"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.196510300TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196510310DET">Sun, Oct 31, 1965</td>
+   <td align="left"  csk="MTL.196510310DET"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.196510310DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511030CBH">Wed, Nov 3, 1965</td>
+   <td align="left"  csk="BOS.196511030CBH"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.196511030CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511030NYR">Wed, Nov 3, 1965</td>
+   <td align="left"  csk="TOR.196511030NYR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.196511030NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511040DET">Thu, Nov 4, 1965</td>
+   <td align="left"  csk="BOS.196511040DET"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.196511040DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511040MTL">Thu, Nov 4, 1965</td>
+   <td align="left"  csk="TOR.196511040MTL"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.196511040MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511060MTL">Sat, Nov 6, 1965</td>
+   <td align="left"  csk="BOS.196511060MTL"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.196511060MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511060TOR">Sat, Nov 6, 1965</td>
+   <td align="left"  csk="NYR.196511060TOR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.196511060TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511070BOS">Sun, Nov 7, 1965</td>
+   <td align="left"  csk="MTL.196511070BOS"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="BOS.196511070BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511070CBH">Sun, Nov 7, 1965</td>
+   <td align="left"  csk="TOR.196511070CBH"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="CBH.196511070CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >9</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511070NYR">Sun, Nov 7, 1965</td>
+   <td align="left"  csk="DET.196511070NYR"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.196511070NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511100CBH">Wed, Nov 10, 1965</td>
+   <td align="left"  csk="DET.196511100CBH"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.196511100CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511100NYR">Wed, Nov 10, 1965</td>
+   <td align="left"  csk="BOS.196511100NYR"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.196511100NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511100TOR">Wed, Nov 10, 1965</td>
+   <td align="left"  csk="MTL.196511100TOR"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.196511100TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511110DET">Thu, Nov 11, 1965</td>
+   <td align="left"  csk="NYR.196511110DET"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.196511110DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511130CBH">Sat, Nov 13, 1965</td>
+   <td align="left"  csk="MTL.196511130CBH"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="CBH.196511130CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511130TOR">Sat, Nov 13, 1965</td>
+   <td align="left"  csk="NYR.196511130TOR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.196511130TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511140BOS">Sun, Nov 14, 1965</td>
+   <td align="left"  csk="TOR.196511140BOS"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.196511140BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511140CBH">Sun, Nov 14, 1965</td>
+   <td align="left"  csk="NYR.196511140CBH"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.196511140CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511140DET">Sun, Nov 14, 1965</td>
+   <td align="left"  csk="MTL.196511140DET"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.196511140DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511170NYR">Wed, Nov 17, 1965</td>
+   <td align="left"  csk="CBH.196511170NYR"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="NYR.196511170NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511180MTL">Thu, Nov 18, 1965</td>
+   <td align="left"  csk="TOR.196511180MTL"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.196511180MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511200BOS">Sat, Nov 20, 1965</td>
+   <td align="left"  csk="DET.196511200BOS"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.196511200BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511200MTL">Sat, Nov 20, 1965</td>
+   <td align="left"  csk="NYR.196511200MTL"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.196511200MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >9</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511200TOR">Sat, Nov 20, 1965</td>
+   <td align="left"  csk="CBH.196511200TOR"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.196511200TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511210BOS">Sun, Nov 21, 1965</td>
+   <td align="left"  csk="MTL.196511210BOS"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.196511210BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511210CBH">Sun, Nov 21, 1965</td>
+   <td align="left"  csk="TOR.196511210CBH"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="CBH.196511210CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511210NYR">Sun, Nov 21, 1965</td>
+   <td align="left"  csk="DET.196511210NYR"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.196511210NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511230DET">Tue, Nov 23, 1965</td>
+   <td align="left"  csk="CBH.196511230DET"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.196511230DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511240NYR">Wed, Nov 24, 1965</td>
+   <td align="left"  csk="BOS.196511240NYR"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.196511240NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511240TOR">Wed, Nov 24, 1965</td>
+   <td align="left"  csk="MTL.196511240TOR"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.196511240TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511250BOS">Thu, Nov 25, 1965</td>
+   <td align="left"  csk="NYR.196511250BOS"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.196511250BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511250CBH">Thu, Nov 25, 1965</td>
+   <td align="left"  csk="DET.196511250CBH"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.196511250CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511270MTL">Sat, Nov 27, 1965</td>
+   <td align="left"  csk="DET.196511270MTL"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.196511270MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511270NYR">Sat, Nov 27, 1965</td>
+   <td align="left"  csk="CBH.196511270NYR"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.196511270NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511270TOR">Sat, Nov 27, 1965</td>
+   <td align="left"  csk="BOS.196511270TOR"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.196511270TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511280BOS">Sun, Nov 28, 1965</td>
+   <td align="left"  csk="DET.196511280BOS"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="BOS.196511280BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511280CBH">Sun, Nov 28, 1965</td>
+   <td align="left"  csk="MTL.196511280CBH"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.196511280CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196511280NYR">Sun, Nov 28, 1965</td>
+   <td align="left"  csk="TOR.196511280NYR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.196511280NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512010CBH">Wed, Dec 1, 1965</td>
+   <td align="left"  csk="BOS.196512010CBH"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.196512010CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512010NYR">Wed, Dec 1, 1965</td>
+   <td align="left"  csk="TOR.196512010NYR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.196512010NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512020DET">Thu, Dec 2, 1965</td>
+   <td align="left"  csk="BOS.196512020DET"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.196512020DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >10</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512040BOS">Sat, Dec 4, 1965</td>
+   <td align="left"  csk="CBH.196512040BOS"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >10</td>
+   <td align="left"  csk="BOS.196512040BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512040MTL">Sat, Dec 4, 1965</td>
+   <td align="left"  csk="NYR.196512040MTL"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.196512040MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512040TOR">Sat, Dec 4, 1965</td>
+   <td align="left"  csk="DET.196512040TOR"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="TOR.196512040TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512050BOS">Sun, Dec 5, 1965</td>
+   <td align="left"  csk="MTL.196512050BOS"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.196512050BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512050DET">Sun, Dec 5, 1965</td>
+   <td align="left"  csk="TOR.196512050DET"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.196512050DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512050NYR">Sun, Dec 5, 1965</td>
+   <td align="left"  csk="CBH.196512050NYR"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="NYR.196512050NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512080CBH">Wed, Dec 8, 1965</td>
+   <td align="left"  csk="NYR.196512080CBH"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.196512080CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512080MTL">Wed, Dec 8, 1965</td>
+   <td align="left"  csk="BOS.196512080MTL"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.196512080MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512090DET">Thu, Dec 9, 1965</td>
+   <td align="left"  csk="NYR.196512090DET"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.196512090DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512110MTL">Sat, Dec 11, 1965</td>
+   <td align="left"  csk="CBH.196512110MTL"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.196512110MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512110NYR">Sat, Dec 11, 1965</td>
+   <td align="left"  csk="DET.196512110NYR"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.196512110NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512110TOR">Sat, Dec 11, 1965</td>
+   <td align="left"  csk="BOS.196512110TOR"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.196512110TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512120BOS">Sun, Dec 12, 1965</td>
+   <td align="left"  csk="DET.196512120BOS"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="BOS.196512120BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512120CBH">Sun, Dec 12, 1965</td>
+   <td align="left"  csk="MTL.196512120CBH"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="CBH.196512120CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512120NYR">Sun, Dec 12, 1965</td>
+   <td align="left"  csk="TOR.196512120NYR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.196512120NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512150CBH">Wed, Dec 15, 1965</td>
+   <td align="left"  csk="BOS.196512150CBH"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.196512150CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512150TOR">Wed, Dec 15, 1965</td>
+   <td align="left"  csk="DET.196512150TOR"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.196512150TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512160DET">Thu, Dec 16, 1965</td>
+   <td align="left"  csk="BOS.196512160DET"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.196512160DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512160MTL">Thu, Dec 16, 1965</td>
+   <td align="left"  csk="TOR.196512160MTL"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.196512160MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512180DET">Sat, Dec 18, 1965</td>
+   <td align="left"  csk="CBH.196512180DET"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.196512180DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512180MTL">Sat, Dec 18, 1965</td>
+   <td align="left"  csk="BOS.196512180MTL"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.196512180MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512180TOR">Sat, Dec 18, 1965</td>
+   <td align="left"  csk="NYR.196512180TOR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.196512180TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512190BOS">Sun, Dec 19, 1965</td>
+   <td align="left"  csk="TOR.196512190BOS"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.196512190BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512190CBH">Sun, Dec 19, 1965</td>
+   <td align="left"  csk="DET.196512190CBH"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.196512190CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512190NYR">Sun, Dec 19, 1965</td>
+   <td align="left"  csk="MTL.196512190NYR"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.196512190NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512220CBH">Wed, Dec 22, 1965</td>
+   <td align="left"  csk="NYR.196512220CBH"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.196512220CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512230DET">Thu, Dec 23, 1965</td>
+   <td align="left"  csk="NYR.196512230DET"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.196512230DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512250BOS">Sat, Dec 25, 1965</td>
+   <td align="left"  csk="NYR.196512250BOS"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.196512250BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512250MTL">Sat, Dec 25, 1965</td>
+   <td align="left"  csk="DET.196512250MTL"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.196512250MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512250TOR">Sat, Dec 25, 1965</td>
+   <td align="left"  csk="CBH.196512250TOR"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.196512250TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512260CBH">Sun, Dec 26, 1965</td>
+   <td align="left"  csk="TOR.196512260CBH"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.196512260CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512260DET">Sun, Dec 26, 1965</td>
+   <td align="left"  csk="MTL.196512260DET"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.196512260DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512260NYR">Sun, Dec 26, 1965</td>
+   <td align="left"  csk="BOS.196512260NYR"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.196512260NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512280BOS">Tue, Dec 28, 1965</td>
+   <td align="left"  csk="DET.196512280BOS"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.196512280BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512290NYR">Wed, Dec 29, 1965</td>
+   <td align="left"  csk="CBH.196512290NYR"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.196512290NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512290TOR">Wed, Dec 29, 1965</td>
+   <td align="left"  csk="MTL.196512290TOR"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.196512290TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196512310DET">Fri, Dec 31, 1965</td>
+   <td align="left"  csk="CBH.196512310DET"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.196512310DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601010MTL">Sat, Jan 1, 1966</td>
+   <td align="left"  csk="NYR.196601010MTL"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.196601010MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601010TOR">Sat, Jan 1, 1966</td>
+   <td align="left"  csk="BOS.196601010TOR"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.196601010TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601020CBH">Sun, Jan 2, 1966</td>
+   <td align="left"  csk="BOS.196601020CBH"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.196601020CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601020DET">Sun, Jan 2, 1966</td>
+   <td align="left"  csk="TOR.196601020DET"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.196601020DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601020NYR">Sun, Jan 2, 1966</td>
+   <td align="left"  csk="MTL.196601020NYR"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="NYR.196601020NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601050MTL">Wed, Jan 5, 1966</td>
+   <td align="left"  csk="CBH.196601050MTL"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.196601050MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601060DET">Thu, Jan 6, 1966</td>
+   <td align="left"  csk="BOS.196601060DET"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.196601060DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601080MTL">Sat, Jan 8, 1966</td>
+   <td align="left"  csk="BOS.196601080MTL"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.196601080MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601080NYR">Sat, Jan 8, 1966</td>
+   <td align="left"  csk="CBH.196601080NYR"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.196601080NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601080TOR">Sat, Jan 8, 1966</td>
+   <td align="left"  csk="DET.196601080TOR"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.196601080TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601090CBH">Sun, Jan 9, 1966</td>
+   <td align="left"  csk="TOR.196601090CBH"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.196601090CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601090DET">Sun, Jan 9, 1966</td>
+   <td align="left"  csk="MTL.196601090DET"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.196601090DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601090NYR">Sun, Jan 9, 1966</td>
+   <td align="left"  csk="BOS.196601090NYR"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.196601090NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601130BOS">Thu, Jan 13, 1966</td>
+   <td align="left"  csk="CBH.196601130BOS"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.196601130BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601130MTL">Thu, Jan 13, 1966</td>
+   <td align="left"  csk="TOR.196601130MTL"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="MTL.196601130MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601150DET">Sat, Jan 15, 1966</td>
+   <td align="left"  csk="NYR.196601150DET"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.196601150DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601150MTL">Sat, Jan 15, 1966</td>
+   <td align="left"  csk="CBH.196601150MTL"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.196601150MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601150TOR">Sat, Jan 15, 1966</td>
+   <td align="left"  csk="BOS.196601150TOR"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.196601150TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601160BOS">Sun, Jan 16, 1966</td>
+   <td align="left"  csk="MTL.196601160BOS"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.196601160BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601160CBH">Sun, Jan 16, 1966</td>
+   <td align="left"  csk="NYR.196601160CBH"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >6</td>
+   <td align="left"  csk="CBH.196601160CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601160DET">Sun, Jan 16, 1966</td>
+   <td align="left"  csk="TOR.196601160DET"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="DET.196601160DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601190TOR">Wed, Jan 19, 1966</td>
+   <td align="left"  csk="NYR.196601190TOR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.196601190TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601200BOS">Thu, Jan 20, 1966</td>
+   <td align="left"  csk="CBH.196601200BOS"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.196601200BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601200DET">Thu, Jan 20, 1966</td>
+   <td align="left"  csk="MTL.196601200DET"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.196601200DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601220BOS">Sat, Jan 22, 1966</td>
+   <td align="left"  csk="NYR.196601220BOS"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.196601220BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601220MTL">Sat, Jan 22, 1966</td>
+   <td align="left"  csk="DET.196601220MTL"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.196601220MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601220TOR">Sat, Jan 22, 1966</td>
+   <td align="left"  csk="CBH.196601220TOR"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.196601220TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601230BOS">Sun, Jan 23, 1966</td>
+   <td align="left"  csk="TOR.196601230BOS"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.196601230BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601230CBH">Sun, Jan 23, 1966</td>
+   <td align="left"  csk="MTL.196601230CBH"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.196601230CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601230DET">Sun, Jan 23, 1966</td>
+   <td align="left"  csk="NYR.196601230DET"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.196601230DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601260MTL">Wed, Jan 26, 1966</td>
+   <td align="left"  csk="CBH.196601260MTL"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.196601260MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601260NYR">Wed, Jan 26, 1966</td>
+   <td align="left"  csk="DET.196601260NYR"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.196601260NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601270BOS">Thu, Jan 27, 1966</td>
+   <td align="left"  csk="CBH.196601270BOS"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.196601270BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601290CBH">Sat, Jan 29, 1966</td>
+   <td align="left"  csk="DET.196601290CBH"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.196601290CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601290MTL">Sat, Jan 29, 1966</td>
+   <td align="left"  csk="NYR.196601290MTL"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.196601290MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601290TOR">Sat, Jan 29, 1966</td>
+   <td align="left"  csk="BOS.196601290TOR"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.196601290TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601300BOS">Sun, Jan 30, 1966</td>
+   <td align="left"  csk="MTL.196601300BOS"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.196601300BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601300DET">Sun, Jan 30, 1966</td>
+   <td align="left"  csk="CBH.196601300DET"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="DET.196601300DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196601300NYR">Sun, Jan 30, 1966</td>
+   <td align="left"  csk="TOR.196601300NYR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.196601300NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602020CBH">Wed, Feb 2, 1966</td>
+   <td align="left"  csk="NYR.196602020CBH"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.196602020CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602030BOS">Thu, Feb 3, 1966</td>
+   <td align="left"  csk="DET.196602030BOS"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.196602030BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602030MTL">Thu, Feb 3, 1966</td>
+   <td align="left"  csk="TOR.196602030MTL"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.196602030MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602050BOS">Sat, Feb 5, 1966</td>
+   <td align="left"  csk="NYR.196602050BOS"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.196602050BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602050MTL">Sat, Feb 5, 1966</td>
+   <td align="left"  csk="DET.196602050MTL"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.196602050MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602050TOR">Sat, Feb 5, 1966</td>
+   <td align="left"  csk="CBH.196602050TOR"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.196602050TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602060CBH">Sun, Feb 6, 1966</td>
+   <td align="left"  csk="TOR.196602060CBH"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.196602060CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602060DET">Sun, Feb 6, 1966</td>
+   <td align="left"  csk="BOS.196602060DET"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.196602060DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602060NYR">Sun, Feb 6, 1966</td>
+   <td align="left"  csk="MTL.196602060NYR"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.196602060NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602090CBH">Wed, Feb 9, 1966</td>
+   <td align="left"  csk="DET.196602090CBH"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.196602090CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602090TOR">Wed, Feb 9, 1966</td>
+   <td align="left"  csk="NYR.196602090TOR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.196602090TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602100BOS">Thu, Feb 10, 1966</td>
+   <td align="left"  csk="MTL.196602100BOS"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="BOS.196602100BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602100DET">Thu, Feb 10, 1966</td>
+   <td align="left"  csk="NYR.196602100DET"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.196602100DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602120CBH">Sat, Feb 12, 1966</td>
+   <td align="left"  csk="MTL.196602120CBH"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.196602120CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602120NYR">Sat, Feb 12, 1966</td>
+   <td align="left"  csk="BOS.196602120NYR"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.196602120NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >9</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602120TOR">Sat, Feb 12, 1966</td>
+   <td align="left"  csk="DET.196602120TOR"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.196602120TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602130BOS">Sun, Feb 13, 1966</td>
+   <td align="left"  csk="TOR.196602130BOS"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.196602130BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602130CBH">Sun, Feb 13, 1966</td>
+   <td align="left"  csk="NYR.196602130CBH"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.196602130CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602130DET">Sun, Feb 13, 1966</td>
+   <td align="left"  csk="MTL.196602130DET"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.196602130DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602160BOS">Wed, Feb 16, 1966</td>
+   <td align="left"  csk="DET.196602160BOS"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="BOS.196602160BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602160NYR">Wed, Feb 16, 1966</td>
+   <td align="left"  csk="CBH.196602160NYR"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="NYR.196602160NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602160TOR">Wed, Feb 16, 1966</td>
+   <td align="left"  csk="MTL.196602160TOR"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.196602160TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602190DET">Sat, Feb 19, 1966</td>
+   <td align="left"  csk="BOS.196602190DET"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="DET.196602190DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602190MTL">Sat, Feb 19, 1966</td>
+   <td align="left"  csk="CBH.196602190MTL"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.196602190MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602190TOR">Sat, Feb 19, 1966</td>
+   <td align="left"  csk="NYR.196602190TOR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.196602190TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602200CBH">Sun, Feb 20, 1966</td>
+   <td align="left"  csk="BOS.196602200CBH"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.196602200CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602200DET">Sun, Feb 20, 1966</td>
+   <td align="left"  csk="TOR.196602200DET"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.196602200DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602200NYR">Sun, Feb 20, 1966</td>
+   <td align="left"  csk="MTL.196602200NYR"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="NYR.196602200NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602230CBH">Wed, Feb 23, 1966</td>
+   <td align="left"  csk="TOR.196602230CBH"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="CBH.196602230CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602230MTL">Wed, Feb 23, 1966</td>
+   <td align="left"  csk="BOS.196602230MTL"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.196602230MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602230NYR">Wed, Feb 23, 1966</td>
+   <td align="left"  csk="DET.196602230NYR"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYR.196602230NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602260DET">Sat, Feb 26, 1966</td>
+   <td align="left"  csk="CBH.196602260DET"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.196602260DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602260MTL">Sat, Feb 26, 1966</td>
+   <td align="left"  csk="NYR.196602260MTL"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.196602260MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602260TOR">Sat, Feb 26, 1966</td>
+   <td align="left"  csk="BOS.196602260TOR"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.196602260TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602270CBH">Sun, Feb 27, 1966</td>
+   <td align="left"  csk="BOS.196602270CBH"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.196602270CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602270DET">Sun, Feb 27, 1966</td>
+   <td align="left"  csk="MTL.196602270DET"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="DET.196602270DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196602270NYR">Sun, Feb 27, 1966</td>
+   <td align="left"  csk="TOR.196602270NYR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.196602270NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603020CBH">Wed, Mar 2, 1966</td>
+   <td align="left"  csk="DET.196603020CBH"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="CBH.196603020CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603020NYR">Wed, Mar 2, 1966</td>
+   <td align="left"  csk="BOS.196603020NYR"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.196603020NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603020TOR">Wed, Mar 2, 1966</td>
+   <td align="left"  csk="MTL.196603020TOR"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.196603020TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603030BOS">Thu, Mar 3, 1966</td>
+   <td align="left"  csk="NYR.196603030BOS"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="BOS.196603030BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603030MTL">Thu, Mar 3, 1966</td>
+   <td align="left"  csk="TOR.196603030MTL"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="MTL.196603030MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603050MTL">Sat, Mar 5, 1966</td>
+   <td align="left"  csk="DET.196603050MTL"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.196603050MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >7</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603050TOR">Sat, Mar 5, 1966</td>
+   <td align="left"  csk="CBH.196603050TOR"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.196603050TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603060BOS">Sun, Mar 6, 1966</td>
+   <td align="left"  csk="TOR.196603060BOS"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="BOS.196603060BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603060CBH">Sun, Mar 6, 1966</td>
+   <td align="left"  csk="MTL.196603060CBH"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.196603060CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603060NYR">Sun, Mar 6, 1966</td>
+   <td align="left"  csk="DET.196603060NYR"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="NYR.196603060NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603090MTL">Wed, Mar 9, 1966</td>
+   <td align="left"  csk="BOS.196603090MTL"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.196603090MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603090NYR">Wed, Mar 9, 1966</td>
+   <td align="left"  csk="CBH.196603090NYR"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="NYR.196603090NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603090TOR">Wed, Mar 9, 1966</td>
+   <td align="left"  csk="DET.196603090TOR"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.196603090TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603120CBH">Sat, Mar 12, 1966</td>
+   <td align="left"  csk="NYR.196603120CBH"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.196603120CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603120MTL">Sat, Mar 12, 1966</td>
+   <td align="left"  csk="DET.196603120MTL"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.196603120MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603120TOR">Sat, Mar 12, 1966</td>
+   <td align="left"  csk="BOS.196603120TOR"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="TOR.196603120TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603130BOS">Sun, Mar 13, 1966</td>
+   <td align="left"  csk="DET.196603130BOS"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >8</td>
+   <td align="left"  csk="BOS.196603130BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603130CBH">Sun, Mar 13, 1966</td>
+   <td align="left"  csk="TOR.196603130CBH"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.196603130CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603130NYR">Sun, Mar 13, 1966</td>
+   <td align="left"  csk="MTL.196603130NYR"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.196603130NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603160CBH">Wed, Mar 16, 1966</td>
+   <td align="left"  csk="DET.196603160CBH"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.196603160CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603160NYR">Wed, Mar 16, 1966</td>
+   <td align="left"  csk="BOS.196603160NYR"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="NYR.196603160NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603160TOR">Wed, Mar 16, 1966</td>
+   <td align="left"  csk="MTL.196603160TOR"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="TOR.196603160TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603170DET">Thu, Mar 17, 1966</td>
+   <td align="left"  csk="BOS.196603170DET"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.196603170DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603190MTL">Sat, Mar 19, 1966</td>
+   <td align="left"  csk="NYR.196603190MTL"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.196603190MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603190TOR">Sat, Mar 19, 1966</td>
+   <td align="left"  csk="CBH.196603190TOR"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="TOR.196603190TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603200BOS">Sun, Mar 20, 1966</td>
+   <td align="left"  csk="NYR.196603200BOS"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.196603200BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603200CBH">Sun, Mar 20, 1966</td>
+   <td align="left"  csk="MTL.196603200CBH"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.196603200CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603200DET">Sun, Mar 20, 1966</td>
+   <td align="left"  csk="TOR.196603200DET"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.196603200DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >6</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603230BOS">Wed, Mar 23, 1966</td>
+   <td align="left"  csk="CBH.196603230BOS"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.196603230BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603230NYR">Wed, Mar 23, 1966</td>
+   <td align="left"  csk="DET.196603230NYR"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="NYR.196603230NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603240MTL">Thu, Mar 24, 1966</td>
+   <td align="left"  csk="TOR.196603240MTL"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.196603240MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603260MTL">Sat, Mar 26, 1966</td>
+   <td align="left"  csk="BOS.196603260MTL"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="MTL.196603260MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603260TOR">Sat, Mar 26, 1966</td>
+   <td align="left"  csk="DET.196603260TOR"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="TOR.196603260TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603270BOS">Sun, Mar 27, 1966</td>
+   <td align="left"  csk="MTL.196603270BOS"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="BOS.196603270BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603270DET">Sun, Mar 27, 1966</td>
+   <td align="left"  csk="CBH.196603270DET"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.196603270DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603270NYR">Sun, Mar 27, 1966</td>
+   <td align="left"  csk="TOR.196603270NYR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="NYR.196603270NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603290CBH">Tue, Mar 29, 1966</td>
+   <td align="left"  csk="BOS.196603290CBH"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="CBH.196603290CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603300TOR">Wed, Mar 30, 1966</td>
+   <td align="left"  csk="MTL.196603300TOR"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.196603300TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603310BOS">Thu, Mar 31, 1966</td>
+   <td align="left"  csk="TOR.196603310BOS"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="BOS.196603310BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196603310DET">Thu, Mar 31, 1966</td>
+   <td align="left"  csk="NYR.196603310DET"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.196603310DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604020MTL">Sat, Apr 2, 1966</td>
+   <td align="left"  csk="CBH.196604020MTL"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.196604020MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >8</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604020TOR">Sat, Apr 2, 1966</td>
+   <td align="left"  csk="NYR.196604020TOR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="TOR.196604020TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604030BOS">Sun, Apr 3, 1966</td>
+   <td align="left"  csk="CBH.196604030BOS"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="BOS.196604030BOS"><a href="/teams/BOS/1966.html">Boston Bruins</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604030DET">Sun, Apr 3, 1966</td>
+   <td align="left"  csk="TOR.196604030DET"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.196604030DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604030NYR">Sun, Apr 3, 1966</td>
+   <td align="left"  csk="MTL.196604030NYR"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="NYR.196604030NYR"><a href="/teams/NYR/1966.html">New York Rangers</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+</tbody>
+</table>
+</div><!-- div.table_container#div_xxxx -->
+<div class="table_heading">
+<h2 data-mobile-header="" style="">Playoffs</h2>
+<div class="table_heading_text"></div>
+</div>
+<div class="table_container" id="div_games_playoffs">
+<table class="sortable  stats_table" id="games_playoffs">
+<colgroup><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr class="">
+  <th align="left"  class="tooltip sort_default_asc" >Date</th>
+  <th align="left"  class="tooltip sort_default_asc" >Visitor</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="left"  class="tooltip sort_default_asc" >Home</th>
+  <th align="right"  class="tooltip" >G</th>
+  <th align="center"  class="tooltip" ></th>
+  <th align="left"  class="tooltip sort_default_asc show_partial_when_sorting" >Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr  class="">
+   <td align="left"  csk="196604070CBH">Thu, Apr 7, 1966</td>
+   <td align="left"  csk="DET.196604070CBH"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="CBH.196604070CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604070MTL">Thu, Apr 7, 1966</td>
+   <td align="left"  csk="TOR.196604070MTL"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.196604070MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604090MTL">Sat, Apr 9, 1966</td>
+   <td align="left"  csk="TOR.196604090MTL"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >0</td>
+   <td align="left"  csk="MTL.196604090MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604100CBH">Sun, Apr 10, 1966</td>
+   <td align="left"  csk="DET.196604100CBH"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >7</td>
+   <td align="left"  csk="CBH.196604100CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >0</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604120DET">Tue, Apr 12, 1966</td>
+   <td align="left"  csk="CBH.196604120DET"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.196604120DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604120TOR">Tue, Apr 12, 1966</td>
+   <td align="left"  csk="MTL.196604120TOR"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="TOR.196604120TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604140DET">Thu, Apr 14, 1966</td>
+   <td align="left"  csk="CBH.196604140DET"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="DET.196604140DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604140TOR">Thu, Apr 14, 1966</td>
+   <td align="left"  csk="MTL.196604140TOR"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="TOR.196604140TOR"><a href="/teams/TOR/1966.html">Toronto Maple Leafs</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604170CBH">Sun, Apr 17, 1966</td>
+   <td align="left"  csk="DET.196604170CBH"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="CBH.196604170CBH"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604190DET">Tue, Apr 19, 1966</td>
+   <td align="left"  csk="CBH.196604190DET"><a href="/teams/CBH/1966.html">Chicago Black Hawks</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.196604190DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604240MTL">Sun, Apr 24, 1966</td>
+   <td align="left"  csk="DET.196604240MTL"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="MTL.196604240MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604260MTL">Tue, Apr 26, 1966</td>
+   <td align="left"  csk="DET.196604260MTL"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >5</td>
+   <td align="left"  csk="MTL.196604260MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196604280DET">Thu, Apr 28, 1966</td>
+   <td align="left"  csk="MTL.196604280DET"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >4</td>
+   <td align="left"  csk="DET.196604280DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196605010DET">Sun, May 1, 1966</td>
+   <td align="left"  csk="MTL.196605010DET"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >2</td>
+   <td align="left"  csk="DET.196605010DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196605030MTL">Tue, May 3, 1966</td>
+   <td align="left"  csk="DET.196605030MTL"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >1</td>
+   <td align="left"  csk="MTL.196605030MTL"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >5</td>
+   <td align="center"  csk="0"></td>
+   <td align="left" ></td>
+</tr>
+<tr  class="">
+   <td align="left"  csk="196605050DET">Thu, May 5, 1966</td>
+   <td align="left"  csk="MTL.196605050DET"><a href="/teams/MTL/1966.html">Montreal Canadiens</a></td>
+   <td align="right" >3</td>
+   <td align="left"  csk="DET.196605050DET"><a href="/teams/DET/1966.html">Detroit Red Wings</a></td>
+   <td align="right" >2</td>
+   <td align="center"  csk="1">OT</td>
+   <td align="left" ></td>
+</tr>
+</tbody>
+</table>
+</div><!-- div.table_container#div_xxxx -->
+</div>
+<div id="sr_js"></div>
+<script type="text/javascript">
+(function () {
+    var sr_js_file = 'http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr-hr-min.js';
+    if (sr_gzipEnabled) {
+       sr_js_file = 'http://d2ft4b0ve1aur1.cloudfront.net/js-290/sr-hr-min.js.jgz';
+    }
+    var sr_script_tag = document.getElementById("sr_js");         
+    if (sr_script_tag) {
+	var scriptStyles = document.createElement("script");
+	scriptStyles.type = "text/javascript";
+	scriptStyles.src = sr_js_file;
+	sr_script_tag.appendChild(scriptStyles);
+	//alert('adding js to footer:'+sr_js_file);
+    }
+}());
+</script>
+
+<div id="site_footer">
+<div class="margin border">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5319453360923253";
+/* Page Bottom - HR */
+google_ad_slot = "1698819814";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<div id="sr_footer">
+Copyright &copy; 2000-2013 <a href="http://www.sports-reference.com">Sports
+Reference LLC</a>. All rights reserved.
+
+<form class="inline margin_left" method="get" name="f_footer" action="/player_search.cgi" style="margin-left:5em;">
+<input x-webkit-speech type="text" id="search_footer" name="search" class="search long"> 
+<input type="submit" value="Search" class="submit">
+</form>
+
+<div class="margin_top">Tools: <a href="/linker/">Automatic Player
+Linker</a>&nbsp;|&nbsp;<a href="/friv/linkify.cgi">Basic Player
+Linker</a></div>
+  
+<div class="blockquote italic_text clear_both margin_top">
+Most historical data provided by <a 
+href="http://www.nhlofficialguide.com/">Dan Diamond and Associates</a>. 
+Current season data provided by <a href="http://www.xmlteam.com">XML Team 
+Solutions</a>.<br>
+Other data sources include the <a
+href="http://groups.yahoo.com/group/hockey_summary_project">Hockey Summary
+Project</a> and <a
+href="http://groups.yahoo.com/group/hockey-databank/">Hockey Databank</a>.
+</div>
+
+<div class="blockquote clear_both margin_top">
+<a href="http://www.sports-reference.com/">A Sports Reference Site</a>:
+<a href="/about/">About HR</a>&nbsp;|
+<a href="/feedback/">Found a bug or have a suggestion?</a><br>
+<a href="http://www.sports-reference.com/privacy.shtml">Privacy Statement</a>&nbsp;|
+<a href="http://www.sports-reference.com/termsofuse.shtml">Conditions &amp; Terms of Service</a> | 
+<a href="http://www.sports-reference.com/data_use.shtml">Use of Data</a>
+</div>
+
+<div class="blockquote clear_both margin_bottom margin_top">
+<a target="_blank" title="USA TODAY Sports" href="http://Sports.USATODAY.com/"><img src="http://d2ft4b0ve1aur1.cloudfront.net/images-252/USATSdp.png" width="193" height="41" border="0"  style="width:193px;height:41px;vertical-align:middle"></a>
+Partner of <a target="_blank" title="USA TODAY Sports" href="http://Sports.USATODAY.com/">USA TODAY Sports Digital Properties</a>.
+</div>
+
+</div><!-- div#sr_footer -->
+</div><!-- div#site_footer -->
+
+<script type="text/javascript"> 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+   var pageTracker = _gat._createTracker("UA-1890630-5");
+   pageTracker._trackPageview();
+   pageTracker._trackPageLoadTime();
+   var sr_tracker = _gat._createTracker("UA-1890630-9");
+   sr_tracker._setDomainName('none'); 
+   sr_tracker._setAllowLinker(true); 
+   sr_tracker._setAllowHash(false);
+   sr_tracker._setCustomVar(1,"site","hr",3);
+   sr_tracker._trackPageview();
+} catch(err) {}</script>
+        
+<!-- Begin comScore Tag -->
+<script type="text/deferscript">
+    document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js' %3E%3C/script%3E"));
+</script>
+
+<script type="text/deferscript">
+  COMSCORE.beacon({
+    c1:2,
+    c2:"6035210",
+    c3:"",
+    c4:"www.hockey-reference.com",
+    c5:"",
+    c6:"",
+    c15:""
+  });
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/b?c1=2&amp;c2=6035210&amp;c3=&amp;c4=www.baseball-reference.com&amp;c5=&amp;c6=&amp;c15=&amp;cv=1.3&amp;cj=1" width="0" height="0" alt="" />
+</noscript>
+<!-- End comScore Tag -->
+
+<!-- google +1 code -->
+<script type="text/deferscript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<!-- facebook code -->
+<script type="text/deferscript">
+     window.fbAsyncInit = function() {
+        FB.init({appId: '212945115395487', status: true, cookie: true,
+                 xfbml: true, channelUrl  : 'http://www.hockey-reference.com/channel.html'});
+      };
+      (function() {
+        var fb_root = document.getElementById('fb-root');
+        if (fb_root) {
+           var e = document.createElement('script');
+           e.type = 'text/javascript';
+           e.src = document.location.protocol +
+              '//connect.facebook.net/en_US/all.js';
+           e.async = true;
+           fb_root.appendChild(e);
+        }
+      }());
+</script>
+
+
+</div><!-- div#Page container -->
+</body>
+</html>
