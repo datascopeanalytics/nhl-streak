@@ -1,8 +1,9 @@
+body {
+    background-color: #ddd;
+}
 #main{
     position:relative;
     font-family: 'Roboto Condensed', sans-serif;
-    background-color: #ddd;
-    padding-bottom: 100px;
 }
 
 .legend_g>text{
